@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity Evento.
+    -->
+    <changeSet id="20200326100500-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="area_id"
+                                 baseTableName="evento"
+                                 constraintName="fk_evento_area_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="area"/>
+
+        <addForeignKeyConstraint baseColumnNames="camara_id"
+                                 baseTableName="evento"
+                                 constraintName="fk_evento_camara_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="camara"/>
+
+        <addForeignKeyConstraint baseColumnNames="tipoevento_id"
+                                 baseTableName="evento"
+                                 constraintName="fk_evento_tipoevento_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tipoevento"/>
+
+    </changeSet>
+</databaseChangeLog>

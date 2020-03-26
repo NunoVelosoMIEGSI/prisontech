@@ -1,0 +1,33 @@
+{
+    "name": "Logseventos",
+    "fields": [
+        {
+            "fieldName": "dataHoraInicio",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dataHoraFim",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "classeOrigem",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "metodoOrigem",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200326100700",
+    "entityTableName": "logseventos",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*",
+    "microserviceName": "eventos"
+}

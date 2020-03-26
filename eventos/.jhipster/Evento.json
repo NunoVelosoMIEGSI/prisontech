@@ -1,0 +1,59 @@
+{
+    "name": "Evento",
+    "fields": [
+        {
+            "fieldName": "descricao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numPessoasPerm",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "numPessoasDet",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "dataHoraInicio",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dataHoraFim",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "area",
+            "otherEntityRelationshipName": "evento",
+            "relationshipName": "area",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "camara",
+            "otherEntityRelationshipName": "evento",
+            "relationshipName": "camara",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "tipoevento",
+            "otherEntityRelationshipName": "evento",
+            "relationshipName": "tipoevento",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200326100500",
+    "entityTableName": "evento",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "eventos",
+    "applications": "*",
+    "microserviceName": "eventos"
+}

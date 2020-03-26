@@ -1,0 +1,48 @@
+entity Area {
+	nome String,
+	numMinPessoa Integer,
+	numMaxPessoa Integer,
+	limiteArea Integer
+}
+
+entity Camara{
+	descricao String
+}
+
+entity Tipoevento{
+	descricao String
+}
+
+entity Evento {
+	descricao String,
+	numPessoasPerm Integer,
+	numPessoasDet Integer,
+	dataHoraInicio ZonedDateTime,
+	dataHoraFim ZonedDateTime
+}
+
+entity Logseventos {
+	dataHoraInicio ZonedDateTime,
+	dataHoraFim ZonedDateTime,
+	classeOrigem String,
+	metodoOrigem String
+}
+
+
+relationship OneToMany {
+	Area to Evento{area},
+	Camara to Evento{camara},
+	Tipoevento to Evento{tipoevento}
+}
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+microservice Area with eventos
+microservice Camara with eventos
+microservice Tipoevento with eventos
+microservice Evento with eventos
+microservice Logseventos with eventos

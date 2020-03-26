@@ -1,0 +1,11 @@
+{
+  "generator-jhipster": {
+    "appsFolders": ["eventos", "gateway"],
+    "directoryPath": "../",
+    "gatewayType": "zuul",
+    "monitoring": "no",
+    "consoleOptions": [],
+    "serviceDiscoveryType": "eureka",
+    "jwtSecretKey": "MjZhY2JlOTM0OWM5ZTVlMWRkNzJiNzZlYTE4MWM3ZDEwZTJkNDk2MDE1NWUxNDc0NmU1NTUzYjMzMzMwNGUyMzI4M2U3ZWQ3MzAxZTlhOGM4MWQxNjEyZTg4MTJjMWY0NDRjMQ=="
+  }
+}

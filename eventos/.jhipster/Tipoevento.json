@@ -1,0 +1,28 @@
+{
+    "name": "Tipoevento",
+    "fields": [
+        {
+            "fieldName": "descricao",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "evento",
+            "otherEntityRelationshipName": "tipoevento",
+            "relationshipName": "evento"
+        }
+    ],
+    "changelogDate": "20200326100400",
+    "entityTableName": "tipoevento",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "eventos",
+    "applications": "*",
+    "microserviceName": "eventos"
+}

@@ -1,0 +1,40 @@
+{
+    "name": "Area",
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numMinPessoa",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "numMaxPessoa",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "limiteArea",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "evento",
+            "otherEntityRelationshipName": "area",
+            "relationshipName": "evento"
+        }
+    ],
+    "changelogDate": "20200326100300",
+    "entityTableName": "area",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*",
+    "microserviceName": "eventos"
+}

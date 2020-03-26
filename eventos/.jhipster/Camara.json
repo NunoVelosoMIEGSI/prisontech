@@ -1,0 +1,28 @@
+{
+    "name": "Camara",
+    "fields": [
+        {
+            "fieldName": "descricao",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "evento",
+            "otherEntityRelationshipName": "camara",
+            "relationshipName": "evento"
+        }
+    ],
+    "changelogDate": "20200326100300",
+    "entityTableName": "camara",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "eventos",
+    "applications": "*",
+    "microserviceName": "eventos"
+}

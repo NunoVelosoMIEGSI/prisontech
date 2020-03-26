@@ -1,0 +1,48 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.dai.eventos"
+    },
+    "jhipsterVersion": "6.7.1",
+    "applicationType": "microservice",
+    "baseName": "eventos",
+    "packageName": "com.dai.eventos",
+    "packageFolder": "com/dai/eventos",
+    "serverPort": "8081",
+    "authenticationType": "jwt",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "gradle",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "NmNjYTRjMWE1NjAzMDczZmIyNzk4ZjVhY2QwMjVhZDUzZTQzYzVkYmQ4MzBmMzI0NTUwZjE3NzIwNTI2YTUyODgwMGFiYjk1YjgzMjJkZmFiZmQ1ZWM4YTIyMGE0MjViNWY1YjJmOGMyMGQyZTNkYjA5MmRmOTZhZjRlMGU3N2U=",
+    "embeddableLaunchScript": false,
+    "creationTimestamp": 1585216540032,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [
+      {
+        "name": "generator-jhipster-vuejs",
+        "version": "1.5.1"
+      }
+    ],
+    "enableTranslation": false,
+    "clientPackageManager": "npm",
+    "blueprints": [
+      {
+        "name": "generator-jhipster-vuejs",
+        "version": "1.5.1"
+      }
+    ],
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}
