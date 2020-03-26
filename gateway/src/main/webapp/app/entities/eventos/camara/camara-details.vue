@@ -2,10 +2,10 @@
     <div class="row justify-content-center">
         <div class="col-8">
             <div v-if="camara">
-                <h2 class="jh-entity-heading"><span>Camara</span> {{camara.id}}</h2>
+                <h2 class="jh-entity-heading"><span>Câmara</span> {{camara.id}}</h2>
                 <dl class="row jh-entity-details">
                     <dt>
-                        <span>Descricao</span>
+                        <span>Descrição</span>
                     </dt>
                     <dd>
                         <span>{{camara.descricao}}</span>
@@ -14,10 +14,10 @@
                 <button type="submit"
                         v-on:click.prevent="previousState()"
                         class="btn btn-info">
-                    <font-awesome-icon icon="arrow-left"></font-awesome-icon>&nbsp;<span> Back</span>
+                    <font-awesome-icon icon="arrow-left"></font-awesome-icon>&nbsp;<span> Voltar</span>
                 </button>
                 <router-link v-if="camara.id" :to="{name: 'CamaraEdit', params: {camaraId: camara.id}}" tag="button" class="btn btn-primary">
-                    <font-awesome-icon icon="pencil-alt"></font-awesome-icon>&nbsp;<span> Edit</span>
+                    <font-awesome-icon icon="pencil-alt"></font-awesome-icon>&nbsp;<span> Editar</span>
                 </router-link>
             </div>
         </div>

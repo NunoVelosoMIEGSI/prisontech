@@ -1,11 +1,11 @@
 <template>
     <div>
         <h2 id="page-heading">
-            <span id="evento-heading">Eventos</span>
+            <span id="evento-heading">Eventos ocorridos</span>
             <router-link :to="{name: 'EventoCreate'}" tag="button" id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-evento">
                 <font-awesome-icon icon="plus"></font-awesome-icon>
                 <span >
-                    Create a new Evento
+                    Criar um novo evento
                 </span>
             </router-link>
         </h2>
@@ -18,21 +18,21 @@
         </b-alert>
         <br/>
         <div class="alert alert-warning" v-if="!isFetching && eventos && eventos.length === 0">
-            <span>No eventos found</span>
+            <span>Não existem registos</span>
         </div>
         <div class="table-responsive" v-if="eventos && eventos.length > 0">
             <table class="table table-striped">
                 <thead>
                 <tr>
                     <th><span>ID</span></th>
-                    <th><span>Descricao</span></th>
-                    <th><span>Num Pessoas Perm</span></th>
-                    <th><span>Num Pessoas Det</span></th>
-                    <th><span>Data Hora Inicio</span></th>
-                    <th><span>Data Hora Fim</span></th>
-                    <th><span>Area</span></th>
-                    <th><span>Camara</span></th>
-                    <th><span>Tipoevento</span></th>
+                    <th><span>Descrição</span></th>
+                    <th><span>Número de pessoas permitidas</span></th>
+                    <th><span>Número de pessoas detetadas</span></th>
+                    <th><span>Data/Hora de início</span></th>
+                    <th><span>Data/Hora de fim</span></th>
+                    <th><span>Área</span></th>
+                    <th><span>Câmara</span></th>
+                    <th><span>Tipo de evento</span></th>
                     <th></th>
                 </tr>
                 </thead>
@@ -49,35 +49,35 @@
                     <td>{{evento.dataHoraFim | formatDate}}</td>
                     <td>
                         <div v-if="evento.area">
-                            <router-link :to="{name: 'AreaView', params: {areaId: evento.area.id}}">{{evento.area.id}}</router-link>
+                            <router-link :to="{name: 'AreaView', params: {areaId: evento.area.id}}">{{evento.area.nome}}</router-link>
                         </div>
                     </td>
                     <td>
                         <div v-if="evento.camara">
-                            <router-link :to="{name: 'CamaraView', params: {camaraId: evento.camara.id}}">{{evento.camara.id}}</router-link>
+                            <router-link :to="{name: 'CamaraView', params: {camaraId: evento.camara.id}}">{{evento.camara.descricao}}</router-link>
                         </div>
                     </td>
                     <td>
                         <div v-if="evento.tipoevento">
-                            <router-link :to="{name: 'TipoeventoView', params: {tipoeventoId: evento.tipoevento.id}}">{{evento.tipoevento.id}}</router-link>
+                            <router-link :to="{name: 'TipoeventoView', params: {tipoeventoId: evento.tipoevento.id}}">{{evento.tipoevento.descricao}}</router-link>
                         </div>
                     </td>
                     <td class="text-right">
                         <div class="btn-group">
                             <router-link :to="{name: 'EventoView', params: {eventoId: evento.id}}" tag="button" class="btn btn-info btn-sm details">
                                 <font-awesome-icon icon="eye"></font-awesome-icon>
-                                <span class="d-none d-md-inline">View</span>
+                                <span class="d-none d-md-inline">Detalhes</span>
                             </router-link>
                             <router-link :to="{name: 'EventoEdit', params: {eventoId: evento.id}}"  tag="button" class="btn btn-primary btn-sm edit">
                                 <font-awesome-icon icon="pencil-alt"></font-awesome-icon>
-                                <span class="d-none d-md-inline">Edit</span>
+                                <span class="d-none d-md-inline">Editar</span>
                             </router-link>
                             <b-button v-on:click="prepareRemove(evento)"
                                    variant="danger"
                                    class="btn btn-sm"
                                    v-b-modal.removeEntity>
                                 <font-awesome-icon icon="times"></font-awesome-icon>
-                                <span class="d-none d-md-inline">Delete</span>
+                                <span class="d-none d-md-inline">Eliminar</span>
                             </b-button>
                         </div>
                     </td>
@@ -86,13 +86,13 @@
             </table>
         </div>
         <b-modal ref="removeEntity" id="removeEntity" >
-            <span slot="modal-title"><span id="gatewayApp.eventosEvento.delete.question">Confirm delete operation</span></span>
+            <span slot="modal-title"><span id="gatewayApp.eventosEvento.delete.question">Confirmar operação</span></span>
             <div class="modal-body">
-                <p id="jhi-delete-evento-heading">Are you sure you want to delete this Evento?</p>
+                <p id="jhi-delete-evento-heading">Tem a certeza que deseja eliminar o registo?</p>
             </div>
             <div slot="modal-footer">
-                <button type="button" class="btn btn-secondary" v-on:click="closeDialog()">Cancel</button>
-                <button type="button" class="btn btn-primary" id="jhi-confirm-delete-evento" v-on:click="removeEvento()">Delete</button>
+                <button type="button" class="btn btn-secondary" v-on:click="closeDialog()">Cancelar</button>
+                <button type="button" class="btn btn-primary" id="jhi-confirm-delete-evento" v-on:click="removeEvento()">Eliminar</button>
             </div>
         </b-modal>
     </div>

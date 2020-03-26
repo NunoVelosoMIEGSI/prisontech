@@ -6,7 +6,7 @@
             </b-navbar-toggle>
             <b-navbar-brand class="logo float-left" b-link to="/">
                 <span class="logo-img"></span>
-                <span class="navbar-title">gateway</span> <span class="navbar-version">{{version}}</span>
+                <span class="navbar-title">PrisionTech</span> <span class="navbar-version">{{version}}</span>
             </b-navbar-brand>
         </div>
         <b-collapse is-nav id="header-tabs">
@@ -23,27 +23,27 @@
                     active-class="active" class="pointer">
                     <span slot="button-content" class="navbar-dropdown-menu">
                         <font-awesome-icon icon="th-list" />
-                        <span>Entities</span>
+                        <span>Dados</span>
                     </span>
                     <b-dropdown-item to="/area">
                         <font-awesome-icon icon="asterisk" />
-                        <span >Area</span>
+                        <span >Áreas</span>
                     </b-dropdown-item>
                     <b-dropdown-item to="/camara">
                         <font-awesome-icon icon="asterisk" />
-                        <span >Camara</span>
+                        <span >Câmaras</span>
                     </b-dropdown-item>
                     <b-dropdown-item to="/tipoevento">
                         <font-awesome-icon icon="asterisk" />
-                        <span >Tipoevento</span>
+                        <span >Tipos de eventos</span>
                     </b-dropdown-item>
                     <b-dropdown-item to="/evento">
                         <font-awesome-icon icon="asterisk" />
-                        <span >Evento</span>
+                        <span >Eventos ocorridos</span>
                     </b-dropdown-item>
                     <b-dropdown-item to="/logseventos">
                         <font-awesome-icon icon="asterisk" />
-                        <span >Logseventos</span>
+                        <span >Logs</span>
                     </b-dropdown-item>
                     <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
                 </b-nav-item-dropdown>
@@ -55,7 +55,7 @@
                     class="pointer">
                     <span slot="button-content" class="navbar-dropdown-menu">
                         <font-awesome-icon icon="user-plus" />
-                        <span>Administration</span>
+                        <span>Administração</span>
                     </span>
                     <b-dropdown-item to="/admin/gateway">
                         <font-awesome-icon icon="road" />
@@ -104,12 +104,12 @@
                     <span slot="button-content" class="navbar-dropdown-menu">
                         <font-awesome-icon icon="user" />
                         <span>
-                            Account
+                            Conta de utilizador
                         </span>
                     </span>
                     <b-dropdown-item to="/account/settings" tag="b-dropdown-item" v-if="authenticated">
                         <font-awesome-icon icon="wrench" />
-                        <span>Settings</span>
+                        <span>Definições</span>
                     </b-dropdown-item>
                     <b-dropdown-item to="/account/password" tag="b-dropdown-item" v-if="authenticated">
                         <font-awesome-icon icon="lock" />
@@ -117,15 +117,15 @@
                     </b-dropdown-item>
                     <b-dropdown-item v-if="authenticated"  v-on:click="logout()" id="logout">
                         <font-awesome-icon icon="sign-out-alt" />
-                        <span>Sign out</span>
+                        <span>Saír</span>
                     </b-dropdown-item>
                     <b-dropdown-item v-if="!authenticated"  v-on:click="openLogin()" id="login">
                         <font-awesome-icon icon="sign-in-alt" />
-                        <span>Sign in</span>
+                        <span>Entrar</span>
                     </b-dropdown-item>
                     <b-dropdown-item to="/register" tag="b-dropdown-item" id="register" v-if="!authenticated">
                         <font-awesome-icon icon="user-plus" />
-                        <span>Register</span>
+                        <span>Registar</span>
                     </b-dropdown-item>
                 </b-nav-item-dropdown>
             </b-navbar-nav>
