@@ -7,11 +7,11 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entidades",
-        "eventosArea": "Area",
-        "eventosCamara": "Camara",
-        "eventosTipoevento": "Tipoevento",
-        "eventosEvento": "Evento",
-        "eventosLogseventos": "Logseventos",
+        "eventosArea": "Áreas",
+        "eventosCamara": "Câmaras",
+        "eventosTipoevento": "Tipos de eventos",
+        "eventosEvento": "Eventos ocorridos",
+        "eventosLogseventos": "Logs de eventos",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {
@@ -20,7 +20,7 @@
         "password": "Palavra-passe",
         "sessions": "Sessões",
         "login": "Entrar",
-        "logout": "Sair",
+        "logout": "Saír",
         "register": "Registar"
       },
       "admin": {

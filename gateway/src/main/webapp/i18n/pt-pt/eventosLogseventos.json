@@ -2,28 +2,28 @@
   "gatewayApp": {
     "eventosLogseventos": {
       "home": {
-        "title": "Logseventos",
-        "createLabel": "Criar novo(a) Logseventos",
-        "createOrEditLabel": "Criar ou editar Logseventos",
-        "notFound": "Nenhum Logseventos encontrado"
+        "title": "Logs de eventos",
+        "createLabel": "Criar novo log de eventos",
+        "createOrEditLabel": "Criar ou editar log de eventos",
+        "notFound": "Não existem registos"
       },
       "delete": {
-        "question": "Tem a certeza que pretende eliminar o(a) Logseventos {{ id }}?"
+        "question": "Tem a certeza que pretende eliminar o log {{ id }}?"
       },
       "detail": {
-        "title": "Logseventos"
+        "title": "Logs de eventos"
       },
-      "dataHoraInicio": "Data Hora Inicio",
-      "dataHoraFim": "Data Hora Fim",
+      "dataHoraInicio": "Data/Hora de início",
+      "dataHoraFim": "Data/Hora de fim",
       "classeOrigem": "Classe Origem",
       "metodoOrigem": "Metodo Origem"
     }
   },
   "eventosApp": {
     "eventosLogseventos": {
-      "created": "Um novo Logseventos foi criado com o identificador {{ param }}",
-      "updated": "Logseventos com identificador {{ param }} foi actualizado",
-      "deleted": "Logseventos com identificador {{ param }} foi eliminado"
+      "created": "Um novo Log foi criado com o identificador {{ param }}",
+      "updated": "Log com identificador {{ param }} foi actualizado",
+      "deleted": "Log com identificador {{ param }} foi eliminado"
     }
   }
 }

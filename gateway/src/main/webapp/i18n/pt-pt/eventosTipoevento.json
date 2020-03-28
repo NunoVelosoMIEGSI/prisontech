@@ -2,26 +2,26 @@
   "gatewayApp": {
     "eventosTipoevento": {
       "home": {
-        "title": "Tipoeventos",
-        "createLabel": "Criar novo(a) Tipoevento",
-        "createOrEditLabel": "Criar ou editar Tipoevento",
-        "notFound": "Nenhum Tipoeventos encontrado"
+        "title": "Tipos de eventos",
+        "createLabel": "Criar novo tipo de evento",
+        "createOrEditLabel": "Criar ou editar tipo de evento",
+        "notFound": "Não existem registos"
       },
       "delete": {
-        "question": "Tem a certeza que pretende eliminar o(a) Tipoevento {{ id }}?"
+        "question": "Tem a certeza que pretende eliminar o tipo de evento {{ id }}?"
       },
       "detail": {
-        "title": "Tipoevento"
+        "title": "Tipo de evento"
       },
-      "descricao": "Descricao",
+      "descricao": "Descrição",
       "evento": "Evento"
     }
   },
   "eventosApp": {
     "eventosTipoevento": {
-      "created": "Um novo Tipoevento foi criado com o identificador {{ param }}",
-      "updated": "Tipoevento com identificador {{ param }} foi actualizado",
-      "deleted": "Tipoevento com identificador {{ param }} foi eliminado"
+      "created": "Um novo tipo de evento foi criado com o identificador {{ param }}",
+      "updated": "Tipo de evento com identificador {{ param }} foi actualizado",
+      "deleted": "Tipo de evento com identificador {{ param }} foi eliminado"
     }
   }
 }

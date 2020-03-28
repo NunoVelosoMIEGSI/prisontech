@@ -3,26 +3,26 @@
     "eventosEvento": {
       "home": {
         "title": "Eventos",
-        "createLabel": "Criar novo(a) Evento",
-        "createOrEditLabel": "Criar ou editar Evento",
-        "notFound": "Nenhum Eventos encontrado"
+        "createLabel": "Criar novo evento",
+        "createOrEditLabel": "Criar ou editar evento",
+        "notFound": "Não existem registos"
       },
       "delete": {
-        "question": "Tem a certeza que pretende eliminar o(a) Evento {{ id }}?"
+        "question": "Tem a certeza que pretende eliminar o evento {{ id }}?"
       },
       "detail": {
         "title": "Evento"
       },
-      "descricao": "Descricao",
-      "numPessoasPerm": "Num Pessoas Perm",
-      "numPessoasDet": "Num Pessoas Det",
-      "dataHoraInicio": "Data Hora Inicio",
-      "dataHoraFim": "Data Hora Fim",
-      "path": "Path",
+      "descricao": "Descrição",
+      "numPessoasPerm": "Número de pessoas permitidas",
+      "numPessoasDet": "Número de pessoas detetadas",
+      "dataHoraInicio": "Data/Hora de início",
+      "dataHoraFim": "Data/Hora de fim",
+      "path": "Path do vídeo",
       "formato": "Formato",
-      "area": "Area",
-      "camara": "Camara",
-      "tipoevento": "Tipoevento"
+      "area": "Área",
+      "camara": "Câmara",
+      "tipoevento": "Tipo de evento"
     }
   },
   "eventosApp": {
