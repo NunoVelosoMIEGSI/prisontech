@@ -5,31 +5,25 @@
             <img src="../../../content/images/img_prison.jpg" style="width: 375px; margin-top: 30px;">
         </div>
         <div class="col-md-9">
-            <!--<img src="../../../content/images/drone 3.gif" style="float: right; width: 200px; margin-top: -60px;">-->
-
-            <h1 class="display-4" style="font-weight: bold;">PrisionTech!</h1>
-            <p class="lead" style="font-size: 30px;">Bem-vindo...
-                <!--<img src="../../../content/images/drone 2.gif" style="width: 100px;">-->
-            </p>
-            <!--<p style="font-weight: bold; color: darkred; font-size: 18px;">PrisionTech - vá preso...em segurança!!!</p>-->
+            <h1 class="display-4" v-text="$t('home.title')">Welcome, Java Hipster!</h1>
+            <p class="lead" v-text="$t('home.subtitle')">This is your homepage</p>
 
             <div>
                 <div class="alert alert-success" v-if="authenticated">
-                    <span v-if="username">Voçê está autenticado como "{{username}}"</span>
+                    <span v-if="username" v-text="$t('home.logged.message', { 'username': username})">You are logged in as user "{{username}}"</span>
                 </div>
 
                 <div class="alert alert-warning" v-if="!authenticated">
-                    <span>Para fazer </span>
-                    <a class="alert-link" v-on:click="openLogin()">login</a><span >, experimente uma das contas existente por defeito:<br/>- Administrator (login="admin" and password="admin") <br/>- User (login="user" and password="user").</span>
+                    <span v-text="$t('global.messages.info.authenticated.prefix')">If you want to </span>
+                    <a class="alert-link" v-on:click="openLogin()" v-text="$t('global.messages.info.authenticated.link')">sign in</a><span v-html="$t('global.messages.info.authenticated.suffix')">, you can try the default accounts:<br/>- Administrator (login="admin" and password="admin") <br/>- User (login="user" and password="user").</span>
                 </div>
                 <div class="alert alert-warning" v-if="!authenticated">
-                    <span>Ainda não tem uma conta de utilizador?</span>&nbsp;
-                    <router-link class="alert-link" to="/register">Criar uma nova conta de utilizador</router-link>
+                    <span v-text="$t('global.messages.info.register.noaccount')">You don't have an account yet?</span>&nbsp;
+                    <router-link class="alert-link" to="/register" v-text="$t('global.messages.info.register.link')">Register a new account</router-link>
                 </div>
             </div>
 
         </div>
-
     </div>
 </template>
 

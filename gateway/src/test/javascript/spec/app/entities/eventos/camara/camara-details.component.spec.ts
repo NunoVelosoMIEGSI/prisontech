@@ -10,6 +10,7 @@ import CamaraService from '@/entities/eventos/camara/camara.service';
 const localVue = createLocalVue();
 
 config.initVueApp(localVue);
+const i18n = config.initI18N(localVue);
 const store = config.initVueXStore(localVue);
 localVue.component('font-awesome-icon', {});
 localVue.component('router-link', {});
@@ -23,7 +24,12 @@ describe('Component Tests', () => {
     beforeEach(() => {
       camaraServiceStub = sinon.createStubInstance<CamaraService>(CamaraService);
 
-      wrapper = shallowMount<CamaraClass>(CamaraDetailComponent, { store, localVue, provide: { camaraService: () => camaraServiceStub } });
+      wrapper = shallowMount<CamaraClass>(CamaraDetailComponent, {
+        store,
+        i18n,
+        localVue,
+        provide: { camaraService: () => camaraServiceStub }
+      });
       comp = wrapper.vm;
     });
 

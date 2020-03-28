@@ -12,6 +12,7 @@ const localVue = createLocalVue();
 const mockedAxios: any = axios;
 
 config.initVueApp(localVue);
+const i18n = config.initI18N(localVue);
 const store = config.initVueXStore(localVue);
 localVue.component('font-awesome-icon', FontAwesomeIcon);
 localVue.component('health-modal', HealthModal);
@@ -29,7 +30,7 @@ describe('Health Component', () => {
     mockedAxios.get.mockReturnValue(Promise.resolve({}));
     wrapper = shallowMount<HealthClass>(Health, {
       store,
-
+      i18n,
       localVue,
       stubs: {
         bModal: true

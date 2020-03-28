@@ -52,7 +52,7 @@ public class TipoeventoResource {
         }
         Tipoevento result = tipoeventoService.save(tipoevento);
         return ResponseEntity.created(new URI("/api/tipoeventos/" + result.getId()))
-            .headers(HeaderUtil.createEntityCreationAlert(applicationName, false, ENTITY_NAME, result.getId().toString()))
+            .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, result.getId().toString()))
             .body(result);
     }
 
@@ -73,7 +73,7 @@ public class TipoeventoResource {
         }
         Tipoevento result = tipoeventoService.save(tipoevento);
         return ResponseEntity.ok()
-            .headers(HeaderUtil.createEntityUpdateAlert(applicationName, false, ENTITY_NAME, tipoevento.getId().toString()))
+            .headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, tipoevento.getId().toString()))
             .body(result);
     }
 
@@ -111,6 +111,6 @@ public class TipoeventoResource {
     public ResponseEntity<Void> deleteTipoevento(@PathVariable Long id) {
         log.debug("REST request to delete Tipoevento : {}", id);
         tipoeventoService.delete(id);
-        return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, false, ENTITY_NAME, id.toString())).build();
+        return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString())).build();
     }
 }

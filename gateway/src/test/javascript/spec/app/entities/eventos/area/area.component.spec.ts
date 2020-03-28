@@ -11,6 +11,7 @@ import AreaService from '@/entities/eventos/area/area.service';
 const localVue = createLocalVue();
 
 config.initVueApp(localVue);
+const i18n = config.initI18N(localVue);
 const store = config.initVueXStore(localVue);
 localVue.component('font-awesome-icon', {});
 localVue.component('b-alert', {});
@@ -39,6 +40,7 @@ describe('Component Tests', () => {
 
       wrapper = shallowMount<AreaClass>(AreaComponent, {
         store,
+        i18n,
         localVue,
         stubs: { bModal: bModalStub as any },
         provide: {

@@ -1,0 +1,35 @@
+{
+  "gatewayApp": {
+    "eventosEvento": {
+      "home": {
+        "title": "Eventos",
+        "createLabel": "Criar novo(a) Evento",
+        "createOrEditLabel": "Criar ou editar Evento",
+        "notFound": "Nenhum Eventos encontrado"
+      },
+      "delete": {
+        "question": "Tem a certeza que pretende eliminar o(a) Evento {{ id }}?"
+      },
+      "detail": {
+        "title": "Evento"
+      },
+      "descricao": "Descricao",
+      "numPessoasPerm": "Num Pessoas Perm",
+      "numPessoasDet": "Num Pessoas Det",
+      "dataHoraInicio": "Data Hora Inicio",
+      "dataHoraFim": "Data Hora Fim",
+      "path": "Path",
+      "formato": "Formato",
+      "area": "Area",
+      "camara": "Camara",
+      "tipoevento": "Tipoevento"
+    }
+  },
+  "eventosApp": {
+    "eventosEvento": {
+      "created": "Um novo Evento foi criado com o identificador {{ param }}",
+      "updated": "Evento com identificador {{ param }} foi actualizado",
+      "deleted": "Evento com identificador {{ param }} foi eliminado"
+    }
+  }
+}

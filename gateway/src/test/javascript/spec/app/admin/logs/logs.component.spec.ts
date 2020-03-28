@@ -10,6 +10,7 @@ const localVue = createLocalVue();
 const mockedAxios: any = axios;
 
 config.initVueApp(localVue);
+const i18n = config.initI18N(localVue);
 const store = config.initVueXStore(localVue);
 
 jest.mock('axios', () => ({
@@ -23,7 +24,7 @@ describe('Logs Component', () => {
 
   beforeEach(() => {
     mockedAxios.get.mockReturnValue(Promise.resolve({}));
-    wrapper = shallowMount<LogsClass>(Logs, { store, localVue, provide: { logsService: () => new LogsService() } });
+    wrapper = shallowMount<LogsClass>(Logs, { store, i18n, localVue, provide: { logsService: () => new LogsService() } });
     logs = wrapper.vm;
   });
 

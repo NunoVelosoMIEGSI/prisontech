@@ -12,6 +12,7 @@ const localVue = createLocalVue();
 const mockedAxios: any = axios;
 
 config.initVueApp(localVue);
+const i18n = config.initI18N(localVue);
 const store = config.initVueXStore(localVue);
 localVue.component('font-awesome-icon', FontAwesomeIcon);
 localVue.component('b-alert', {});
@@ -43,6 +44,7 @@ describe('UserManagement Component', () => {
     store.commit('authenticated', account);
     wrapper = shallowMount<UserManagementClass>(UserManagement, {
       store,
+      i18n,
       localVue,
       stubs: {
         bPagination: true,

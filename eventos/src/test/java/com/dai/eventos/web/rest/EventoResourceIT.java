@@ -54,6 +54,12 @@ public class EventoResourceIT {
     private static final ZonedDateTime DEFAULT_DATA_HORA_FIM = ZonedDateTime.ofInstant(Instant.ofEpochMilli(0L), ZoneOffset.UTC);
     private static final ZonedDateTime UPDATED_DATA_HORA_FIM = ZonedDateTime.now(ZoneId.systemDefault()).withNano(0);
 
+    private static final String DEFAULT_PATH = "AAAAAAAAAA";
+    private static final String UPDATED_PATH = "BBBBBBBBBB";
+
+    private static final String DEFAULT_FORMATO = "AAAAAAAAAA";
+    private static final String UPDATED_FORMATO = "BBBBBBBBBB";
+
     @Autowired
     private EventoRepository eventoRepository;
 
@@ -103,7 +109,9 @@ public class EventoResourceIT {
             .numPessoasPerm(DEFAULT_NUM_PESSOAS_PERM)
             .numPessoasDet(DEFAULT_NUM_PESSOAS_DET)
             .dataHoraInicio(DEFAULT_DATA_HORA_INICIO)
-            .dataHoraFim(DEFAULT_DATA_HORA_FIM);
+            .dataHoraFim(DEFAULT_DATA_HORA_FIM)
+            .path(DEFAULT_PATH)
+            .formato(DEFAULT_FORMATO);
         return evento;
     }
     /**
@@ -118,7 +126,9 @@ public class EventoResourceIT {
             .numPessoasPerm(UPDATED_NUM_PESSOAS_PERM)
             .numPessoasDet(UPDATED_NUM_PESSOAS_DET)
             .dataHoraInicio(UPDATED_DATA_HORA_INICIO)
-            .dataHoraFim(UPDATED_DATA_HORA_FIM);
+            .dataHoraFim(UPDATED_DATA_HORA_FIM)
+            .path(UPDATED_PATH)
+            .formato(UPDATED_FORMATO);
         return evento;
     }
 
@@ -147,6 +157,8 @@ public class EventoResourceIT {
         assertThat(testEvento.getNumPessoasDet()).isEqualTo(DEFAULT_NUM_PESSOAS_DET);
         assertThat(testEvento.getDataHoraInicio()).isEqualTo(DEFAULT_DATA_HORA_INICIO);
         assertThat(testEvento.getDataHoraFim()).isEqualTo(DEFAULT_DATA_HORA_FIM);
+        assertThat(testEvento.getPath()).isEqualTo(DEFAULT_PATH);
+        assertThat(testEvento.getFormato()).isEqualTo(DEFAULT_FORMATO);
     }
 
     @Test
@@ -184,7 +196,9 @@ public class EventoResourceIT {
             .andExpect(jsonPath("$.[*].numPessoasPerm").value(hasItem(DEFAULT_NUM_PESSOAS_PERM)))
             .andExpect(jsonPath("$.[*].numPessoasDet").value(hasItem(DEFAULT_NUM_PESSOAS_DET)))
             .andExpect(jsonPath("$.[*].dataHoraInicio").value(hasItem(sameInstant(DEFAULT_DATA_HORA_INICIO))))
-            .andExpect(jsonPath("$.[*].dataHoraFim").value(hasItem(sameInstant(DEFAULT_DATA_HORA_FIM))));
+            .andExpect(jsonPath("$.[*].dataHoraFim").value(hasItem(sameInstant(DEFAULT_DATA_HORA_FIM))))
+            .andExpect(jsonPath("$.[*].path").value(hasItem(DEFAULT_PATH)))
+            .andExpect(jsonPath("$.[*].formato").value(hasItem(DEFAULT_FORMATO)));
     }
     
     @Test
@@ -202,7 +216,9 @@ public class EventoResourceIT {
             .andExpect(jsonPath("$.numPessoasPerm").value(DEFAULT_NUM_PESSOAS_PERM))
             .andExpect(jsonPath("$.numPessoasDet").value(DEFAULT_NUM_PESSOAS_DET))
             .andExpect(jsonPath("$.dataHoraInicio").value(sameInstant(DEFAULT_DATA_HORA_INICIO)))
-            .andExpect(jsonPath("$.dataHoraFim").value(sameInstant(DEFAULT_DATA_HORA_FIM)));
+            .andExpect(jsonPath("$.dataHoraFim").value(sameInstant(DEFAULT_DATA_HORA_FIM)))
+            .andExpect(jsonPath("$.path").value(DEFAULT_PATH))
+            .andExpect(jsonPath("$.formato").value(DEFAULT_FORMATO));
     }
 
     @Test
@@ -230,7 +246,9 @@ public class EventoResourceIT {
             .numPessoasPerm(UPDATED_NUM_PESSOAS_PERM)
             .numPessoasDet(UPDATED_NUM_PESSOAS_DET)
             .dataHoraInicio(UPDATED_DATA_HORA_INICIO)
-            .dataHoraFim(UPDATED_DATA_HORA_FIM);
+            .dataHoraFim(UPDATED_DATA_HORA_FIM)
+            .path(UPDATED_PATH)
+            .formato(UPDATED_FORMATO);
 
         restEventoMockMvc.perform(put("/api/eventos")
             .contentType(TestUtil.APPLICATION_JSON)
@@ -246,6 +264,8 @@ public class EventoResourceIT {
         assertThat(testEvento.getNumPessoasDet()).isEqualTo(UPDATED_NUM_PESSOAS_DET);
         assertThat(testEvento.getDataHoraInicio()).isEqualTo(UPDATED_DATA_HORA_INICIO);
         assertThat(testEvento.getDataHoraFim()).isEqualTo(UPDATED_DATA_HORA_FIM);
+        assertThat(testEvento.getPath()).isEqualTo(UPDATED_PATH);
+        assertThat(testEvento.getFormato()).isEqualTo(UPDATED_FORMATO);
     }
 
     @Test

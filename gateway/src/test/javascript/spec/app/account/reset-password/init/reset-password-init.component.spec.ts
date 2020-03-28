@@ -8,6 +8,7 @@ const localVue = createLocalVue();
 const mockedAxios: any = axios;
 
 config.initVueApp(localVue);
+const i18n = config.initI18N(localVue);
 
 jest.mock('axios', () => ({
   get: jest.fn(),
@@ -21,6 +22,7 @@ describe('Reset Component Init', () => {
   beforeEach(() => {
     mockedAxios.post.mockReset();
     wrapper = shallowMount<ResetPasswordInitClass>(ResetPasswordInit, {
+      i18n,
       localVue
     });
     resetPasswordInit = wrapper.vm;

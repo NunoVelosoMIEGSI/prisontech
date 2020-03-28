@@ -11,6 +11,7 @@ import LogseventosService from '@/entities/eventos/logseventos/logseventos.servi
 const localVue = createLocalVue();
 
 config.initVueApp(localVue);
+const i18n = config.initI18N(localVue);
 const store = config.initVueXStore(localVue);
 localVue.component('font-awesome-icon', {});
 localVue.component('b-alert', {});
@@ -39,6 +40,7 @@ describe('Component Tests', () => {
 
       wrapper = shallowMount<LogseventosClass>(LogseventosComponent, {
         store,
+        i18n,
         localVue,
         stubs: { bModal: bModalStub as any },
         provide: {

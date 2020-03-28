@@ -89,7 +89,6 @@ export default class JhiUserManagementEdit extends Vue {
           this.alertService().showAlert(this.getMessageFromHeader(res), 'info');
         });
     } else {
-      this.userAccount.langKey = 'en';
       this.userManagementService()
         .create(this.userAccount)
         .then(res => {
@@ -105,6 +104,8 @@ export default class JhiUserManagementEdit extends Vue {
   }
 
   private getMessageFromHeader(res: any): any {
-    return res.headers['x-gatewayapp-alert'];
+    return this.$t(res.headers['x-gatewayapp-alert'], {
+      param: decodeURIComponent(res.headers['x-gatewayapp-params'].replace(/\+/g, ' '))
+    });
   }
 }

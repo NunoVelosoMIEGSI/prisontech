@@ -18,7 +18,9 @@ entity Evento {
 	numPessoasPerm Integer,
 	numPessoasDet Integer,
 	dataHoraInicio ZonedDateTime,
-	dataHoraFim ZonedDateTime
+	dataHoraFim ZonedDateTime,
+	path String,
+	formato String
 }
 
 entity Logseventos {

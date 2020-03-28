@@ -35,6 +35,12 @@ public class Evento implements Serializable {
     @Column(name = "data_hora_fim")
     private ZonedDateTime dataHoraFim;
 
+    @Column(name = "path")
+    private String path;
+
+    @Column(name = "formato")
+    private String formato;
+
     @ManyToOne
     @JsonIgnoreProperties("eventos")
     private Area area;
@@ -121,6 +127,32 @@ public class Evento implements Serializable {
         this.dataHoraFim = dataHoraFim;
     }
 
+    public String getPath() {
+        return path;
+    }
+
+    public Evento path(String path) {
+        this.path = path;
+        return this;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
+    }
+
+    public String getFormato() {
+        return formato;
+    }
+
+    public Evento formato(String formato) {
+        this.formato = formato;
+        return this;
+    }
+
+    public void setFormato(String formato) {
+        this.formato = formato;
+    }
+
     public Area getArea() {
         return area;
     }
@@ -186,6 +218,8 @@ public class Evento implements Serializable {
             ", numPessoasDet=" + getNumPessoasDet() +
             ", dataHoraInicio='" + getDataHoraInicio() + "'" +
             ", dataHoraFim='" + getDataHoraFim() + "'" +
+            ", path='" + getPath() + "'" +
+            ", formato='" + getFormato() + "'" +
             "}";
     }
 }

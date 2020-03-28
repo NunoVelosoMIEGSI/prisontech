@@ -10,6 +10,7 @@ const localVue = createLocalVue();
 const mockedAxios: any = axios;
 
 config.initVueApp(localVue);
+const i18n = config.initI18N(localVue);
 const store = config.initVueXStore(localVue);
 
 jest.mock('axios', () => ({
@@ -34,6 +35,7 @@ describe('Settings Component', () => {
     store.commit('authenticated', account);
     wrapper = shallowMount<SettingsClass>(Settings, {
       store,
+      i18n,
       localVue
     });
     settings = wrapper.vm;

@@ -1,0 +1,27 @@
+{
+  "gatewayApp": {
+    "eventosTipoevento": {
+      "home": {
+        "title": "Tipoeventos",
+        "createLabel": "Create a new Tipoevento",
+        "createOrEditLabel": "Create or edit a Tipoevento",
+        "notFound": "No Tipoeventos found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Tipoevento {{ id }}?"
+      },
+      "detail": {
+        "title": "Tipoevento"
+      },
+      "descricao": "Descricao",
+      "evento": "Evento"
+    }
+  },
+  "eventosApp": {
+    "eventosTipoevento": {
+      "created": "A new Tipoevento is created with identifier {{ param }}",
+      "updated": "A Tipoevento is updated with identifier {{ param }}",
+      "deleted": "A Tipoevento is deleted with identifier {{ param }}"
+    }
+  }
+}

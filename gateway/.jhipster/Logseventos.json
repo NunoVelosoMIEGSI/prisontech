@@ -19,7 +19,7 @@
         }
     ],
     "relationships": [],
-    "changelogDate": "20200326100700",
+    "changelogDate": "20200328154600",
     "entityTableName": "logseventos",
     "dto": "no",
     "pagination": "no",

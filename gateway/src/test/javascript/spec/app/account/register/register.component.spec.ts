@@ -12,6 +12,7 @@ const localVue = createLocalVue();
 const mockedAxios: any = axios;
 
 config.initVueApp(localVue);
+const i18n = config.initI18N(localVue);
 const store = config.initVueXStore(localVue);
 
 jest.mock('axios', () => ({
@@ -22,7 +23,7 @@ jest.mock('axios', () => ({
 describe('Register Component', () => {
   let wrapper: Wrapper<RegisterClass>;
   let register: RegisterClass;
-  const filledRegisterAccount = { email: 'jhi@pster.net', langKey: 'en', login: 'jhi', password: 'jhipster' };
+  const filledRegisterAccount = { email: 'jhi@pster.net', langKey: 'pt-pt', login: 'jhi', password: 'jhipster' };
 
   beforeEach(() => {
     mockedAxios.get.mockReset();
@@ -31,6 +32,7 @@ describe('Register Component', () => {
 
     wrapper = shallowMount<RegisterClass>(Register, {
       store,
+      i18n,
       localVue,
       provide: {
         registerService: () => new RegisterService(),
@@ -82,7 +84,7 @@ describe('Register Component', () => {
 
     expect(mockedAxios.post).toHaveBeenCalledWith('api/register', {
       email: 'jhi@pster.net',
-      langKey: 'en',
+      langKey: 'pt-pt',
       login: 'jhi',
       password: 'jhipster'
     });
@@ -103,7 +105,7 @@ describe('Register Component', () => {
 
     expect(mockedAxios.post).toHaveBeenCalledWith('api/register', {
       email: 'jhi@pster.net',
-      langKey: 'en',
+      langKey: 'pt-pt',
       login: 'jhi',
       password: 'jhipster'
     });
@@ -124,7 +126,7 @@ describe('Register Component', () => {
 
     expect(mockedAxios.post).toHaveBeenCalledWith('api/register', {
       email: 'jhi@pster.net',
-      langKey: 'en',
+      langKey: 'pt-pt',
       login: 'jhi',
       password: 'jhipster'
     });
@@ -145,7 +147,7 @@ describe('Register Component', () => {
 
     expect(mockedAxios.post).toHaveBeenCalledWith('api/register', {
       email: 'jhi@pster.net',
-      langKey: 'en',
+      langKey: 'pt-pt',
       login: 'jhi',
       password: 'jhipster'
     });

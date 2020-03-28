@@ -52,7 +52,7 @@ public class LogseventosResource {
         }
         Logseventos result = logseventosService.save(logseventos);
         return ResponseEntity.created(new URI("/api/logseventos/" + result.getId()))
-            .headers(HeaderUtil.createEntityCreationAlert(applicationName, false, ENTITY_NAME, result.getId().toString()))
+            .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, result.getId().toString()))
             .body(result);
     }
 
@@ -73,7 +73,7 @@ public class LogseventosResource {
         }
         Logseventos result = logseventosService.save(logseventos);
         return ResponseEntity.ok()
-            .headers(HeaderUtil.createEntityUpdateAlert(applicationName, false, ENTITY_NAME, logseventos.getId().toString()))
+            .headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, logseventos.getId().toString()))
             .body(result);
     }
 
@@ -111,6 +111,6 @@ public class LogseventosResource {
     public ResponseEntity<Void> deleteLogseventos(@PathVariable Long id) {
         log.debug("REST request to delete Logseventos : {}", id);
         logseventosService.delete(id);
-        return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, false, ENTITY_NAME, id.toString())).build();
+        return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString())).build();
     }
 }

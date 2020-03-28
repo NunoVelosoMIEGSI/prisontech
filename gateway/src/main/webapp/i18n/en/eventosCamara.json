@@ -1,0 +1,27 @@
+{
+  "gatewayApp": {
+    "eventosCamara": {
+      "home": {
+        "title": "Camaras",
+        "createLabel": "Create a new Camara",
+        "createOrEditLabel": "Create or edit a Camara",
+        "notFound": "No Camaras found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Camara {{ id }}?"
+      },
+      "detail": {
+        "title": "Camara"
+      },
+      "descricao": "Descricao",
+      "evento": "Evento"
+    }
+  },
+  "eventosApp": {
+    "eventosCamara": {
+      "created": "A new Camara is created with identifier {{ param }}",
+      "updated": "A Camara is updated with identifier {{ param }}",
+      "deleted": "A Camara is deleted with identifier {{ param }}"
+    }
+  }
+}

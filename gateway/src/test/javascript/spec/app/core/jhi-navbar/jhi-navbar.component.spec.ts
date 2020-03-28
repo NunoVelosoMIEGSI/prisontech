@@ -6,6 +6,7 @@ import router from '@/router';
 
 const localVue = createLocalVue();
 config.initVueApp(localVue);
+const i18n = config.initI18N(localVue);
 const store = config.initVueXStore(localVue);
 localVue.component('font-awesome-icon', {});
 localVue.component('b-navbar', {});
@@ -23,14 +24,17 @@ describe('JhiNavbar', () => {
   let wrapper: Wrapper<JhiNavbarClass>;
   const loginService = { openLogin: jest.fn() };
   const accountService = { hasAnyAuthority: jest.fn() };
+  const translationService = { refreshTranslation: jest.fn() };
 
   beforeEach(() => {
     wrapper = shallowMount<JhiNavbarClass>(JhiNavbar, {
+      i18n,
       store,
       router,
       localVue,
       provide: {
         loginService: () => loginService,
+        translationService: () => translationService,
         accountService: () => accountService
       }
     });
@@ -39,6 +43,8 @@ describe('JhiNavbar', () => {
 
   it('should be a Vue instance', () => {
     expect(wrapper.isVueInstance()).toBeTruthy();
+
+    expect(translationService.refreshTranslation).toHaveBeenCalled();
   });
 
   it('should not have user data set', () => {
@@ -84,5 +90,18 @@ describe('JhiNavbar', () => {
     expect(jhiNavbar.subIsActive('/titi')).toBeFalsy();
     expect(jhiNavbar.subIsActive('/toto')).toBeTruthy();
     expect(jhiNavbar.subIsActive(['/toto', 'toto'])).toBeTruthy();
+  });
+
+  it('should call translationService when changing language', () => {
+    jhiNavbar.changeLanguage('fr');
+
+    expect(translationService.refreshTranslation).toHaveBeenCalled();
+  });
+
+  it('should check for correct language', () => {
+    store.commit('currentLanguage', 'fr');
+
+    expect(jhiNavbar.isActiveLanguage('en')).toBeFalsy();
+    expect(jhiNavbar.isActiveLanguage('fr')).toBeTruthy();
   });
 });

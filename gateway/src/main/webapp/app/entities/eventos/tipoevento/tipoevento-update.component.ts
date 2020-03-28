@@ -45,7 +45,7 @@ export default class TipoeventoUpdate extends Vue {
         .then(param => {
           this.isSaving = false;
           this.$router.go(-1);
-          const message = 'A Tipoevento is updated with identifier ' + param.id;
+          const message = this.$t('gatewayApp.eventosTipoevento.updated', { param: param.id });
           this.alertService().showAlert(message, 'info');
         });
     } else {
@@ -54,7 +54,7 @@ export default class TipoeventoUpdate extends Vue {
         .then(param => {
           this.isSaving = false;
           this.$router.go(-1);
-          const message = 'A Tipoevento is created with identifier ' + param.id;
+          const message = this.$t('gatewayApp.eventosTipoevento.created', { param: param.id });
           this.alertService().showAlert(message, 'success');
         });
     }

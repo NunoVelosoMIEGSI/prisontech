@@ -44,7 +44,7 @@ export default class LogseventosUpdate extends Vue {
         .then(param => {
           this.isSaving = false;
           this.$router.go(-1);
-          const message = 'A Logseventos is updated with identifier ' + param.id;
+          const message = this.$t('gatewayApp.eventosLogseventos.updated', { param: param.id });
           this.alertService().showAlert(message, 'info');
         });
     } else {
@@ -53,7 +53,7 @@ export default class LogseventosUpdate extends Vue {
         .then(param => {
           this.isSaving = false;
           this.$router.go(-1);
-          const message = 'A Logseventos is created with identifier ' + param.id;
+          const message = this.$t('gatewayApp.eventosLogseventos.created', { param: param.id });
           this.alertService().showAlert(message, 'success');
         });
     }

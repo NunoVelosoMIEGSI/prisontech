@@ -10,6 +10,7 @@ import AreaService from '@/entities/eventos/area/area.service';
 const localVue = createLocalVue();
 
 config.initVueApp(localVue);
+const i18n = config.initI18N(localVue);
 const store = config.initVueXStore(localVue);
 localVue.component('font-awesome-icon', {});
 localVue.component('router-link', {});
@@ -23,7 +24,7 @@ describe('Component Tests', () => {
     beforeEach(() => {
       areaServiceStub = sinon.createStubInstance<AreaService>(AreaService);
 
-      wrapper = shallowMount<AreaClass>(AreaDetailComponent, { store, localVue, provide: { areaService: () => areaServiceStub } });
+      wrapper = shallowMount<AreaClass>(AreaDetailComponent, { store, i18n, localVue, provide: { areaService: () => areaServiceStub } });
       comp = wrapper.vm;
     });
 

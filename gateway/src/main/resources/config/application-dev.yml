@@ -84,7 +84,7 @@ spring:
         enabled: true
 
 server:
-  port: 8080
+  port: 8181
 
 # ===================================================================
 # JHipster specific properties
@@ -116,12 +116,12 @@ jhipster:
     authentication:
       jwt:
         # This token must be encoded using Base64 and be at least 256 bits long (you can type `openssl rand -base64 64` on your command line to generate a 512 bits one)
-        base64-secret: YWI0ZDU0NzQ4YmQ5MDgzMDZjMDg1NzlhMjkwYzE1MzE0YjY2ODc1NmZjMjY4MDBhYzY3NmU4M2NjZTczOTVlYTIyMTU3ZGRmYmI1M2ZhNmNhYzFiMmQ0YjdlMGJjNjAxYWQxN2I4ZWQyNjcyNjkxZGQ2ZmZiYzU5MjJiZmYzZWE=
+        base64-secret: ZTJjMWVkMzM2ZjQ2ZmJjYjA3N2JhOTBjY2EyNjIzODA2MDg3ZWZiMjhlNDgzYjgxZTEzYTZjODM2ODIyYWI0NzlhMmI4ODk0MzBiNmI1ZGFmZjY1YzcwZGNhOTFlNzMxMmMwMDdlZjBjYThiYTMzZGFlMWJkOGM1Y2ZiNjI0ZjA=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
         token-validity-in-seconds-for-remember-me: 2592000
   mail: # specific JHipster mail property, for standard properties see MailProperties
-    base-url: http://127.0.0.1:8080
+    base-url: http://127.0.0.1:8181
   metrics:
     logs: # Reports metrics in the logs
       enabled: false

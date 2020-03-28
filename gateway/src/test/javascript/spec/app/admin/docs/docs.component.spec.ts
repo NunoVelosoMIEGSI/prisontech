@@ -7,6 +7,7 @@ import * as config from '@/shared/config/config';
 const localVue = createLocalVue();
 
 config.initVueApp(localVue);
+const i18n = config.initI18N(localVue);
 
 describe('JhiDocs', () => {
   let jhiDocs: JhiDocsClass;
@@ -14,6 +15,7 @@ describe('JhiDocs', () => {
 
   beforeEach(() => {
     wrapper = shallowMount<JhiDocsClass>(JhiDocs, {
+      i18n,
       localVue
     });
     jhiDocs = wrapper.vm;

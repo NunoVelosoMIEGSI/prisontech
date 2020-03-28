@@ -3,6 +3,7 @@ const path = require('path');
 const vueLoaderConfig = require('./loader.conf');
 const { VueLoaderPlugin } = require('vue-loader');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const MergeJsonWebpackPlugin = require('merge-jsons-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { BaseHrefWebpackPlugin } = require('base-href-webpack-plugin');
 
@@ -103,6 +104,15 @@ module.exports = {
       chunksSortMode: 'manual',
       inject: true
     }),
-    new BaseHrefWebpackPlugin({ baseHref: '/' })
+    new BaseHrefWebpackPlugin({ baseHref: '/' }),
+    new MergeJsonWebpackPlugin({
+      output: {
+        groupBy: [
+          { pattern: './src/main/webapp/i18n/pt-pt/*.json', fileName: './i18n/pt-pt.json' },
+          { pattern: './src/main/webapp/i18n/en/*.json', fileName: './i18n/en.json' }
+          // jhipster-needle-i18n-language-webpack - JHipster will add/remove languages in this array
+        ]
+      }
+    })
   ]
 };

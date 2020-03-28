@@ -50,7 +50,7 @@ export default class Tipoevento extends mixins(Vue2Filters.mixin, AlertMixin) {
     this.tipoeventoService()
       .delete(this.removeId)
       .then(() => {
-        const message = 'A Tipoevento is deleted with identifier ' + this.removeId;
+        const message = this.$t('gatewayApp.eventosTipoevento.deleted', { param: this.removeId });
         this.alertService().showAlert(message, 'danger');
         this.getAlertFromStore();
 

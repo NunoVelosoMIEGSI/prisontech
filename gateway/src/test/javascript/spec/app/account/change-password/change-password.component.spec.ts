@@ -9,6 +9,7 @@ const localVue = createLocalVue();
 const mockedAxios: any = axios;
 
 config.initVueApp(localVue);
+const i18n = config.initI18N(localVue);
 const store = config.initVueXStore(localVue);
 
 jest.mock('axios', () => ({
@@ -27,6 +28,7 @@ describe('ChangePassword Component', () => {
 
     wrapper = shallowMount<ChangePasswordClass>(ChangePassword, {
       store,
+      i18n,
       localVue
     });
     changePassword = wrapper.vm;

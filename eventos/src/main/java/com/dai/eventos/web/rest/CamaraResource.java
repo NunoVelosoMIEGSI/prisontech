@@ -52,7 +52,7 @@ public class CamaraResource {
         }
         Camara result = camaraService.save(camara);
         return ResponseEntity.created(new URI("/api/camaras/" + result.getId()))
-            .headers(HeaderUtil.createEntityCreationAlert(applicationName, false, ENTITY_NAME, result.getId().toString()))
+            .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, result.getId().toString()))
             .body(result);
     }
 
@@ -73,7 +73,7 @@ public class CamaraResource {
         }
         Camara result = camaraService.save(camara);
         return ResponseEntity.ok()
-            .headers(HeaderUtil.createEntityUpdateAlert(applicationName, false, ENTITY_NAME, camara.getId().toString()))
+            .headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, camara.getId().toString()))
             .body(result);
     }
 
@@ -111,6 +111,6 @@ public class CamaraResource {
     public ResponseEntity<Void> deleteCamara(@PathVariable Long id) {
         log.debug("REST request to delete Camara : {}", id);
         camaraService.delete(id);
-        return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, false, ENTITY_NAME, id.toString())).build();
+        return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString())).build();
     }
 }

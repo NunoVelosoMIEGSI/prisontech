@@ -52,7 +52,7 @@ public class AreaResource {
         }
         Area result = areaService.save(area);
         return ResponseEntity.created(new URI("/api/areas/" + result.getId()))
-            .headers(HeaderUtil.createEntityCreationAlert(applicationName, false, ENTITY_NAME, result.getId().toString()))
+            .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, result.getId().toString()))
             .body(result);
     }
 
@@ -73,7 +73,7 @@ public class AreaResource {
         }
         Area result = areaService.save(area);
         return ResponseEntity.ok()
-            .headers(HeaderUtil.createEntityUpdateAlert(applicationName, false, ENTITY_NAME, area.getId().toString()))
+            .headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, area.getId().toString()))
             .body(result);
     }
 
@@ -111,6 +111,6 @@ public class AreaResource {
     public ResponseEntity<Void> deleteArea(@PathVariable Long id) {
         log.debug("REST request to delete Area : {}", id);
         areaService.delete(id);
-        return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, false, ENTITY_NAME, id.toString())).build();
+        return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString())).build();
     }
 }

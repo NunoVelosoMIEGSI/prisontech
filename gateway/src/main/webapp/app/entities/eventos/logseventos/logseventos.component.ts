@@ -50,7 +50,7 @@ export default class Logseventos extends mixins(Vue2Filters.mixin, AlertMixin) {
     this.logseventosService()
       .delete(this.removeId)
       .then(() => {
-        const message = 'A Logseventos is deleted with identifier ' + this.removeId;
+        const message = this.$t('gatewayApp.eventosLogseventos.deleted', { param: this.removeId });
         this.alertService().showAlert(message, 'danger');
         this.getAlertFromStore();
 

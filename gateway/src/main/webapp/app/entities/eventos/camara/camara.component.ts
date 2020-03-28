@@ -50,7 +50,7 @@ export default class Camara extends mixins(Vue2Filters.mixin, AlertMixin) {
     this.camaraService()
       .delete(this.removeId)
       .then(() => {
-        const message = 'A Camara is deleted with identifier ' + this.removeId;
+        const message = this.$t('gatewayApp.eventosCamara.deleted', { param: this.removeId });
         this.alertService().showAlert(message, 'danger');
         this.getAlertFromStore();
 

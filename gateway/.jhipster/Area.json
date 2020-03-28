@@ -26,7 +26,7 @@
             "relationshipName": "evento"
         }
     ],
-    "changelogDate": "20200326100300",
+    "changelogDate": "20200328154200",
     "entityTableName": "area",
     "dto": "no",
     "pagination": "no",

@@ -11,6 +11,7 @@ const localVue = createLocalVue();
 const mockedAxios: any = axios;
 
 config.initVueApp(localVue);
+const i18n = config.initI18N(localVue);
 const store = config.initVueXStore(localVue);
 
 jest.mock('axios', () => ({
@@ -27,6 +28,7 @@ describe('Activate Component', () => {
     mockedAxios.get.mockReturnValue(Promise.resolve({}));
 
     wrapper = shallowMount<ActivateClass>(Activate, {
+      i18n,
       localVue,
       provide: {
         activateService: () => new ActivateService(),

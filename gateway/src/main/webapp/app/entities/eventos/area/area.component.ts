@@ -50,7 +50,7 @@ export default class Area extends mixins(Vue2Filters.mixin, AlertMixin) {
     this.areaService()
       .delete(this.removeId)
       .then(() => {
-        const message = 'A Area is deleted with identifier ' + this.removeId;
+        const message = this.$t('gatewayApp.eventosArea.deleted', { param: this.removeId });
         this.alertService().showAlert(message, 'danger');
         this.getAlertFromStore();
 

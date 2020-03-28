@@ -45,7 +45,7 @@ export default class CamaraUpdate extends Vue {
         .then(param => {
           this.isSaving = false;
           this.$router.go(-1);
-          const message = 'A Camara is updated with identifier ' + param.id;
+          const message = this.$t('gatewayApp.eventosCamara.updated', { param: param.id });
           this.alertService().showAlert(message, 'info');
         });
     } else {
@@ -54,7 +54,7 @@ export default class CamaraUpdate extends Vue {
         .then(param => {
           this.isSaving = false;
           this.$router.go(-1);
-          const message = 'A Camara is created with identifier ' + param.id;
+          const message = this.$t('gatewayApp.eventosCamara.created', { param: param.id });
           this.alertService().showAlert(message, 'success');
         });
     }

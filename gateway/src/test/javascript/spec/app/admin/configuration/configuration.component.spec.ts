@@ -10,6 +10,7 @@ const localVue = createLocalVue();
 const mockedAxios: any = axios;
 
 config.initVueApp(localVue);
+const i18n = config.initI18N(localVue);
 const store = config.initVueXStore(localVue);
 
 jest.mock('axios', () => ({
@@ -29,6 +30,7 @@ describe('Configuration Component', () => {
     );
     wrapper = shallowMount<ConfigurationClass>(Configuration, {
       store,
+      i18n,
       localVue,
       provide: { configurationService: () => new ConfigurationService() }
     });

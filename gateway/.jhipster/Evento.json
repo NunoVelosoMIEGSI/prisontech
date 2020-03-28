@@ -20,6 +20,14 @@
         {
             "fieldName": "dataHoraFim",
             "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "path",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "formato",
+            "fieldType": "String"
         }
     ],
     "relationships": [
@@ -45,7 +53,7 @@
             "otherEntityField": "id"
         }
     ],
-    "changelogDate": "20200326100600",
+    "changelogDate": "20200328154500",
     "entityTableName": "evento",
     "dto": "no",
     "pagination": "no",

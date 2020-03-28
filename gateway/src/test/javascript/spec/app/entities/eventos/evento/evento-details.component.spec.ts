@@ -10,6 +10,7 @@ import EventoService from '@/entities/eventos/evento/evento.service';
 const localVue = createLocalVue();
 
 config.initVueApp(localVue);
+const i18n = config.initI18N(localVue);
 const store = config.initVueXStore(localVue);
 localVue.component('font-awesome-icon', {});
 localVue.component('router-link', {});
@@ -23,7 +24,12 @@ describe('Component Tests', () => {
     beforeEach(() => {
       eventoServiceStub = sinon.createStubInstance<EventoService>(EventoService);
 
-      wrapper = shallowMount<EventoClass>(EventoDetailComponent, { store, localVue, provide: { eventoService: () => eventoServiceStub } });
+      wrapper = shallowMount<EventoClass>(EventoDetailComponent, {
+        store,
+        i18n,
+        localVue,
+        provide: { eventoService: () => eventoServiceStub }
+      });
       comp = wrapper.vm;
     });
 

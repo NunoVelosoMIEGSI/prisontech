@@ -33,7 +33,7 @@ describe('Service Tests', () => {
       service = new EventoService();
       currentDate = new Date();
 
-      elemDefault = new Evento(0, 'AAAAAAA', 0, 0, currentDate, currentDate);
+      elemDefault = new Evento(0, 'AAAAAAA', 0, 0, currentDate, currentDate, 'AAAAAAA', 'AAAAAAA');
     });
 
     describe('Service methods', () => {
@@ -103,7 +103,9 @@ describe('Service Tests', () => {
             numPessoasPerm: 1,
             numPessoasDet: 1,
             dataHoraInicio: format(currentDate, DATE_TIME_FORMAT),
-            dataHoraFim: format(currentDate, DATE_TIME_FORMAT)
+            dataHoraFim: format(currentDate, DATE_TIME_FORMAT),
+            path: 'BBBBBB',
+            formato: 'BBBBBB'
           },
           elemDefault
         );
@@ -140,7 +142,9 @@ describe('Service Tests', () => {
             numPessoasPerm: 1,
             numPessoasDet: 1,
             dataHoraInicio: format(currentDate, DATE_TIME_FORMAT),
-            dataHoraFim: format(currentDate, DATE_TIME_FORMAT)
+            dataHoraFim: format(currentDate, DATE_TIME_FORMAT),
+            path: 'BBBBBB',
+            formato: 'BBBBBB'
           },
           elemDefault
         );

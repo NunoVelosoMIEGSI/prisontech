@@ -52,7 +52,7 @@ public class EventoResource {
         }
         Evento result = eventoService.save(evento);
         return ResponseEntity.created(new URI("/api/eventos/" + result.getId()))
-            .headers(HeaderUtil.createEntityCreationAlert(applicationName, false, ENTITY_NAME, result.getId().toString()))
+            .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, result.getId().toString()))
             .body(result);
     }
 
@@ -73,7 +73,7 @@ public class EventoResource {
         }
         Evento result = eventoService.save(evento);
         return ResponseEntity.ok()
-            .headers(HeaderUtil.createEntityUpdateAlert(applicationName, false, ENTITY_NAME, evento.getId().toString()))
+            .headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, evento.getId().toString()))
             .body(result);
     }
 
@@ -111,6 +111,6 @@ public class EventoResource {
     public ResponseEntity<Void> deleteEvento(@PathVariable Long id) {
         log.debug("REST request to delete Evento : {}", id);
         eventoService.delete(id);
-        return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, false, ENTITY_NAME, id.toString())).build();
+        return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString())).build();
     }
 }

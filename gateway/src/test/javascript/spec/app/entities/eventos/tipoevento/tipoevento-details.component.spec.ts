@@ -10,6 +10,7 @@ import TipoeventoService from '@/entities/eventos/tipoevento/tipoevento.service'
 const localVue = createLocalVue();
 
 config.initVueApp(localVue);
+const i18n = config.initI18N(localVue);
 const store = config.initVueXStore(localVue);
 localVue.component('font-awesome-icon', {});
 localVue.component('router-link', {});
@@ -25,6 +26,7 @@ describe('Component Tests', () => {
 
       wrapper = shallowMount<TipoeventoClass>(TipoeventoDetailComponent, {
         store,
+        i18n,
         localVue,
         provide: { tipoeventoService: () => tipoeventoServiceStub }
       });

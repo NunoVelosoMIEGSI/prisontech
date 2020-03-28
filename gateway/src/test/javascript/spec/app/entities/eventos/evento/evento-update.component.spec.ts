@@ -22,6 +22,7 @@ import TipoeventoService from '@/entities/eventos/tipoevento/tipoevento.service'
 const localVue = createLocalVue();
 
 config.initVueApp(localVue);
+const i18n = config.initI18N(localVue);
 const store = config.initVueXStore(localVue);
 const router = new Router();
 localVue.use(Router);
@@ -38,6 +39,7 @@ describe('Component Tests', () => {
 
       wrapper = shallowMount<EventoClass>(EventoUpdateComponent, {
         store,
+        i18n,
         localVue,
         router,
         provide: {

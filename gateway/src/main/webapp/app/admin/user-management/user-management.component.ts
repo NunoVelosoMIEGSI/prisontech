@@ -82,7 +82,9 @@ export default class JhiUserManagementComponent extends mixins(Vue2Filters.mixin
     this.userManagementService()
       .remove(this.removeId)
       .then(res => {
-        const message = res.headers['x-gatewayapp-alert'];
+        const message = this.$t(res.headers['x-gatewayapp-alert'], {
+          param: decodeURIComponent(res.headers['x-gatewayapp-params'].replace(/\+/g, ' '))
+        });
         this.alertService().showAlert(message, 'danger');
         this.getAlertFromStore();
         this.removeId = null;

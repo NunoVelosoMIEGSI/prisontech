@@ -14,6 +14,7 @@ localVue.use(VueRouter);
 const mockedAxios: any = axios;
 
 config.initVueApp(localVue);
+const i18n = config.initI18N(localVue);
 const store = config.initVueXStore(localVue);
 localVue.component('font-awesome-icon', FontAwesomeIcon);
 localVue.component('b-alert', {});
@@ -33,6 +34,7 @@ describe('UserManagementEdit Component', () => {
     wrapper = shallowMount<UserManagementEditClass>(UserManagementEdit, {
       store,
       router,
+      i18n,
       localVue,
       provide: {
         alertService: () => new AlertService(store),
@@ -99,7 +101,7 @@ describe('UserManagementEdit Component', () => {
       await userManagementEdit.$nextTick();
 
       // THEN
-      expect(mockedAxios.post).toHaveBeenCalledWith(`api/users`, { authorities: [], langKey: 'en' });
+      expect(mockedAxios.post).toHaveBeenCalledWith(`api/users`, { authorities: [] });
       expect(userManagementEdit.isSaving).toEqual(false);
     });
   });

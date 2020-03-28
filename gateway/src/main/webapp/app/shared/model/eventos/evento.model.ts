@@ -9,6 +9,8 @@ export interface IEvento {
   numPessoasDet?: number;
   dataHoraInicio?: Date;
   dataHoraFim?: Date;
+  path?: string;
+  formato?: string;
   area?: IArea;
   camara?: ICamara;
   tipoevento?: ITipoevento;
@@ -22,6 +24,8 @@ export class Evento implements IEvento {
     public numPessoasDet?: number,
     public dataHoraInicio?: Date,
     public dataHoraFim?: Date,
+    public path?: string,
+    public formato?: string,
     public area?: IArea,
     public camara?: ICamara,
     public tipoevento?: ITipoevento

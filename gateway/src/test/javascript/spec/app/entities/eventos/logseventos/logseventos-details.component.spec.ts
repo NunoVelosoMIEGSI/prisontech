@@ -10,6 +10,7 @@ import LogseventosService from '@/entities/eventos/logseventos/logseventos.servi
 const localVue = createLocalVue();
 
 config.initVueApp(localVue);
+const i18n = config.initI18N(localVue);
 const store = config.initVueXStore(localVue);
 localVue.component('font-awesome-icon', {});
 localVue.component('router-link', {});
@@ -25,6 +26,7 @@ describe('Component Tests', () => {
 
       wrapper = shallowMount<LogseventosClass>(LogseventosDetailComponent, {
         store,
+        i18n,
         localVue,
         provide: { logseventosService: () => logseventosServiceStub }
       });

@@ -14,7 +14,7 @@
             "relationshipName": "evento"
         }
     ],
-    "changelogDate": "20200326100500",
+    "changelogDate": "20200328154400",
     "entityTableName": "tipoevento",
     "dto": "no",
     "pagination": "no",

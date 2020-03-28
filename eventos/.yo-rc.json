@@ -1,14 +1,15 @@
 {
   "generator-jhipster": {
     "promptValues": {
-      "packageName": "com.dai.eventos"
+      "packageName": "com.dai.eventos",
+      "nativeLanguage": "pt-pt"
     },
     "jhipsterVersion": "6.7.1",
     "applicationType": "microservice",
     "baseName": "eventos",
     "packageName": "com.dai.eventos",
     "packageFolder": "com/dai/eventos",
-    "serverPort": "8081",
+    "serverPort": "8100",
     "authenticationType": "jwt",
     "cacheProvider": "hazelcast",
     "enableHibernateCache": false,
@@ -21,9 +22,9 @@
     "serviceDiscoveryType": "eureka",
     "buildTool": "gradle",
     "enableSwaggerCodegen": false,
-    "jwtSecretKey": "NmNjYTRjMWE1NjAzMDczZmIyNzk4ZjVhY2QwMjVhZDUzZTQzYzVkYmQ4MzBmMzI0NTUwZjE3NzIwNTI2YTUyODgwMGFiYjk1YjgzMjJkZmFiZmQ1ZWM4YTIyMGE0MjViNWY1YjJmOGMyMGQyZTNkYjA5MmRmOTZhZjRlMGU3N2U=",
+    "jwtSecretKey": "YWU2MTcxNjU5Y2I3YTQxYTE1NTZlMGQxZGE5ZThmYmFhY2UxYTZiYTI3NWMxNjhhYmE3ODM0MDc5MjUyMzhkZDZiNjgwOTkxNzZmOGZiMzIxZTY3ZTU5ZjlhMDlhYjZjMWQ4ZDM5YjRhM2M0MzNlOWVjYmVlZDJkNzUwYzdlYjk=",
     "embeddableLaunchScript": false,
-    "creationTimestamp": 1585216540032,
+    "creationTimestamp": 1585409830353,
     "testFrameworks": [],
     "jhiPrefix": "jhi",
     "entitySuffix": "",
@@ -34,8 +35,10 @@
         "version": "1.5.1"
       }
     ],
-    "enableTranslation": false,
+    "enableTranslation": true,
     "clientPackageManager": "npm",
+    "nativeLanguage": "pt-pt",
+    "languages": ["pt-pt", "en"],
     "blueprints": [
       {
         "name": "generator-jhipster-vuejs",

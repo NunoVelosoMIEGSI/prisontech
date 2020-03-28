@@ -25,7 +25,9 @@ const validations: any = {
     numPessoasPerm: {},
     numPessoasDet: {},
     dataHoraInicio: {},
-    dataHoraFim: {}
+    dataHoraFim: {},
+    path: {},
+    formato: {}
   }
 };
 
@@ -67,7 +69,7 @@ export default class EventoUpdate extends Vue {
         .then(param => {
           this.isSaving = false;
           this.$router.go(-1);
-          const message = 'A Evento is updated with identifier ' + param.id;
+          const message = this.$t('gatewayApp.eventosEvento.updated', { param: param.id });
           this.alertService().showAlert(message, 'info');
         });
     } else {
@@ -76,7 +78,7 @@ export default class EventoUpdate extends Vue {
         .then(param => {
           this.isSaving = false;
           this.$router.go(-1);
-          const message = 'A Evento is created with identifier ' + param.id;
+          const message = this.$t('gatewayApp.eventosEvento.created', { param: param.id });
           this.alertService().showAlert(message, 'success');
         });
     }
