@@ -5,8 +5,9 @@
                 <font-awesome-icon icon="bars" />
             </b-navbar-toggle>
             <b-navbar-brand class="logo float-left" b-link to="/">
-                <span class="logo-img"></span>
-                <span v-text="$t('global.title')" class="navbar-title">gateway</span> <span class="navbar-version">{{version}}</span>
+                <img src="../../../content/images/cctv.png" style="width: 46px; height: 46px;">
+                <!--<span class="logo-img"></span>-->
+                <span v-text="$t('global.title')" class="navbar-title">Prisontech</span> <span class="navbar-version">{{version}}</span>
             </b-navbar-brand>
         </div>
         <b-collapse is-nav id="header-tabs">
