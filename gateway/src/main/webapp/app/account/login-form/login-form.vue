@@ -20,18 +20,19 @@
                       <span v-text="$t('login.form.rememberme')">Remember me</span>
                     </b-form-checkbox>
                     <div>
-                        <b-button type="submit" variant="primary" v-text="$t('login.form.button')">Sign in</b-button>
+                        <b-button type="submit" variant="primary" v-text="$t('login.form.button')" style="margin-left: 210px;">Sign in</b-button>
                     </div>
                 </b-form>
                 <p></p>
-                <div>
+                <div style="width: 301px; margin-left: -10px; margin-top: 60px;">
                     <b-alert show variant="warning">
                         <b-link :to="'/account/reset/request'" class="alert-link" v-text="$t('login.password.forgot')">Did you forget your password?</b-link>
                     </b-alert>
                 </div>
-                <div>
+                <div style="width: 301px; margin-left: -10px;">
                     <b-alert show variant="warning">
                       <span v-text="$t('global.messages.info.register.noaccount')">You don't have an account yet?</span>
+                      <br>
                       <b-link :to="'/register'" class="alert-link" v-text="$t('global.messages.info.register.link')">Register a new account</b-link>
                     </b-alert>
                 </div>
