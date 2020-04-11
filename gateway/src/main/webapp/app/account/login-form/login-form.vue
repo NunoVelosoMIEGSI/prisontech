@@ -24,12 +24,12 @@
                     </div>
                 </b-form>
                 <p></p>
-                <div style="width: 301px; margin-left: -10px; margin-top: 60px;">
+                <div style="width: 320px; margin-left: -20px; margin-top: 60px;">
                     <b-alert show variant="warning">
                         <b-link :to="'/account/reset/request'" class="alert-link" v-text="$t('login.password.forgot')">Did you forget your password?</b-link>
                     </b-alert>
                 </div>
-                <div style="width: 301px; margin-left: -10px;">
+                <div style="width: 320px; margin-left: -20px;">
                     <b-alert show variant="warning">
                       <span v-text="$t('global.messages.info.register.noaccount')">You don't have an account yet?</span>
                       <br>
