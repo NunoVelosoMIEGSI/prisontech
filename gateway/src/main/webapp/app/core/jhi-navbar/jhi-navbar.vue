@@ -48,6 +48,27 @@
                     </b-dropdown-item>
                     <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
                 </b-nav-item-dropdown>
+
+                <b-nav-item-dropdown
+                    id="meu-menu"
+                    v-if="hasAnyAuthority('ROLE_ADMIN')"
+                    :class="{'router-link-active': subIsActive('/pages')}"
+                    active-class="active"
+                    class="pointer">
+                    <span slot="button-content" class="navbar-dropdown-menu">
+                        <font-awesome-icon icon="user-plus" />
+                        <span>Integrações</span>
+                    </span>
+                    <b-dropdown-item to="/pages/page_camaras">
+                        <font-awesome-icon icon="user" />
+                        <span>Câmaras video-vigilância</span>
+                    </b-dropdown-item>
+                    <b-dropdown-item href="http://localhost:3000" target="_blank">
+                        <font-awesome-icon icon="user" />
+                        <span>Dashboards informação</span>
+                    </b-dropdown-item>
+                </b-nav-item-dropdown>
+
                 <b-nav-item-dropdown
                     id="admin-menu"
                     v-if="hasAnyAuthority('ROLE_ADMIN')"

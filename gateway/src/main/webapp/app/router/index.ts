@@ -15,6 +15,7 @@ const ResetPasswordInit = () => import('../account/reset-password/init/reset-pas
 const ResetPasswordFinish = () => import('../account/reset-password/finish/reset-password-finish.vue');
 const ChangePassword = () => import('../account/change-password/change-password.vue');
 const Settings = () => import('../account/settings/settings.vue');
+const page_camaras = () => import('../pages/page_camaras.vue');
 const JhiUserManagementComponent = () => import('../admin/user-management/user-management.vue');
 const JhiUserManagementViewComponent = () => import('../admin/user-management/user-management-view.vue');
 const JhiUserManagementEditComponent = () => import('../admin/user-management/user-management-edit.vue');
@@ -112,6 +113,12 @@ export default new Router({
       name: 'Settings',
       component: Settings,
       meta: { authorities: [Authority.USER] }
+    },
+    {
+      path: '/pages/page_camaras',
+      name: 'Câmaras',
+      component: page_camaras,
+      meta: { authorities: [Authority.ADMIN] }
     },
     {
       path: '/admin/user-management',
