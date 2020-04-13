@@ -1,4 +1,5 @@
 import { IEvento } from '@/shared/model/eventos/evento.model';
+import { ICamara } from '@/shared/model/eventos/camara.model';
 
 export interface IArea {
   id?: number;
@@ -7,6 +8,7 @@ export interface IArea {
   numMaxPessoa?: number;
   limiteArea?: number;
   eventos?: IEvento[];
+  camara?: ICamara;
 }
 
 export class Area implements IArea {
@@ -16,6 +18,7 @@ export class Area implements IArea {
     public numMinPessoa?: number,
     public numMaxPessoa?: number,
     public limiteArea?: number,
-    public eventos?: IEvento[]
+    public eventos?: IEvento[],
+    public camara?: ICamara
   ) {}
 }

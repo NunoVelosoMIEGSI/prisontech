@@ -2,6 +2,7 @@ package com.dai.eventos.domain;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 
 import java.io.Serializable;
 import java.util.HashSet;
@@ -20,8 +21,16 @@ public class Camara implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "descricao")
+    @NotNull
+    @Column(name = "descricao", nullable = false)
     private String descricao;
+
+    @NotNull
+    @Column(name = "estado", nullable = false)
+    private Boolean estado;
+
+    @OneToMany(mappedBy = "camara")
+    private Set<Area> areas = new HashSet<>();
 
     @OneToMany(mappedBy = "camara")
     private Set<Evento> eventos = new HashSet<>();
@@ -46,6 +55,44 @@ public class Camara implements Serializable {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public Boolean isEstado() {
+        return estado;
+    }
+
+    public Camara estado(Boolean estado) {
+        this.estado = estado;
+        return this;
+    }
+
+    public void setEstado(Boolean estado) {
+        this.estado = estado;
+    }
+
+    public Set<Area> getAreas() {
+        return areas;
+    }
+
+    public Camara areas(Set<Area> areas) {
+        this.areas = areas;
+        return this;
+    }
+
+    public Camara addArea(Area area) {
+        this.areas.add(area);
+        area.setCamara(this);
+        return this;
+    }
+
+    public Camara removeArea(Area area) {
+        this.areas.remove(area);
+        area.setCamara(null);
+        return this;
+    }
+
+    public void setAreas(Set<Area> areas) {
+        this.areas = areas;
     }
 
     public Set<Evento> getEventos() {
@@ -95,6 +142,7 @@ public class Camara implements Serializable {
         return "Camara{" +
             "id=" + getId() +
             ", descricao='" + getDescricao() + "'" +
+            ", estado='" + isEstado() + "'" +
             "}";
     }
 }

@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
@@ -45,7 +46,7 @@ public class AreaResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PostMapping("/areas")
-    public ResponseEntity<Area> createArea(@RequestBody Area area) throws URISyntaxException {
+    public ResponseEntity<Area> createArea(@Valid @RequestBody Area area) throws URISyntaxException {
         log.debug("REST request to save Area : {}", area);
         if (area.getId() != null) {
             throw new BadRequestAlertException("A new area cannot already have an ID", ENTITY_NAME, "idexists");
@@ -66,7 +67,7 @@ public class AreaResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PutMapping("/areas")
-    public ResponseEntity<Area> updateArea(@RequestBody Area area) throws URISyntaxException {
+    public ResponseEntity<Area> updateArea(@Valid @RequestBody Area area) throws URISyntaxException {
         log.debug("REST request to update Area : {}", area);
         if (area.getId() == null) {
             throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");

@@ -1,7 +1,9 @@
 package com.dai.eventos.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 
 import java.io.Serializable;
 import java.util.HashSet;
@@ -20,20 +22,28 @@ public class Area implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "nome")
+    @NotNull
+    @Column(name = "nome", nullable = false)
     private String nome;
 
-    @Column(name = "num_min_pessoa")
+    @NotNull
+    @Column(name = "num_min_pessoa", nullable = false)
     private Integer numMinPessoa;
 
-    @Column(name = "num_max_pessoa")
+    @NotNull
+    @Column(name = "num_max_pessoa", nullable = false)
     private Integer numMaxPessoa;
 
-    @Column(name = "limite_area")
+    @NotNull
+    @Column(name = "limite_area", nullable = false)
     private Integer limiteArea;
 
     @OneToMany(mappedBy = "area")
     private Set<Evento> eventos = new HashSet<>();
+
+    @ManyToOne
+    @JsonIgnoreProperties("areas")
+    private Camara camara;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -119,6 +129,19 @@ public class Area implements Serializable {
 
     public void setEventos(Set<Evento> eventos) {
         this.eventos = eventos;
+    }
+
+    public Camara getCamara() {
+        return camara;
+    }
+
+    public Area camara(Camara camara) {
+        this.camara = camara;
+        return this;
+    }
+
+    public void setCamara(Camara camara) {
+        this.camara = camara;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

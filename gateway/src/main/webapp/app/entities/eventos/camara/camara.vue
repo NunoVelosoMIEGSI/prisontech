@@ -26,6 +26,7 @@
                 <tr>
                     <th><span v-text="$t('global.field.id')">ID</span></th>
                     <th><span v-text="$t('gatewayApp.eventosCamara.descricao')">Descricao</span></th>
+                    <th><span v-text="$t('gatewayApp.eventosCamara.estado')">Estado</span></th>
                     <th></th>
                 </tr>
                 </thead>
@@ -36,6 +37,7 @@
                         <router-link :to="{name: 'CamaraView', params: {camaraId: camara.id}}">{{camara.id}}</router-link>
                     </td>
                     <td>{{camara.descricao}}</td>
+                    <td>{{camara.estado}}</td>
                     <td class="text-right">
                         <div class="btn-group">
                             <router-link :to="{name: 'CamaraView', params: {camaraId: camara.id}}" tag="button" class="btn btn-info btn-sm details">

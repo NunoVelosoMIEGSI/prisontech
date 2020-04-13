@@ -17,7 +17,8 @@
       "numMinPessoa": "Num Min Pessoa",
       "numMaxPessoa": "Num Max Pessoa",
       "limiteArea": "Limite Area",
-      "evento": "Evento"
+      "evento": "Evento",
+      "camara": "Camara"
     }
   },
   "eventosApp": {

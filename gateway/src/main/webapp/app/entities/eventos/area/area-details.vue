@@ -28,6 +28,14 @@
                     <dd>
                         <span>{{area.limiteArea}}</span>
                     </dd>
+                    <dt>
+                        <span v-text="$t('gatewayApp.eventosArea.camara')">Camara</span>
+                    </dt>
+                    <dd>
+                        <div v-if="area.camara">
+                            <router-link :to="{name: 'CamaraView', params: {camaraId: area.camara.id}}">{{area.camara.descricao}}</router-link>
+                        </div>
+                    </dd>
                 </dl>
                 <button type="submit"
                         v-on:click.prevent="previousState()"

@@ -6,43 +6,49 @@
             "fieldType": "String",
             "fieldValidateRules": [
                 "required"
-            ]  
+            ]
         },
         {
             "fieldName": "numPessoasPerm",
             "fieldType": "Integer",
             "fieldValidateRules": [
                 "required"
-            ]  
+            ]
         },
         {
             "fieldName": "numPessoasDet",
             "fieldType": "Integer",
             "fieldValidateRules": [
                 "required"
-            ]  
+            ]
         },
         {
             "fieldName": "dataHoraInicio",
             "fieldType": "ZonedDateTime",
             "fieldValidateRules": [
                 "required"
-            ]  
+            ]
         },
         {
             "fieldName": "dataHoraFim",
             "fieldType": "ZonedDateTime",
             "fieldValidateRules": [
                 "required"
-            ]  
+            ]
         },
         {
             "fieldName": "path",
-            "fieldType": "String"
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
         },
         {
             "fieldName": "formato",
-            "fieldType": "String"
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
         }
     ],
     "relationships": [

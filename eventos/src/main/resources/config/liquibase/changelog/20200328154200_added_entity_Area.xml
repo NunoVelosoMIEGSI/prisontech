@@ -17,15 +17,18 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="nome" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints nullable="false" />
             </column>
             <column name="num_min_pessoa" type="integer">
-                <constraints nullable="true" />
+                <constraints nullable="false" />
             </column>
             <column name="num_max_pessoa" type="integer">
-                <constraints nullable="true" />
+                <constraints nullable="false" />
             </column>
             <column name="limite_area" type="integer">
+                <constraints nullable="false" />
+            </column>
+            <column name="camara_id" type="bigint">
                 <constraints nullable="true" />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->

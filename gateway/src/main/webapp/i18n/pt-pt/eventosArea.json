@@ -2,29 +2,30 @@
   "gatewayApp": {
     "eventosArea": {
       "home": {
-        "title": "Áreas",
-        "createLabel": "Criar nova área",
-        "createOrEditLabel": "Criar ou editar área",
-        "notFound": "Não existem registos"
+        "title": "Areas",
+        "createLabel": "Criar novo(a) Area",
+        "createOrEditLabel": "Criar ou editar Area",
+        "notFound": "Nenhum Areas encontrado"
       },
       "delete": {
-        "question": "Tem a certeza que pretende eliminar a área {{ id }}?"
+        "question": "Tem a certeza que pretende eliminar o(a) Area {{ id }}?"
       },
       "detail": {
-        "title": "Área"
+        "title": "Area"
       },
       "nome": "Nome",
-      "numMinPessoa": "Número minimo de pessoas",
-      "numMaxPessoa": "Número máximo de pessoas",
-      "limiteArea": "Limite da área",
-      "evento": "Evento"
+      "numMinPessoa": "Num Min Pessoa",
+      "numMaxPessoa": "Num Max Pessoa",
+      "limiteArea": "Limite Area",
+      "evento": "Evento",
+      "camara": "Camara"
     }
   },
   "eventosApp": {
     "eventosArea": {
-      "created": "Uma nova área foi criada com o identificador {{ param }}",
-      "updated": "Área com identificador {{ param }} foi actualizada",
-      "deleted": "Área com identificador {{ param }} foi eliminada"
+      "created": "Um novo Area foi criado com o identificador {{ param }}",
+      "updated": "Area com identificador {{ param }} foi actualizado",
+      "deleted": "Area com identificador {{ param }} foi eliminado"
     }
   }
 }

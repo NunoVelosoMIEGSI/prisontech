@@ -30,7 +30,7 @@ describe('Service Tests', () => {
     beforeEach(() => {
       service = new CamaraService();
 
-      elemDefault = new Camara(0, 'AAAAAAA');
+      elemDefault = new Camara(0, 'AAAAAAA', false);
     });
 
     describe('Service methods', () => {
@@ -82,7 +82,8 @@ describe('Service Tests', () => {
       it('should update a Camara', async () => {
         const returnedFromService = Object.assign(
           {
-            descricao: 'BBBBBB'
+            descricao: 'BBBBBB',
+            estado: true
           },
           elemDefault
         );
@@ -109,7 +110,8 @@ describe('Service Tests', () => {
       it('should return a list of Camara', async () => {
         const returnedFromService = Object.assign(
           {
-            descricao: 'BBBBBB'
+            descricao: 'BBBBBB',
+            estado: true
           },
           elemDefault
         );

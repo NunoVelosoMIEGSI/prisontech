@@ -5,16 +5,30 @@ import { numeric, required, minLength, maxLength, minValue, maxValue } from 'vue
 import EventoService from '../evento/evento.service';
 import { IEvento } from '@/shared/model/eventos/evento.model';
 
+import CamaraService from '../camara/camara.service';
+import { ICamara } from '@/shared/model/eventos/camara.model';
+
 import AlertService from '@/shared/alert/alert.service';
 import { IArea, Area } from '@/shared/model/eventos/area.model';
 import AreaService from './area.service';
 
 const validations: any = {
   area: {
-    nome: {},
-    numMinPessoa: {},
-    numMaxPessoa: {},
-    limiteArea: {}
+    nome: {
+      required
+    },
+    numMinPessoa: {
+      required,
+      numeric
+    },
+    numMaxPessoa: {
+      required,
+      numeric
+    },
+    limiteArea: {
+      required,
+      numeric
+    }
   }
 };
 
@@ -29,6 +43,10 @@ export default class AreaUpdate extends Vue {
   @Inject('eventoService') private eventoService: () => EventoService;
 
   public eventos: IEvento[] = [];
+
+  @Inject('camaraService') private camaraService: () => CamaraService;
+
+  public camaras: ICamara[] = [];
   public isSaving = false;
 
   beforeRouteEnter(to, from, next) {
@@ -80,6 +98,11 @@ export default class AreaUpdate extends Vue {
       .retrieve()
       .then(res => {
         this.eventos = res.data;
+      });
+    this.camaraService()
+      .retrieve()
+      .then(res => {
+        this.camaras = res.data;
       });
   }
 }

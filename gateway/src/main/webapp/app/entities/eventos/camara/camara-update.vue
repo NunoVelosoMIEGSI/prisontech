@@ -12,7 +12,22 @@
                     <div class="form-group">
                         <label class="form-control-label" v-text="$t('gatewayApp.eventosCamara.descricao')" for="camara-descricao">Descricao</label>
                         <input type="text" class="form-control" name="descricao" id="camara-descricao"
-                            :class="{'valid': !$v.camara.descricao.$invalid, 'invalid': $v.camara.descricao.$invalid }" v-model="$v.camara.descricao.$model" />
+                            :class="{'valid': !$v.camara.descricao.$invalid, 'invalid': $v.camara.descricao.$invalid }" v-model="$v.camara.descricao.$model"  required/>
+                        <div v-if="$v.camara.descricao.$anyDirty && $v.camara.descricao.$invalid">
+                            <small class="form-text text-danger" v-if="!$v.camara.descricao.required" v-text="$t('entity.validation.required')">
+                                This field is required.
+                            </small>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label" v-text="$t('gatewayApp.eventosCamara.estado')" for="camara-estado">Estado</label>
+                        <input type="checkbox" class="form-check" name="estado" id="camara-estado"
+                            :class="{'valid': !$v.camara.estado.$invalid, 'invalid': $v.camara.estado.$invalid }" v-model="$v.camara.estado.$model"  required/>
+                        <div v-if="$v.camara.estado.$anyDirty && $v.camara.estado.$invalid">
+                            <small class="form-text text-danger" v-if="!$v.camara.estado.required" v-text="$t('entity.validation.required')">
+                                This field is required.
+                            </small>
+                        </div>
                     </div>
                 </div>
                 <div>

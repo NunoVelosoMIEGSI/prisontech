@@ -2,6 +2,9 @@ import { Component, Vue, Inject } from 'vue-property-decorator';
 
 import { numeric, required, minLength, maxLength, minValue, maxValue } from 'vuelidate/lib/validators';
 
+import AreaService from '../area/area.service';
+import { IArea } from '@/shared/model/eventos/area.model';
+
 import EventoService from '../evento/evento.service';
 import { IEvento } from '@/shared/model/eventos/evento.model';
 
@@ -11,7 +14,12 @@ import CamaraService from './camara.service';
 
 const validations: any = {
   camara: {
-    descricao: {}
+    descricao: {
+      required
+    },
+    estado: {
+      required
+    }
   }
 };
 
@@ -22,6 +30,10 @@ export default class CamaraUpdate extends Vue {
   @Inject('alertService') private alertService: () => AlertService;
   @Inject('camaraService') private camaraService: () => CamaraService;
   public camara: ICamara = new Camara();
+
+  @Inject('areaService') private areaService: () => AreaService;
+
+  public areas: IArea[] = [];
 
   @Inject('eventoService') private eventoService: () => EventoService;
 
@@ -73,6 +85,11 @@ export default class CamaraUpdate extends Vue {
   }
 
   public initRelationships(): void {
+    this.areaService()
+      .retrieve()
+      .then(res => {
+        this.areas = res.data;
+      });
     this.eventoService()
       .retrieve()
       .then(res => {

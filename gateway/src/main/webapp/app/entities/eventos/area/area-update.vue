@@ -12,22 +12,58 @@
                     <div class="form-group">
                         <label class="form-control-label" v-text="$t('gatewayApp.eventosArea.nome')" for="area-nome">Nome</label>
                         <input type="text" class="form-control" name="nome" id="area-nome"
-                            :class="{'valid': !$v.area.nome.$invalid, 'invalid': $v.area.nome.$invalid }" v-model="$v.area.nome.$model" />
+                            :class="{'valid': !$v.area.nome.$invalid, 'invalid': $v.area.nome.$invalid }" v-model="$v.area.nome.$model"  required/>
+                        <div v-if="$v.area.nome.$anyDirty && $v.area.nome.$invalid">
+                            <small class="form-text text-danger" v-if="!$v.area.nome.required" v-text="$t('entity.validation.required')">
+                                This field is required.
+                            </small>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label class="form-control-label" v-text="$t('gatewayApp.eventosArea.numMinPessoa')" for="area-numMinPessoa">Num Min Pessoa</label>
                         <input type="number" class="form-control" name="numMinPessoa" id="area-numMinPessoa"
-                            :class="{'valid': !$v.area.numMinPessoa.$invalid, 'invalid': $v.area.numMinPessoa.$invalid }" v-model.number="$v.area.numMinPessoa.$model" />
+                            :class="{'valid': !$v.area.numMinPessoa.$invalid, 'invalid': $v.area.numMinPessoa.$invalid }" v-model.number="$v.area.numMinPessoa.$model"  required/>
+                        <div v-if="$v.area.numMinPessoa.$anyDirty && $v.area.numMinPessoa.$invalid">
+                            <small class="form-text text-danger" v-if="!$v.area.numMinPessoa.required" v-text="$t('entity.validation.required')">
+                                This field is required.
+                            </small>
+                            <small class="form-text text-danger" v-if="!$v.area.numMinPessoa.numeric" v-text="$t('entity.validation.number')">
+                                This field should be a number.
+                            </small>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label class="form-control-label" v-text="$t('gatewayApp.eventosArea.numMaxPessoa')" for="area-numMaxPessoa">Num Max Pessoa</label>
                         <input type="number" class="form-control" name="numMaxPessoa" id="area-numMaxPessoa"
-                            :class="{'valid': !$v.area.numMaxPessoa.$invalid, 'invalid': $v.area.numMaxPessoa.$invalid }" v-model.number="$v.area.numMaxPessoa.$model" />
+                            :class="{'valid': !$v.area.numMaxPessoa.$invalid, 'invalid': $v.area.numMaxPessoa.$invalid }" v-model.number="$v.area.numMaxPessoa.$model"  required/>
+                        <div v-if="$v.area.numMaxPessoa.$anyDirty && $v.area.numMaxPessoa.$invalid">
+                            <small class="form-text text-danger" v-if="!$v.area.numMaxPessoa.required" v-text="$t('entity.validation.required')">
+                                This field is required.
+                            </small>
+                            <small class="form-text text-danger" v-if="!$v.area.numMaxPessoa.numeric" v-text="$t('entity.validation.number')">
+                                This field should be a number.
+                            </small>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label class="form-control-label" v-text="$t('gatewayApp.eventosArea.limiteArea')" for="area-limiteArea">Limite Area</label>
                         <input type="number" class="form-control" name="limiteArea" id="area-limiteArea"
-                            :class="{'valid': !$v.area.limiteArea.$invalid, 'invalid': $v.area.limiteArea.$invalid }" v-model.number="$v.area.limiteArea.$model" />
+                            :class="{'valid': !$v.area.limiteArea.$invalid, 'invalid': $v.area.limiteArea.$invalid }" v-model.number="$v.area.limiteArea.$model"  required/>
+                        <div v-if="$v.area.limiteArea.$anyDirty && $v.area.limiteArea.$invalid">
+                            <small class="form-text text-danger" v-if="!$v.area.limiteArea.required" v-text="$t('entity.validation.required')">
+                                This field is required.
+                            </small>
+                            <small class="form-text text-danger" v-if="!$v.area.limiteArea.numeric" v-text="$t('entity.validation.number')">
+                                This field should be a number.
+                            </small>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label" v-text="$t('gatewayApp.eventosArea.camara')" for="area-camara">Camara</label>
+                        <select class="form-control" id="area-camara" name="camara" v-model="area.camara">
+                            <option v-bind:value="null"></option>
+                            <option v-bind:value="area.camara && camaraOption.id === area.camara.id ? area.camara : camaraOption" v-for="camaraOption in camaras" :key="camaraOption.id">{{camaraOption.descricao}}</option>
+                        </select>
                     </div>
                 </div>
                 <div>

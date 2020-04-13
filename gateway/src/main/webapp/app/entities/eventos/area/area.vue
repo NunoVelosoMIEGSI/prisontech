@@ -29,6 +29,7 @@
                     <th><span v-text="$t('gatewayApp.eventosArea.numMinPessoa')">Num Min Pessoa</span></th>
                     <th><span v-text="$t('gatewayApp.eventosArea.numMaxPessoa')">Num Max Pessoa</span></th>
                     <th><span v-text="$t('gatewayApp.eventosArea.limiteArea')">Limite Area</span></th>
+                    <th><span v-text="$t('gatewayApp.eventosArea.camara')">Camara</span></th>
                     <th></th>
                 </tr>
                 </thead>
@@ -42,6 +43,11 @@
                     <td>{{area.numMinPessoa}}</td>
                     <td>{{area.numMaxPessoa}}</td>
                     <td>{{area.limiteArea}}</td>
+                    <td>
+                        <div v-if="area.camara">
+                            <router-link :to="{name: 'CamaraView', params: {camaraId: area.camara.id}}">{{area.camara.descricao}}</router-link>
+                        </div>
+                    </td>
                     <td class="text-right">
                         <div class="btn-group">
                             <router-link :to="{name: 'AreaView', params: {areaId: area.id}}" tag="button" class="btn btn-info btn-sm details">

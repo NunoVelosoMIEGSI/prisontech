@@ -2,11 +2,12 @@ entity Area {
 	nome String required,
 	numMinPessoa Integer required,
 	numMaxPessoa Integer required,
-	limiteArea Integer
+	limiteArea Integer required
 }
 
 entity Camara{
-	descricao String required
+	descricao String required,
+	estado Boolean required
 }
 
 entity Tipoevento{
@@ -19,8 +20,8 @@ entity Evento {
 	numPessoasDet Integer required,
 	dataHoraInicio ZonedDateTime required,
 	dataHoraFim ZonedDateTime required,
-	path String,
-	formato String
+	path String required,
+	formato String required
 }
 
 entity Logseventos {
@@ -32,6 +33,7 @@ entity Logseventos {
 
 
 relationship OneToMany {
+	Camara to Area{camara},
 	Area to Evento{area},
 	Camara to Evento{camara},
 	Tipoevento to Evento{tipoevento}

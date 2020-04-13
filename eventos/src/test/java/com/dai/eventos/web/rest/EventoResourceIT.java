@@ -183,6 +183,132 @@ public class EventoResourceIT {
 
     @Test
     @Transactional
+    public void checkDescricaoIsRequired() throws Exception {
+        int databaseSizeBeforeTest = eventoRepository.findAll().size();
+        // set the field null
+        evento.setDescricao(null);
+
+        // Create the Evento, which fails.
+
+        restEventoMockMvc.perform(post("/api/eventos")
+            .contentType(TestUtil.APPLICATION_JSON)
+            .content(TestUtil.convertObjectToJsonBytes(evento)))
+            .andExpect(status().isBadRequest());
+
+        List<Evento> eventoList = eventoRepository.findAll();
+        assertThat(eventoList).hasSize(databaseSizeBeforeTest);
+    }
+
+    @Test
+    @Transactional
+    public void checkNumPessoasPermIsRequired() throws Exception {
+        int databaseSizeBeforeTest = eventoRepository.findAll().size();
+        // set the field null
+        evento.setNumPessoasPerm(null);
+
+        // Create the Evento, which fails.
+
+        restEventoMockMvc.perform(post("/api/eventos")
+            .contentType(TestUtil.APPLICATION_JSON)
+            .content(TestUtil.convertObjectToJsonBytes(evento)))
+            .andExpect(status().isBadRequest());
+
+        List<Evento> eventoList = eventoRepository.findAll();
+        assertThat(eventoList).hasSize(databaseSizeBeforeTest);
+    }
+
+    @Test
+    @Transactional
+    public void checkNumPessoasDetIsRequired() throws Exception {
+        int databaseSizeBeforeTest = eventoRepository.findAll().size();
+        // set the field null
+        evento.setNumPessoasDet(null);
+
+        // Create the Evento, which fails.
+
+        restEventoMockMvc.perform(post("/api/eventos")
+            .contentType(TestUtil.APPLICATION_JSON)
+            .content(TestUtil.convertObjectToJsonBytes(evento)))
+            .andExpect(status().isBadRequest());
+
+        List<Evento> eventoList = eventoRepository.findAll();
+        assertThat(eventoList).hasSize(databaseSizeBeforeTest);
+    }
+
+    @Test
+    @Transactional
+    public void checkDataHoraInicioIsRequired() throws Exception {
+        int databaseSizeBeforeTest = eventoRepository.findAll().size();
+        // set the field null
+        evento.setDataHoraInicio(null);
+
+        // Create the Evento, which fails.
+
+        restEventoMockMvc.perform(post("/api/eventos")
+            .contentType(TestUtil.APPLICATION_JSON)
+            .content(TestUtil.convertObjectToJsonBytes(evento)))
+            .andExpect(status().isBadRequest());
+
+        List<Evento> eventoList = eventoRepository.findAll();
+        assertThat(eventoList).hasSize(databaseSizeBeforeTest);
+    }
+
+    @Test
+    @Transactional
+    public void checkDataHoraFimIsRequired() throws Exception {
+        int databaseSizeBeforeTest = eventoRepository.findAll().size();
+        // set the field null
+        evento.setDataHoraFim(null);
+
+        // Create the Evento, which fails.
+
+        restEventoMockMvc.perform(post("/api/eventos")
+            .contentType(TestUtil.APPLICATION_JSON)
+            .content(TestUtil.convertObjectToJsonBytes(evento)))
+            .andExpect(status().isBadRequest());
+
+        List<Evento> eventoList = eventoRepository.findAll();
+        assertThat(eventoList).hasSize(databaseSizeBeforeTest);
+    }
+
+    @Test
+    @Transactional
+    public void checkPathIsRequired() throws Exception {
+        int databaseSizeBeforeTest = eventoRepository.findAll().size();
+        // set the field null
+        evento.setPath(null);
+
+        // Create the Evento, which fails.
+
+        restEventoMockMvc.perform(post("/api/eventos")
+            .contentType(TestUtil.APPLICATION_JSON)
+            .content(TestUtil.convertObjectToJsonBytes(evento)))
+            .andExpect(status().isBadRequest());
+
+        List<Evento> eventoList = eventoRepository.findAll();
+        assertThat(eventoList).hasSize(databaseSizeBeforeTest);
+    }
+
+    @Test
+    @Transactional
+    public void checkFormatoIsRequired() throws Exception {
+        int databaseSizeBeforeTest = eventoRepository.findAll().size();
+        // set the field null
+        evento.setFormato(null);
+
+        // Create the Evento, which fails.
+
+        restEventoMockMvc.perform(post("/api/eventos")
+            .contentType(TestUtil.APPLICATION_JSON)
+            .content(TestUtil.convertObjectToJsonBytes(evento)))
+            .andExpect(status().isBadRequest());
+
+        List<Evento> eventoList = eventoRepository.findAll();
+        assertThat(eventoList).hasSize(databaseSizeBeforeTest);
+    }
+
+    @Test
+    @Transactional
     public void getAllEventos() throws Exception {
         // Initialize the database
         eventoRepository.saveAndFlush(evento);

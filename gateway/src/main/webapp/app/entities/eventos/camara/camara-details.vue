@@ -10,6 +10,12 @@
                     <dd>
                         <span>{{camara.descricao}}</span>
                     </dd>
+                    <dt>
+                        <span v-text="$t('gatewayApp.eventosCamara.estado')">Estado</span>
+                    </dt>
+                    <dd>
+                        <span>{{camara.estado}}</span>
+                    </dd>
                 </dl>
                 <button type="submit"
                         v-on:click.prevent="previousState()"

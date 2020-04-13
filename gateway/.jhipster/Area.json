@@ -12,27 +12,22 @@
             "fieldName": "numMinPessoa",
             "fieldType": "Integer",
             "fieldValidateRules": [
-                "required",
-                "min",
-                "max"                
-            ],
-            "fieldValidateRulesMin": "0",
-            "fieldValidateRulesMax": "100"
+                "required"
+            ]
         },
         {
             "fieldName": "numMaxPessoa",
             "fieldType": "Integer",
             "fieldValidateRules": [
-                "required",
-                "min",
-                "max"                
-            ],
-            "fieldValidateRulesMin": "0",
-            "fieldValidateRulesMax": "100"
+                "required"
+            ]
         },
         {
             "fieldName": "limiteArea",
-            "fieldType": "Integer"
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
         }
     ],
     "relationships": [
@@ -41,6 +36,13 @@
             "otherEntityName": "evento",
             "otherEntityRelationshipName": "area",
             "relationshipName": "evento"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "camara",
+            "otherEntityRelationshipName": "area",
+            "relationshipName": "camara",
+            "otherEntityField": "id"
         }
     ],
     "changelogDate": "20200328154200",

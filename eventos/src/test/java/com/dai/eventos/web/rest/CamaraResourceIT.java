@@ -37,6 +37,9 @@ public class CamaraResourceIT {
     private static final String DEFAULT_DESCRICAO = "AAAAAAAAAA";
     private static final String UPDATED_DESCRICAO = "BBBBBBBBBB";
 
+    private static final Boolean DEFAULT_ESTADO = false;
+    private static final Boolean UPDATED_ESTADO = true;
+
     @Autowired
     private CamaraRepository camaraRepository;
 
@@ -82,7 +85,8 @@ public class CamaraResourceIT {
      */
     public static Camara createEntity(EntityManager em) {
         Camara camara = new Camara()
-            .descricao(DEFAULT_DESCRICAO);
+            .descricao(DEFAULT_DESCRICAO)
+            .estado(DEFAULT_ESTADO);
         return camara;
     }
     /**
@@ -93,7 +97,8 @@ public class CamaraResourceIT {
      */
     public static Camara createUpdatedEntity(EntityManager em) {
         Camara camara = new Camara()
-            .descricao(UPDATED_DESCRICAO);
+            .descricao(UPDATED_DESCRICAO)
+            .estado(UPDATED_ESTADO);
         return camara;
     }
 
@@ -118,6 +123,7 @@ public class CamaraResourceIT {
         assertThat(camaraList).hasSize(databaseSizeBeforeCreate + 1);
         Camara testCamara = camaraList.get(camaraList.size() - 1);
         assertThat(testCamara.getDescricao()).isEqualTo(DEFAULT_DESCRICAO);
+        assertThat(testCamara.isEstado()).isEqualTo(DEFAULT_ESTADO);
     }
 
     @Test
@@ -142,6 +148,42 @@ public class CamaraResourceIT {
 
     @Test
     @Transactional
+    public void checkDescricaoIsRequired() throws Exception {
+        int databaseSizeBeforeTest = camaraRepository.findAll().size();
+        // set the field null
+        camara.setDescricao(null);
+
+        // Create the Camara, which fails.
+
+        restCamaraMockMvc.perform(post("/api/camaras")
+            .contentType(TestUtil.APPLICATION_JSON)
+            .content(TestUtil.convertObjectToJsonBytes(camara)))
+            .andExpect(status().isBadRequest());
+
+        List<Camara> camaraList = camaraRepository.findAll();
+        assertThat(camaraList).hasSize(databaseSizeBeforeTest);
+    }
+
+    @Test
+    @Transactional
+    public void checkEstadoIsRequired() throws Exception {
+        int databaseSizeBeforeTest = camaraRepository.findAll().size();
+        // set the field null
+        camara.setEstado(null);
+
+        // Create the Camara, which fails.
+
+        restCamaraMockMvc.perform(post("/api/camaras")
+            .contentType(TestUtil.APPLICATION_JSON)
+            .content(TestUtil.convertObjectToJsonBytes(camara)))
+            .andExpect(status().isBadRequest());
+
+        List<Camara> camaraList = camaraRepository.findAll();
+        assertThat(camaraList).hasSize(databaseSizeBeforeTest);
+    }
+
+    @Test
+    @Transactional
     public void getAllCamaras() throws Exception {
         // Initialize the database
         camaraRepository.saveAndFlush(camara);
@@ -151,7 +193,8 @@ public class CamaraResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(camara.getId().intValue())))
-            .andExpect(jsonPath("$.[*].descricao").value(hasItem(DEFAULT_DESCRICAO)));
+            .andExpect(jsonPath("$.[*].descricao").value(hasItem(DEFAULT_DESCRICAO)))
+            .andExpect(jsonPath("$.[*].estado").value(hasItem(DEFAULT_ESTADO.booleanValue())));
     }
     
     @Test
@@ -165,7 +208,8 @@ public class CamaraResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(camara.getId().intValue()))
-            .andExpect(jsonPath("$.descricao").value(DEFAULT_DESCRICAO));
+            .andExpect(jsonPath("$.descricao").value(DEFAULT_DESCRICAO))
+            .andExpect(jsonPath("$.estado").value(DEFAULT_ESTADO.booleanValue()));
     }
 
     @Test
@@ -189,7 +233,8 @@ public class CamaraResourceIT {
         // Disconnect from session so that the updates on updatedCamara are not directly saved in db
         em.detach(updatedCamara);
         updatedCamara
-            .descricao(UPDATED_DESCRICAO);
+            .descricao(UPDATED_DESCRICAO)
+            .estado(UPDATED_ESTADO);
 
         restCamaraMockMvc.perform(put("/api/camaras")
             .contentType(TestUtil.APPLICATION_JSON)
@@ -201,6 +246,7 @@ public class CamaraResourceIT {
         assertThat(camaraList).hasSize(databaseSizeBeforeUpdate);
         Camara testCamara = camaraList.get(camaraList.size() - 1);
         assertThat(testCamara.getDescricao()).isEqualTo(UPDATED_DESCRICAO);
+        assertThat(testCamara.isEstado()).isEqualTo(UPDATED_ESTADO);
     }
 
     @Test

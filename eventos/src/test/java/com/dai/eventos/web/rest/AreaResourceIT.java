@@ -160,6 +160,78 @@ public class AreaResourceIT {
 
     @Test
     @Transactional
+    public void checkNomeIsRequired() throws Exception {
+        int databaseSizeBeforeTest = areaRepository.findAll().size();
+        // set the field null
+        area.setNome(null);
+
+        // Create the Area, which fails.
+
+        restAreaMockMvc.perform(post("/api/areas")
+            .contentType(TestUtil.APPLICATION_JSON)
+            .content(TestUtil.convertObjectToJsonBytes(area)))
+            .andExpect(status().isBadRequest());
+
+        List<Area> areaList = areaRepository.findAll();
+        assertThat(areaList).hasSize(databaseSizeBeforeTest);
+    }
+
+    @Test
+    @Transactional
+    public void checkNumMinPessoaIsRequired() throws Exception {
+        int databaseSizeBeforeTest = areaRepository.findAll().size();
+        // set the field null
+        area.setNumMinPessoa(null);
+
+        // Create the Area, which fails.
+
+        restAreaMockMvc.perform(post("/api/areas")
+            .contentType(TestUtil.APPLICATION_JSON)
+            .content(TestUtil.convertObjectToJsonBytes(area)))
+            .andExpect(status().isBadRequest());
+
+        List<Area> areaList = areaRepository.findAll();
+        assertThat(areaList).hasSize(databaseSizeBeforeTest);
+    }
+
+    @Test
+    @Transactional
+    public void checkNumMaxPessoaIsRequired() throws Exception {
+        int databaseSizeBeforeTest = areaRepository.findAll().size();
+        // set the field null
+        area.setNumMaxPessoa(null);
+
+        // Create the Area, which fails.
+
+        restAreaMockMvc.perform(post("/api/areas")
+            .contentType(TestUtil.APPLICATION_JSON)
+            .content(TestUtil.convertObjectToJsonBytes(area)))
+            .andExpect(status().isBadRequest());
+
+        List<Area> areaList = areaRepository.findAll();
+        assertThat(areaList).hasSize(databaseSizeBeforeTest);
+    }
+
+    @Test
+    @Transactional
+    public void checkLimiteAreaIsRequired() throws Exception {
+        int databaseSizeBeforeTest = areaRepository.findAll().size();
+        // set the field null
+        area.setLimiteArea(null);
+
+        // Create the Area, which fails.
+
+        restAreaMockMvc.perform(post("/api/areas")
+            .contentType(TestUtil.APPLICATION_JSON)
+            .content(TestUtil.convertObjectToJsonBytes(area)))
+            .andExpect(status().isBadRequest());
+
+        List<Area> areaList = areaRepository.findAll();
+        assertThat(areaList).hasSize(databaseSizeBeforeTest);
+    }
+
+    @Test
+    @Transactional
     public void getAllAreas() throws Exception {
         // Initialize the database
         areaRepository.saveAndFlush(area);

@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
@@ -45,7 +46,7 @@ public class CamaraResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PostMapping("/camaras")
-    public ResponseEntity<Camara> createCamara(@RequestBody Camara camara) throws URISyntaxException {
+    public ResponseEntity<Camara> createCamara(@Valid @RequestBody Camara camara) throws URISyntaxException {
         log.debug("REST request to save Camara : {}", camara);
         if (camara.getId() != null) {
             throw new BadRequestAlertException("A new camara cannot already have an ID", ENTITY_NAME, "idexists");
@@ -66,7 +67,7 @@ public class CamaraResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PutMapping("/camaras")
-    public ResponseEntity<Camara> updateCamara(@RequestBody Camara camara) throws URISyntaxException {
+    public ResponseEntity<Camara> updateCamara(@Valid @RequestBody Camara camara) throws URISyntaxException {
         log.debug("REST request to update Camara : {}", camara);
         if (camara.getId() == null) {
             throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");

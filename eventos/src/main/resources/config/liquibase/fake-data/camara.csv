@@ -1,11 +1,11 @@
-id;descricao
-1;European Unit of Account 9(E.U.A.-9)
-2;modular Keys Specialist
-3;Tasty Granite Car logistical
-4;program
-5;Architect
-6;value-added Optimized
-7;Configuration
-8;microchip Human
-9;Keyboard solutions Pennsylvania
-10;payment
+id;descricao;estado
+1;European Unit of Account 9(E.U.A.-9);true
+2;withdrawal;false
+3;knowledge user Tasty Granite Car logistical;false
+4;Business-focused Architect Maine;false
+5;Cambodia;true
+6;Oregon Salad International;false
+7;solutions;true
+8;orchid Pound Sterling program;false
+9;input withdrawal Berkshire;false
+10;upward-trending Implementation innovative;true

@@ -21,13 +21,29 @@ import EventoService from './evento.service';
 
 const validations: any = {
   evento: {
-    descricao: {},
-    numPessoasPerm: {},
-    numPessoasDet: {},
-    dataHoraInicio: {},
-    dataHoraFim: {},
-    path: {},
-    formato: {}
+    descricao: {
+      required
+    },
+    numPessoasPerm: {
+      required,
+      numeric
+    },
+    numPessoasDet: {
+      required,
+      numeric
+    },
+    dataHoraInicio: {
+      required
+    },
+    dataHoraFim: {
+      required
+    },
+    path: {
+      required
+    },
+    formato: {
+      required
+    }
   }
 };
 

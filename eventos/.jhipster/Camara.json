@@ -6,10 +6,23 @@
             "fieldType": "String",
             "fieldValidateRules": [
                 "required"
-            ]  
+            ]
+        },
+        {
+            "fieldName": "estado",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
         }
     ],
     "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "area",
+            "otherEntityRelationshipName": "camara",
+            "relationshipName": "area"
+        },
         {
             "relationshipType": "one-to-many",
             "otherEntityName": "evento",

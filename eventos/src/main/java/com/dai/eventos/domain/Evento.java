@@ -3,6 +3,7 @@ package com.dai.eventos.domain;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 
 import java.io.Serializable;
 import java.time.ZonedDateTime;
@@ -20,25 +21,32 @@ public class Evento implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "descricao")
+    @NotNull
+    @Column(name = "descricao", nullable = false)
     private String descricao;
 
-    @Column(name = "num_pessoas_perm")
+    @NotNull
+    @Column(name = "num_pessoas_perm", nullable = false)
     private Integer numPessoasPerm;
 
-    @Column(name = "num_pessoas_det")
+    @NotNull
+    @Column(name = "num_pessoas_det", nullable = false)
     private Integer numPessoasDet;
 
-    @Column(name = "data_hora_inicio")
+    @NotNull
+    @Column(name = "data_hora_inicio", nullable = false)
     private ZonedDateTime dataHoraInicio;
 
-    @Column(name = "data_hora_fim")
+    @NotNull
+    @Column(name = "data_hora_fim", nullable = false)
     private ZonedDateTime dataHoraFim;
 
-    @Column(name = "path")
+    @NotNull
+    @Column(name = "path", nullable = false)
     private String path;
 
-    @Column(name = "formato")
+    @NotNull
+    @Column(name = "formato", nullable = false)
     private String formato;
 
     @ManyToOne

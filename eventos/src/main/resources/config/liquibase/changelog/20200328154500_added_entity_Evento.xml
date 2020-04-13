@@ -17,25 +17,25 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="descricao" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints nullable="false" />
             </column>
             <column name="num_pessoas_perm" type="integer">
-                <constraints nullable="true" />
+                <constraints nullable="false" />
             </column>
             <column name="num_pessoas_det" type="integer">
-                <constraints nullable="true" />
+                <constraints nullable="false" />
             </column>
             <column name="data_hora_inicio" type="datetime">
-                <constraints nullable="true" />
+                <constraints nullable="false" />
             </column>
             <column name="data_hora_fim" type="datetime">
-                <constraints nullable="true" />
+                <constraints nullable="false" />
             </column>
             <column name="path" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints nullable="false" />
             </column>
             <column name="formato" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints nullable="false" />
             </column>
             <column name="area_id" type="bigint">
                 <constraints nullable="true" />
