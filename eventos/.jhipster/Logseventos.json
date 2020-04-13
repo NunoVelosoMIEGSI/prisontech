@@ -3,19 +3,31 @@
     "fields": [
         {
             "fieldName": "dataHoraInicio",
-            "fieldType": "ZonedDateTime"
+            "fieldType": "ZonedDateTime",
+            "fieldValidateRules": [
+                "required"
+            ]  
         },
         {
             "fieldName": "dataHoraFim",
-            "fieldType": "ZonedDateTime"
+            "fieldType": "ZonedDateTime",
+            "fieldValidateRules": [
+                "required"
+            ]  
         },
         {
             "fieldName": "classeOrigem",
-            "fieldType": "String"
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]  
         },
         {
             "fieldName": "metodoOrigem",
-            "fieldType": "String"
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]  
         }
     ],
     "relationships": [],

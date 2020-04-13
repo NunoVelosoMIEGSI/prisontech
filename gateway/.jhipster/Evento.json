@@ -3,23 +3,38 @@
     "fields": [
         {
             "fieldName": "descricao",
-            "fieldType": "String"
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]  
         },
         {
             "fieldName": "numPessoasPerm",
-            "fieldType": "Integer"
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]  
         },
         {
             "fieldName": "numPessoasDet",
-            "fieldType": "Integer"
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]  
         },
         {
             "fieldName": "dataHoraInicio",
-            "fieldType": "ZonedDateTime"
+            "fieldType": "ZonedDateTime",
+            "fieldValidateRules": [
+                "required"
+            ]  
         },
         {
             "fieldName": "dataHoraFim",
-            "fieldType": "ZonedDateTime"
+            "fieldType": "ZonedDateTime",
+            "fieldValidateRules": [
+                "required"
+            ]  
         },
         {
             "fieldName": "path",

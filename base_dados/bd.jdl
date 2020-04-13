@@ -1,33 +1,33 @@
 entity Area {
-	nome String,
-	numMinPessoa Integer,
-	numMaxPessoa Integer,
+	nome String required,
+	numMinPessoa Integer required,
+	numMaxPessoa Integer required,
 	limiteArea Integer
 }
 
 entity Camara{
-	descricao String
+	descricao String required
 }
 
 entity Tipoevento{
-	descricao String
+	descricao String required
 }
 
 entity Evento {
-	descricao String,
-	numPessoasPerm Integer,
-	numPessoasDet Integer,
-	dataHoraInicio ZonedDateTime,
-	dataHoraFim ZonedDateTime,
+	descricao String required,
+	numPessoasPerm Integer required,
+	numPessoasDet Integer required,
+	dataHoraInicio ZonedDateTime required,
+	dataHoraFim ZonedDateTime required,
 	path String,
 	formato String
 }
 
 entity Logseventos {
-	dataHoraInicio ZonedDateTime,
-	dataHoraFim ZonedDateTime,
-	classeOrigem String,
-	metodoOrigem String
+	dataHoraInicio ZonedDateTime required,
+	dataHoraFim ZonedDateTime required,
+	classeOrigem String required,
+	metodoOrigem String required
 }
 
 

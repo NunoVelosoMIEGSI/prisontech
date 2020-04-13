@@ -3,7 +3,10 @@
     "fields": [
         {
             "fieldName": "descricao",
-            "fieldType": "String"
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]  
         }
     ],
     "relationships": [

@@ -3,15 +3,32 @@
     "fields": [
         {
             "fieldName": "nome",
-            "fieldType": "String"
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
         },
         {
             "fieldName": "numMinPessoa",
-            "fieldType": "Integer"
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required",
+                "min",
+                "max"                
+            ],
+            "fieldValidateRulesMin": "0",
+            "fieldValidateRulesMax": "100"
         },
         {
             "fieldName": "numMaxPessoa",
-            "fieldType": "Integer"
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required",
+                "min",
+                "max"                
+            ],
+            "fieldValidateRulesMin": "0",
+            "fieldValidateRulesMax": "100"
         },
         {
             "fieldName": "limiteArea",
