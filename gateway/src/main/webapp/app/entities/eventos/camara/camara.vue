@@ -24,7 +24,7 @@
             <table class="table table-striped">
                 <thead>
                 <tr>
-                    <th><span v-text="$t('global.field.id')">ID</span></th>
+                    <!--<th><span v-text="$t('global.field.id')">ID</span></th>-->
                     <th><span v-text="$t('gatewayApp.eventosCamara.descricao')">Descricao</span></th>
                     <th><span v-text="$t('gatewayApp.eventosCamara.estado')">Estado</span></th>
                     <th></th>
@@ -33,9 +33,9 @@
                 <tbody>
                 <tr v-for="camara in camaras"
                     :key="camara.id">
-                    <td>
+                    <!--<td>
                         <router-link :to="{name: 'CamaraView', params: {camaraId: camara.id}}">{{camara.id}}</router-link>
-                    </td>
+                    </td>-->
                     <td>{{camara.descricao}}</td>
                     <td>{{camara.estado}}</td>
                     <td class="text-right">

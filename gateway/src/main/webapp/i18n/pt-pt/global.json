@@ -12,11 +12,6 @@
         "eventosTipoevento": "Tipos de eventos",
         "eventosEvento": "Eventos ocorridos",
         "eventosLogseventos": "Logs de eventos",
-        "eventosArea": "Área",
-        "eventosEvento": "Eventos ocorridos",
-        "eventosCamara": "Câmara",
-        "eventosArea": "Area",
-        "eventosCamara": "Camara",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

@@ -4,11 +4,11 @@
             <form name="editForm" role="form" novalidate v-on:submit.prevent="save()" >
                 <h2 id="gatewayApp.eventosLogseventos.home.createOrEditLabel" v-text="$t('gatewayApp.eventosLogseventos.home.createOrEditLabel')">Create or edit a Logseventos</h2>
                 <div>
-                    <div class="form-group" v-if="logseventos.id">
+                    <!--<div class="form-group" v-if="logseventos.id">
                         <label for="id" v-text="$t('global.field.id')">ID</label>
                         <input type="text" class="form-control" id="id" name="id"
                                v-model="logseventos.id" readonly />
-                    </div>
+                    </div>-->
                     <div class="form-group">
                         <label class="form-control-label" v-text="$t('gatewayApp.eventosLogseventos.dataHoraInicio')" for="logseventos-dataHoraInicio">Data Hora Inicio</label>
                         <div class="d-flex">

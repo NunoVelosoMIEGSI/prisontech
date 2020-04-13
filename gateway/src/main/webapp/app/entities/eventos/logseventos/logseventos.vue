@@ -24,7 +24,7 @@
             <table class="table table-striped">
                 <thead>
                 <tr>
-                    <th><span v-text="$t('global.field.id')">ID</span></th>
+                    <!--<th><span v-text="$t('global.field.id')">ID</span></th>-->
                     <th><span v-text="$t('gatewayApp.eventosLogseventos.dataHoraInicio')">Data Hora Inicio</span></th>
                     <th><span v-text="$t('gatewayApp.eventosLogseventos.dataHoraFim')">Data Hora Fim</span></th>
                     <th><span v-text="$t('gatewayApp.eventosLogseventos.classeOrigem')">Classe Origem</span></th>
@@ -35,9 +35,9 @@
                 <tbody>
                 <tr v-for="logseventos in logseventos"
                     :key="logseventos.id">
-                    <td>
+                    <!--<td>
                         <router-link :to="{name: 'LogseventosView', params: {logseventosId: logseventos.id}}">{{logseventos.id}}</router-link>
-                    </td>
+                    </td>-->
                     <td v-if="logseventos.dataHoraInicio"> {{$d(Date.parse(logseventos.dataHoraInicio), 'short') }}</td>
                     <td v-if="logseventos.dataHoraFim"> {{$d(Date.parse(logseventos.dataHoraFim), 'short') }}</td>
                     <td>{{logseventos.classeOrigem}}</td>

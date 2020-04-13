@@ -24,7 +24,7 @@
             <table class="table table-striped">
                 <thead>
                 <tr>
-                    <th><span v-text="$t('global.field.id')">ID</span></th>
+                    <!--<th><span v-text="$t('global.field.id')">ID</span></th>-->
                     <th><span v-text="$t('gatewayApp.eventosArea.nome')">Nome</span></th>
                     <th><span v-text="$t('gatewayApp.eventosArea.numMinPessoa')">Num Min Pessoa</span></th>
                     <th><span v-text="$t('gatewayApp.eventosArea.numMaxPessoa')">Num Max Pessoa</span></th>
@@ -36,9 +36,9 @@
                 <tbody>
                 <tr v-for="area in areas"
                     :key="area.id">
-                    <td>
+                    <!--<td>
                         <router-link :to="{name: 'AreaView', params: {areaId: area.id}}">{{area.id}}</router-link>
-                    </td>
+                    </td>-->
                     <td>{{area.nome}}</td>
                     <td>{{area.numMinPessoa}}</td>
                     <td>{{area.numMaxPessoa}}</td>

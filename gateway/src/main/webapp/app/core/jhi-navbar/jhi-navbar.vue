@@ -26,13 +26,13 @@
                         <font-awesome-icon icon="th-list" />
                         <span v-text="$t('global.menu.entities.main')">Entities</span>
                     </span>
-                    <b-dropdown-item to="/area">
-                        <font-awesome-icon icon="asterisk" />
-                        <span v-text="$t('global.menu.entities.eventosArea')">Area</span>
-                    </b-dropdown-item>
                     <b-dropdown-item to="/camara">
                         <font-awesome-icon icon="asterisk" />
                         <span v-text="$t('global.menu.entities.eventosCamara')">Camara</span>
+                    </b-dropdown-item>
+                    <b-dropdown-item to="/area">
+                        <font-awesome-icon icon="asterisk" />
+                        <span v-text="$t('global.menu.entities.eventosArea')">Area</span>
                     </b-dropdown-item>
                     <b-dropdown-item to="/tipoevento">
                         <font-awesome-icon icon="asterisk" />

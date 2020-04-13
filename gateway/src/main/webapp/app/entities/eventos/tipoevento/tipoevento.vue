@@ -24,7 +24,7 @@
             <table class="table table-striped">
                 <thead>
                 <tr>
-                    <th><span v-text="$t('global.field.id')">ID</span></th>
+                    <!--<th><span v-text="$t('global.field.id')">ID</span></th>-->
                     <th><span v-text="$t('gatewayApp.eventosTipoevento.descricao')">Descricao</span></th>
                     <th></th>
                 </tr>
@@ -32,9 +32,9 @@
                 <tbody>
                 <tr v-for="tipoevento in tipoeventos"
                     :key="tipoevento.id">
-                    <td>
+                    <!--<td>
                         <router-link :to="{name: 'TipoeventoView', params: {tipoeventoId: tipoevento.id}}">{{tipoevento.id}}</router-link>
-                    </td>
+                    </td>-->
                     <td>{{tipoevento.descricao}}</td>
                     <td class="text-right">
                         <div class="btn-group">
