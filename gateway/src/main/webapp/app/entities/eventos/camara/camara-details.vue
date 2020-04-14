@@ -14,7 +14,9 @@
                         <span v-text="$t('gatewayApp.eventosCamara.estado')">Estado</span>
                     </dt>
                     <dd>
-                        <span>{{camara.estado}}</span>
+                        <!--<span>{{camara.estado}}</span>-->
+                        <span v-if="camara.estado==true">Ativa</span>
+                        <span v-if="camara.estado==false">Inativa</span>
                     </dd>
                 </dl>
                 <button type="submit"

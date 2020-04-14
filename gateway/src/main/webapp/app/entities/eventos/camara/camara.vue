@@ -37,7 +37,9 @@
                         <router-link :to="{name: 'CamaraView', params: {camaraId: camara.id}}">{{camara.id}}</router-link>
                     </td>-->
                     <td>{{camara.descricao}}</td>
-                    <td>{{camara.estado}}</td>
+                    <!--<td>{{camara.estado}}</td>-->
+                    <td v-if="camara.estado==true">Ativa</td>
+                    <td v-if="camara.estado==false">Inativa</td>
                     <td class="text-right">
                         <div class="btn-group">
                             <router-link :to="{name: 'CamaraView', params: {camaraId: camara.id}}" tag="button" class="btn btn-info btn-sm details">

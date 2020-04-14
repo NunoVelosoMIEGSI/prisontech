@@ -20,7 +20,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="form-control-label" v-text="$t('gatewayApp.eventosCamara.estado')" for="camara-estado">Estado</label>
+                        <label class="form-control-label" v-text="$t('gatewayApp.eventosCamara.estado')" for="camara-estado">Câmara ativa</label>
                         <input type="checkbox" class="form-check" name="estado" id="camara-estado"
                             :class="{'valid': !$v.camara.estado.$invalid, 'invalid': $v.camara.estado.$invalid }" v-model="$v.camara.estado.$model"  required/>
                         <div v-if="$v.camara.estado.$anyDirty && $v.camara.estado.$invalid">
