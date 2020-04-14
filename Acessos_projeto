@@ -6,5 +6,7 @@ xptoinformatica.no-ip.org:8181
 
 Portas:
 
-gateway: 8181
-eventos: 8100
+gateway:    8181
+eventos:    8100
+prometeus:  9090
+grafana:    3000

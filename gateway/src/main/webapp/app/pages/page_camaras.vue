@@ -9,18 +9,54 @@
         </div>
 
         <div>
-            <video class='videos' src="" width="350" height="270" autoplay></video>
-            <video class='videos' src="" width="350" height="270" autoplay></video>
-            <video class='videos' src="" width="350" height="270" autoplay></video>
-            <video class='videos' src="" width="350" height="270" autoplay></video>
-            <video class='videos' src="" width="350" height="270" autoplay></video>
-            <video class='videos' src="" width="350" height="270" autoplay></video>
-            <video class='videos' src="" width="350" height="270" autoplay></video>
-            <video class='videos' src="" width="350" height="270" autoplay></video>
-            <video class='videos' src="" width="350" height="270" autoplay></video>
-            <video class='videos' src="" width="350" height="270" autoplay></video>
-            <video class='videos' src="" width="350" height="270" autoplay></video>
-            <video class='videos' src="" width="350" height="270" autoplay></video>
+            <div class='videos_div'>
+                <video class='videos' src="" autoplay></video>
+                <span >Câmara: -</span>
+            </div>
+            <div class='videos_div'>
+                <video class='videos' src="" autoplay></video>
+                <span >Câmara: -</span>
+            </div>
+            <div class='videos_div'>
+                <video class='videos' src="" autoplay></video>
+                <span >Câmara: -</span>
+            </div>
+            <div class='videos_div'>
+                <video class='videos' src="" autoplay></video>
+                <span >Câmara: -</span>
+            </div>
+            <div class='videos_div'>
+                <video class='videos' src="" autoplay></video>
+                <span >Câmara: -</span>
+            </div>
+            <div class='videos_div'>
+                <video class='videos' src="" autoplay></video>
+                <span >Câmara: -</span>
+            </div>
+            <div class='videos_div'>
+                <video class='videos' src="" autoplay></video>
+                <span >Câmara: -</span>
+            </div>
+            <div class='videos_div'>
+                <video class='videos' src="" autoplay></video>
+                <span >Câmara: -</span>
+            </div>
+            <div class='videos_div'>
+                <video class='videos' src="" autoplay></video>
+                <span >Câmara: -</span>
+            </div>
+            <div class='videos_div'>
+                <video class='videos' src="" autoplay></video>
+                <span >Câmara: -</span>
+            </div>
+            <div class='videos_div'>
+                <video class='videos' src="" autoplay></video>
+                <span >Câmara: -</span>
+            </div>
+            <div class='videos_div'>
+                <video class='videos' src="" autoplay></video>
+                <span >Câmara: -</span>
+            </div>
         </div>
     </div>    
 </template>
@@ -33,9 +69,21 @@
 
 <style scoped>
 
-    .videos{
-        background-color: black;
+    .videos_div{
+        display: inline-block;
         margin: 2px;
     }
+
+    .videos{
+        display: block;
+        background-color: black;
+        margin-bottom: 3px;
+        width: 370px;
+        height: 270px;
+    }
+
+    .videos_span{
+        margin-left: 10px;
+    }        
 
 </style>
