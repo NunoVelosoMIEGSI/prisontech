@@ -22,7 +22,10 @@
       "formato": "Formato",
       "area": "Área",
       "camara": "Câmara",
-      "tipoevento": "Tipo de evento"
+      "tipoevento": "Tipo de evento",
+      "created": "Um novo Evento foi criado com o identificador {{ param }}",
+      "updated": "Evento com identificador {{ param }} foi actualizado",
+      "deleted": "Evento com identificador {{ param }} foi eliminado"
     }
   },
   "eventosApp": {

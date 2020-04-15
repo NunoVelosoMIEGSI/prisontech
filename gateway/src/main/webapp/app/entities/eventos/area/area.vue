@@ -26,8 +26,7 @@
                 <tr>
                     <!--<th><span v-text="$t('global.field.id')">ID</span></th>-->
                     <th><span v-text="$t('gatewayApp.eventosArea.nome')">Nome</span></th>
-                    <th><span v-text="$t('gatewayApp.eventosArea.numMinPessoa')">Num Min Pessoa</span></th>
-                    <th><span v-text="$t('gatewayApp.eventosArea.numMaxPessoa')">Num Max Pessoa</span></th>
+                    <th><span v-text="$t('gatewayApp.eventosArea.numPessoasPerm')">Num Pessoas Perm</span></th>
                     <th><span v-text="$t('gatewayApp.eventosArea.limiteArea')">Limite Area</span></th>
                     <th><span v-text="$t('gatewayApp.eventosArea.camara')">Camara</span></th>
                     <th></th>
@@ -40,8 +39,7 @@
                         <router-link :to="{name: 'AreaView', params: {areaId: area.id}}">{{area.id}}</router-link>
                     </td>-->
                     <td>{{area.nome}}</td>
-                    <td>{{area.numMinPessoa}}</td>
-                    <td>{{area.numMaxPessoa}}</td>
+                    <td>{{area.numPessoasPerm}}</td>
                     <td>{{area.limiteArea}}</td>
                     <td>
                         <div v-if="area.camara">

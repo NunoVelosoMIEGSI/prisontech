@@ -14,7 +14,10 @@
         "title": "Tipo de evento"
       },
       "descricao": "Descrição",
-      "evento": "Evento"
+      "evento": "Evento",
+      "created": "Um novo tipo de evento foi criado com o identificador {{ param }}",
+      "updated": "Tipo de evento com identificador {{ param }} foi actualizado",
+      "deleted": "Tipo de evento com identificador {{ param }} foi eliminado"
     }
   },
   "eventosApp": {

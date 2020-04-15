@@ -19,10 +19,7 @@
             <column name="nome" type="varchar(255)">
                 <constraints nullable="false" />
             </column>
-            <column name="num_min_pessoa" type="integer">
-                <constraints nullable="false" />
-            </column>
-            <column name="num_max_pessoa" type="integer">
+            <column name="num_pessoas_perm" type="integer">
                 <constraints nullable="false" />
             </column>
             <column name="limite_area" type="integer">
@@ -55,8 +52,7 @@
                   tableName="area">
             <column name="id" type="numeric"/>
             <column name="nome" type="string"/>
-            <column name="num_min_pessoa" type="numeric"/>
-            <column name="num_max_pessoa" type="numeric"/>
+            <column name="num_pessoas_perm" type="numeric"/>
             <column name="limite_area" type="numeric"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->
         </loadData>

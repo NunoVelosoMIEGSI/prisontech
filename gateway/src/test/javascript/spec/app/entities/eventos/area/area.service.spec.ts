@@ -30,7 +30,7 @@ describe('Service Tests', () => {
     beforeEach(() => {
       service = new AreaService();
 
-      elemDefault = new Area(0, 'AAAAAAA', 0, 0, 0);
+      elemDefault = new Area(0, 'AAAAAAA', 0, 0);
     });
 
     describe('Service methods', () => {
@@ -83,8 +83,7 @@ describe('Service Tests', () => {
         const returnedFromService = Object.assign(
           {
             nome: 'BBBBBB',
-            numMinPessoa: 1,
-            numMaxPessoa: 1,
+            numPessoasPerm: 1,
             limiteArea: 1
           },
           elemDefault
@@ -113,8 +112,7 @@ describe('Service Tests', () => {
         const returnedFromService = Object.assign(
           {
             nome: 'BBBBBB',
-            numMinPessoa: 1,
-            numMaxPessoa: 1,
+            numPessoasPerm: 1,
             limiteArea: 1
           },
           elemDefault

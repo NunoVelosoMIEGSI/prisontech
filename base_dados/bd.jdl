@@ -1,7 +1,6 @@
 entity Area {
 	nome String required,
-	numMinPessoa Integer required,
-	numMaxPessoa Integer required,
+	numPessoasPerm Integer required,
 	limiteArea Integer required
 }
 

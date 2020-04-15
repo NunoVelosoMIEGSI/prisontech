@@ -14,8 +14,7 @@
         "title": "Area"
       },
       "nome": "Nome",
-      "numMinPessoa": "Num Min Pessoa",
-      "numMaxPessoa": "Num Max Pessoa",
+      "numPessoasPerm": "Num Pessoas Perm",
       "limiteArea": "Limite Area",
       "evento": "Evento",
       "camara": "Camara"

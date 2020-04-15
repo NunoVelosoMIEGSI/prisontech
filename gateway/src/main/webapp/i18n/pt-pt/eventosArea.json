@@ -14,11 +14,13 @@
         "title": "Área"
       },
       "nome": "Nome",
-      "numMinPessoa": "Número mínimo de pessoas",
-      "numMaxPessoa": "Número máximo de pessoas",
+      "numPessoasPerm": "Número de pessoas permitidas",
       "limiteArea": "Limite da área",
       "evento": "Evento",
-      "camara": "Câmara"
+      "camara": "Câmara",
+      "created": "Uma nova área foi criada com o identificador {{ param }}",
+      "updated": "Área com identificador {{ param }} foi actualizada",
+      "deleted": "Área com identificador {{ param }} foi eliminada"
     }
   },
   "eventosApp": {

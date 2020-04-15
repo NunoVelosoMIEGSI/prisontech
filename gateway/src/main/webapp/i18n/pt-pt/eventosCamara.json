@@ -16,7 +16,10 @@
       "descricao": "Descrição",
       "estado": "Estado",
       "area": "Área",
-      "evento": "Evento"
+      "evento": "Evento",
+      "created": "Uma nova câmara foi criada com o identificador {{ param }}",
+      "updated": "Câmara com identificador {{ param }} foi actualizada",
+      "deleted": "Câmara com identificador {{ param }} foi eliminada"
     }
   },
   "eventosApp": {

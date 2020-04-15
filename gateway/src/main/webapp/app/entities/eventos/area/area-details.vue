@@ -11,16 +11,10 @@
                         <span>{{area.nome}}</span>
                     </dd>
                     <dt>
-                        <span v-text="$t('gatewayApp.eventosArea.numMinPessoa')">Num Min Pessoa</span>
+                        <span v-text="$t('gatewayApp.eventosArea.numPessoasPerm')">Num Pessoas Perm</span>
                     </dt>
                     <dd>
-                        <span>{{area.numMinPessoa}}</span>
-                    </dd>
-                    <dt>
-                        <span v-text="$t('gatewayApp.eventosArea.numMaxPessoa')">Num Max Pessoa</span>
-                    </dt>
-                    <dd>
-                        <span>{{area.numMaxPessoa}}</span>
+                        <span>{{area.numPessoasPerm}}</span>
                     </dd>
                     <dt>
                         <span v-text="$t('gatewayApp.eventosArea.limiteArea')">Limite Area</span>

@@ -17,11 +17,7 @@ const validations: any = {
     nome: {
       required
     },
-    numMinPessoa: {
-      required,
-      numeric
-    },
-    numMaxPessoa: {
+    numPessoasPerm: {
       required,
       numeric
     },

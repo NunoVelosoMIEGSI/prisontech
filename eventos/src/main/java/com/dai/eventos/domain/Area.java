@@ -27,12 +27,8 @@ public class Area implements Serializable {
     private String nome;
 
     @NotNull
-    @Column(name = "num_min_pessoa", nullable = false)
-    private Integer numMinPessoa;
-
-    @NotNull
-    @Column(name = "num_max_pessoa", nullable = false)
-    private Integer numMaxPessoa;
+    @Column(name = "num_pessoas_perm", nullable = false)
+    private Integer numPessoasPerm;
 
     @NotNull
     @Column(name = "limite_area", nullable = false)
@@ -67,30 +63,17 @@ public class Area implements Serializable {
         this.nome = nome;
     }
 
-    public Integer getNumMinPessoa() {
-        return numMinPessoa;
+    public Integer getNumPessoasPerm() {
+        return numPessoasPerm;
     }
 
-    public Area numMinPessoa(Integer numMinPessoa) {
-        this.numMinPessoa = numMinPessoa;
+    public Area numPessoasPerm(Integer numPessoasPerm) {
+        this.numPessoasPerm = numPessoasPerm;
         return this;
     }
 
-    public void setNumMinPessoa(Integer numMinPessoa) {
-        this.numMinPessoa = numMinPessoa;
-    }
-
-    public Integer getNumMaxPessoa() {
-        return numMaxPessoa;
-    }
-
-    public Area numMaxPessoa(Integer numMaxPessoa) {
-        this.numMaxPessoa = numMaxPessoa;
-        return this;
-    }
-
-    public void setNumMaxPessoa(Integer numMaxPessoa) {
-        this.numMaxPessoa = numMaxPessoa;
+    public void setNumPessoasPerm(Integer numPessoasPerm) {
+        this.numPessoasPerm = numPessoasPerm;
     }
 
     public Integer getLimiteArea() {
@@ -166,8 +149,7 @@ public class Area implements Serializable {
         return "Area{" +
             "id=" + getId() +
             ", nome='" + getNome() + "'" +
-            ", numMinPessoa=" + getNumMinPessoa() +
-            ", numMaxPessoa=" + getNumMaxPessoa() +
+            ", numPessoasPerm=" + getNumPessoasPerm() +
             ", limiteArea=" + getLimiteArea() +
             "}";
     }

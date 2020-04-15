@@ -16,7 +16,10 @@
       "dataHoraInicio": "Data/Hora de início",
       "dataHoraFim": "Data/Hora de fim",
       "classeOrigem": "Classe Origem",
-      "metodoOrigem": "Método Origem"
+      "metodoOrigem": "Método Origem",
+      "created": "Um novo Log foi criado com o identificador {{ param }}",
+      "updated": "Log com identificador {{ param }} foi actualizado",
+      "deleted": "Log com identificador {{ param }} foi eliminado"
     }
   },
   "eventosApp": {

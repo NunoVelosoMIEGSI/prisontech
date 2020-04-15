@@ -9,14 +9,7 @@
             ]
         },
         {
-            "fieldName": "numMinPessoa",
-            "fieldType": "Integer",
-            "fieldValidateRules": [
-                "required"
-            ]
-        },
-        {
-            "fieldName": "numMaxPessoa",
+            "fieldName": "numPessoasPerm",
             "fieldType": "Integer",
             "fieldValidateRules": [
                 "required"

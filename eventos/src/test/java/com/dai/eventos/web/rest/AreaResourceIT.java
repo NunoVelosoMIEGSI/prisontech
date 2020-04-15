@@ -37,11 +37,8 @@ public class AreaResourceIT {
     private static final String DEFAULT_NOME = "AAAAAAAAAA";
     private static final String UPDATED_NOME = "BBBBBBBBBB";
 
-    private static final Integer DEFAULT_NUM_MIN_PESSOA = 1;
-    private static final Integer UPDATED_NUM_MIN_PESSOA = 2;
-
-    private static final Integer DEFAULT_NUM_MAX_PESSOA = 1;
-    private static final Integer UPDATED_NUM_MAX_PESSOA = 2;
+    private static final Integer DEFAULT_NUM_PESSOAS_PERM = 1;
+    private static final Integer UPDATED_NUM_PESSOAS_PERM = 2;
 
     private static final Integer DEFAULT_LIMITE_AREA = 1;
     private static final Integer UPDATED_LIMITE_AREA = 2;
@@ -92,8 +89,7 @@ public class AreaResourceIT {
     public static Area createEntity(EntityManager em) {
         Area area = new Area()
             .nome(DEFAULT_NOME)
-            .numMinPessoa(DEFAULT_NUM_MIN_PESSOA)
-            .numMaxPessoa(DEFAULT_NUM_MAX_PESSOA)
+            .numPessoasPerm(DEFAULT_NUM_PESSOAS_PERM)
             .limiteArea(DEFAULT_LIMITE_AREA);
         return area;
     }
@@ -106,8 +102,7 @@ public class AreaResourceIT {
     public static Area createUpdatedEntity(EntityManager em) {
         Area area = new Area()
             .nome(UPDATED_NOME)
-            .numMinPessoa(UPDATED_NUM_MIN_PESSOA)
-            .numMaxPessoa(UPDATED_NUM_MAX_PESSOA)
+            .numPessoasPerm(UPDATED_NUM_PESSOAS_PERM)
             .limiteArea(UPDATED_LIMITE_AREA);
         return area;
     }
@@ -133,8 +128,7 @@ public class AreaResourceIT {
         assertThat(areaList).hasSize(databaseSizeBeforeCreate + 1);
         Area testArea = areaList.get(areaList.size() - 1);
         assertThat(testArea.getNome()).isEqualTo(DEFAULT_NOME);
-        assertThat(testArea.getNumMinPessoa()).isEqualTo(DEFAULT_NUM_MIN_PESSOA);
-        assertThat(testArea.getNumMaxPessoa()).isEqualTo(DEFAULT_NUM_MAX_PESSOA);
+        assertThat(testArea.getNumPessoasPerm()).isEqualTo(DEFAULT_NUM_PESSOAS_PERM);
         assertThat(testArea.getLimiteArea()).isEqualTo(DEFAULT_LIMITE_AREA);
     }
 
@@ -178,28 +172,10 @@ public class AreaResourceIT {
 
     @Test
     @Transactional
-    public void checkNumMinPessoaIsRequired() throws Exception {
+    public void checkNumPessoasPermIsRequired() throws Exception {
         int databaseSizeBeforeTest = areaRepository.findAll().size();
         // set the field null
-        area.setNumMinPessoa(null);
-
-        // Create the Area, which fails.
-
-        restAreaMockMvc.perform(post("/api/areas")
-            .contentType(TestUtil.APPLICATION_JSON)
-            .content(TestUtil.convertObjectToJsonBytes(area)))
-            .andExpect(status().isBadRequest());
-
-        List<Area> areaList = areaRepository.findAll();
-        assertThat(areaList).hasSize(databaseSizeBeforeTest);
-    }
-
-    @Test
-    @Transactional
-    public void checkNumMaxPessoaIsRequired() throws Exception {
-        int databaseSizeBeforeTest = areaRepository.findAll().size();
-        // set the field null
-        area.setNumMaxPessoa(null);
+        area.setNumPessoasPerm(null);
 
         // Create the Area, which fails.
 
@@ -242,8 +218,7 @@ public class AreaResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(area.getId().intValue())))
             .andExpect(jsonPath("$.[*].nome").value(hasItem(DEFAULT_NOME)))
-            .andExpect(jsonPath("$.[*].numMinPessoa").value(hasItem(DEFAULT_NUM_MIN_PESSOA)))
-            .andExpect(jsonPath("$.[*].numMaxPessoa").value(hasItem(DEFAULT_NUM_MAX_PESSOA)))
+            .andExpect(jsonPath("$.[*].numPessoasPerm").value(hasItem(DEFAULT_NUM_PESSOAS_PERM)))
             .andExpect(jsonPath("$.[*].limiteArea").value(hasItem(DEFAULT_LIMITE_AREA)));
     }
     
@@ -259,8 +234,7 @@ public class AreaResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(area.getId().intValue()))
             .andExpect(jsonPath("$.nome").value(DEFAULT_NOME))
-            .andExpect(jsonPath("$.numMinPessoa").value(DEFAULT_NUM_MIN_PESSOA))
-            .andExpect(jsonPath("$.numMaxPessoa").value(DEFAULT_NUM_MAX_PESSOA))
+            .andExpect(jsonPath("$.numPessoasPerm").value(DEFAULT_NUM_PESSOAS_PERM))
             .andExpect(jsonPath("$.limiteArea").value(DEFAULT_LIMITE_AREA));
     }
 
@@ -286,8 +260,7 @@ public class AreaResourceIT {
         em.detach(updatedArea);
         updatedArea
             .nome(UPDATED_NOME)
-            .numMinPessoa(UPDATED_NUM_MIN_PESSOA)
-            .numMaxPessoa(UPDATED_NUM_MAX_PESSOA)
+            .numPessoasPerm(UPDATED_NUM_PESSOAS_PERM)
             .limiteArea(UPDATED_LIMITE_AREA);
 
         restAreaMockMvc.perform(put("/api/areas")
@@ -300,8 +273,7 @@ public class AreaResourceIT {
         assertThat(areaList).hasSize(databaseSizeBeforeUpdate);
         Area testArea = areaList.get(areaList.size() - 1);
         assertThat(testArea.getNome()).isEqualTo(UPDATED_NOME);
-        assertThat(testArea.getNumMinPessoa()).isEqualTo(UPDATED_NUM_MIN_PESSOA);
-        assertThat(testArea.getNumMaxPessoa()).isEqualTo(UPDATED_NUM_MAX_PESSOA);
+        assertThat(testArea.getNumPessoasPerm()).isEqualTo(UPDATED_NUM_PESSOAS_PERM);
         assertThat(testArea.getLimiteArea()).isEqualTo(UPDATED_LIMITE_AREA);
     }
 
