@@ -63,7 +63,7 @@
                         <font-awesome-icon icon="user" />
                         <span>Câmaras video-vigilância</span>
                     </b-dropdown-item>
-                    <b-dropdown-item href="http://localhost:3000" target="_blank">
+                    <b-dropdown-item @click="getGrafanaURL" target="_blank">
                         <font-awesome-icon icon="user" />
                         <span>Dashboards informação</span>
                     </b-dropdown-item>
