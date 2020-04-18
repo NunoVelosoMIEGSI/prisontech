@@ -1,6 +1,6 @@
 {
   "global": {
-    "title": "Prisontech",
+    "title": "Prisiontech",
     "browsehappy": "Está a usar um navegador <strong>desatualizado</strong>. Por favor <a href=\"http://browsehappy.com/?locale=pt_PT\">atualize o seu navegador</a> para ter uma experiência melhor.",
     "menu": {
       "home": "Início",
@@ -13,6 +13,12 @@
         "eventosEvento": "Eventos ocorridos",
         "eventosLogseventos": "Logs de eventos",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
+      },
+      "meu_menu": {
+        "main": "Integrações"
+      },
+      "meu_menu2": {
+        "main": "Informação"
       },
       "account": {
         "main": "Conta",
