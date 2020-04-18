@@ -27,11 +27,13 @@ export default class JhiNavbar extends Vue {
   }
 
   public getGrafanaURL() {
-    if (window.location.hostname === 'localhost') {
+    window.open('http://' + window.location.hostname + ':3000', '_blank');
+
+    /*if (window.location.hostname === 'localhost') {
       window.open('http://localhost:3000', '_blank');
     } else {
       window.open('http://xptoinformatica.no-ip.org:3000', '_blank');
-    }
+    }*/
   }
 
   public changeLanguage(newLanguage: string): void {
