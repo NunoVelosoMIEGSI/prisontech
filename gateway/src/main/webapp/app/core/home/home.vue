@@ -26,8 +26,8 @@
                             <tr>
                                 <!--<th><span v-text="$t('global.field.id')">ID</span></th>-->
                                 <th><span v-text="$t('gatewayApp.eventosEvento.descricao')">Descricao</span></th>
-                                <th><span v-text="$t('gatewayApp.eventosEvento.numPessoasPerm')">Num Pessoas Perm</span></th>
-                                <th><span v-text="$t('gatewayApp.eventosEvento.numPessoasDet')">Num Pessoas Det</span></th>
+                                <th style="width: 175px;"><span v-text="$t('gatewayApp.eventosEvento.numPessoasPerm')">Num Pessoas Perm</span></th>
+                                <th style="width: 175px;"><span v-text="$t('gatewayApp.eventosEvento.numPessoasDet')">Num Pessoas Det</span></th>
                                 <th><span v-text="$t('gatewayApp.eventosEvento.dataHoraInicio')">Data Hora Inicio</span></th>
                                 <th><span v-text="$t('gatewayApp.eventosEvento.dataHoraFim')">Data Hora Fim</span></th>
                                 <th><span v-text="$t('gatewayApp.eventosEvento.area')">Area</span></th>
