@@ -70,6 +70,14 @@
                             <router-link :to="{name: 'TipoeventoView', params: {tipoeventoId: evento.tipoevento.id}}">{{evento.tipoevento.descricao}}</router-link>
                         </div>
                     </dd>
+                    <dt>
+                        <span>Filmagem</span>
+                    </dt>
+                    <dd>
+                        <div>
+                            <video controls :src="evento.path"></video>
+                        </div>
+                    </dd>
                 </dl>
                 <button type="submit"
                         v-on:click.prevent="previousState()"
