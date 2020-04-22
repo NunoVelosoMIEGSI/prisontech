@@ -1,5 +1,6 @@
 package com.dai.eventos.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
@@ -30,10 +31,11 @@ public class Camara implements Serializable {
     private Boolean estado;
 
     @OneToMany(mappedBy = "camara")
-    private Set<Area> areas = new HashSet<>();
-
-    @OneToMany(mappedBy = "camara")
     private Set<Evento> eventos = new HashSet<>();
+
+    @ManyToMany(mappedBy = "camaras")
+    @JsonIgnore
+    private Set<Area> areas = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -70,31 +72,6 @@ public class Camara implements Serializable {
         this.estado = estado;
     }
 
-    public Set<Area> getAreas() {
-        return areas;
-    }
-
-    public Camara areas(Set<Area> areas) {
-        this.areas = areas;
-        return this;
-    }
-
-    public Camara addArea(Area area) {
-        this.areas.add(area);
-        area.setCamara(this);
-        return this;
-    }
-
-    public Camara removeArea(Area area) {
-        this.areas.remove(area);
-        area.setCamara(null);
-        return this;
-    }
-
-    public void setAreas(Set<Area> areas) {
-        this.areas = areas;
-    }
-
     public Set<Evento> getEventos() {
         return eventos;
     }
@@ -118,6 +95,31 @@ public class Camara implements Serializable {
 
     public void setEventos(Set<Evento> eventos) {
         this.eventos = eventos;
+    }
+
+    public Set<Area> getAreas() {
+        return areas;
+    }
+
+    public Camara areas(Set<Area> areas) {
+        this.areas = areas;
+        return this;
+    }
+
+    public Camara addArea(Area area) {
+        this.areas.add(area);
+        area.getCamaras().add(this);
+        return this;
+    }
+
+    public Camara removeArea(Area area) {
+        this.areas.remove(area);
+        area.getCamaras().remove(this);
+        return this;
+    }
+
+    public void setAreas(Set<Area> areas) {
+        this.areas = areas;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

@@ -81,10 +81,11 @@ public class AreaResource {
     /**
      * {@code GET  /areas} : get all the areas.
      *
+     * @param eagerload flag to eager load entities from relationships (This is applicable for many-to-many).
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of areas in body.
      */
     @GetMapping("/areas")
-    public List<Area> getAllAreas() {
+    public List<Area> getAllAreas(@RequestParam(required = false, defaultValue = "false") boolean eagerload) {
         log.debug("REST request to get all Areas");
         return areaService.findAll();
     }

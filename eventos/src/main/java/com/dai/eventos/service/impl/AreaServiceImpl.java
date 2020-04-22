@@ -6,6 +6,8 @@ import com.dai.eventos.repository.AreaRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -48,7 +50,16 @@ public class AreaServiceImpl implements AreaService {
     @Transactional(readOnly = true)
     public List<Area> findAll() {
         log.debug("Request to get all Areas");
-        return areaRepository.findAll();
+        return areaRepository.findAllWithEagerRelationships();
+    }
+
+    /**
+     * Get all the areas with eager load of many-to-many relationships.
+     *
+     * @return the list of entities.
+     */
+    public Page<Area> findAllWithEagerRelationships(Pageable pageable) {
+        return areaRepository.findAllWithEagerRelationships(pageable);
     }
 
     /**
@@ -61,7 +72,7 @@ public class AreaServiceImpl implements AreaService {
     @Transactional(readOnly = true)
     public Optional<Area> findOne(Long id) {
         log.debug("Request to get Area : {}", id);
-        return areaRepository.findById(id);
+        return areaRepository.findOneWithEagerRelationships(id);
     }
 
     /**

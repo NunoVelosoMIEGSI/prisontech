@@ -9,9 +9,9 @@ import CamaraUpdateComponent from '@/entities/eventos/camara/camara-update.vue';
 import CamaraClass from '@/entities/eventos/camara/camara-update.component';
 import CamaraService from '@/entities/eventos/camara/camara.service';
 
-import AreaService from '@/entities/eventos/area/area.service';
-
 import EventoService from '@/entities/eventos/evento/evento.service';
+
+import AreaService from '@/entities/eventos/area/area.service';
 
 const localVue = createLocalVue();
 
@@ -40,9 +40,9 @@ describe('Component Tests', () => {
           alertService: () => new AlertService(store),
           camaraService: () => camaraServiceStub,
 
-          areaService: () => new AreaService(),
+          eventoService: () => new EventoService(),
 
-          eventoService: () => new EventoService()
+          areaService: () => new AreaService()
         }
       });
       comp = wrapper.vm;

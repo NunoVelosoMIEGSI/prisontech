@@ -32,10 +32,14 @@ entity Logseventos {
 
 
 relationship OneToMany {
-	Camara to Area{camara},
 	Area to Evento{area},
 	Camara to Evento{camara},
 	Tipoevento to Evento{tipoevento}
+}
+
+
+relationship ManyToMany {
+  Area{camara} to Camara{area}
 }
 
 // Use Data Transfert Objects (DTO)

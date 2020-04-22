@@ -2,11 +2,11 @@ import { Component, Vue, Inject } from 'vue-property-decorator';
 
 import { numeric, required, minLength, maxLength, minValue, maxValue } from 'vuelidate/lib/validators';
 
-import AreaService from '../area/area.service';
-import { IArea } from '@/shared/model/eventos/area.model';
-
 import EventoService from '../evento/evento.service';
 import { IEvento } from '@/shared/model/eventos/evento.model';
+
+import AreaService from '../area/area.service';
+import { IArea } from '@/shared/model/eventos/area.model';
 
 import AlertService from '@/shared/alert/alert.service';
 import { ICamara, Camara } from '@/shared/model/eventos/camara.model';
@@ -31,13 +31,13 @@ export default class CamaraUpdate extends Vue {
   @Inject('camaraService') private camaraService: () => CamaraService;
   public camara: ICamara = new Camara();
 
-  @Inject('areaService') private areaService: () => AreaService;
-
-  public areas: IArea[] = [];
-
   @Inject('eventoService') private eventoService: () => EventoService;
 
   public eventos: IEvento[] = [];
+
+  @Inject('areaService') private areaService: () => AreaService;
+
+  public areas: IArea[] = [];
   public isSaving = false;
 
   beforeRouteEnter(to, from, next) {
@@ -85,15 +85,15 @@ export default class CamaraUpdate extends Vue {
   }
 
   public initRelationships(): void {
-    this.areaService()
-      .retrieve()
-      .then(res => {
-        this.areas = res.data;
-      });
     this.eventoService()
       .retrieve()
       .then(res => {
         this.eventos = res.data;
+      });
+    this.areaService()
+      .retrieve()
+      .then(res => {
+        this.areas = res.data;
       });
   }
 }

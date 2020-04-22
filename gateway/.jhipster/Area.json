@@ -31,11 +31,12 @@
             "relationshipName": "evento"
         },
         {
-            "relationshipType": "many-to-one",
+            "relationshipType": "many-to-many",
             "otherEntityName": "camara",
             "otherEntityRelationshipName": "area",
             "relationshipName": "camara",
-            "otherEntityField": "id"
+            "otherEntityField": "id",
+            "ownerSide": true
         }
     ],
     "changelogDate": "20200328154200",
