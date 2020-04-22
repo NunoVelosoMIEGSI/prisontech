@@ -19,15 +19,17 @@
     "relationships": [
         {
             "relationshipType": "one-to-many",
-            "otherEntityName": "area",
-            "otherEntityRelationshipName": "camara",
-            "relationshipName": "area"
-        },
-        {
-            "relationshipType": "one-to-many",
             "otherEntityName": "evento",
             "otherEntityRelationshipName": "camara",
             "relationshipName": "evento"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "area",
+            "otherEntityRelationshipName": "camara",
+            "relationshipName": "area",
+            "otherEntityField": "id",
+            "ownerSide": false
         }
     ],
     "changelogDate": "20200328154300",

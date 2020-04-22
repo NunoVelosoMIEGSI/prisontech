@@ -15,8 +15,8 @@
       },
       "descricao": "Descricao",
       "estado": "Estado",
-      "area": "Area",
-      "evento": "Evento"
+      "evento": "Evento",
+      "area": "Area"
     }
   },
   "eventosApp": {

@@ -25,15 +25,23 @@
             <column name="limite_area" type="integer">
                 <constraints nullable="false" />
             </column>
-            <column name="camara_id" type="bigint">
-                <constraints nullable="true" />
-            </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
     </changeSet>
 
     <changeSet id="20200328154200-1-relations" author="jhipster">
 
+        <createTable tableName="area_camara">
+            <column name="camara_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="area_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="area_id, camara_id" tableName="area_camara"/>
+        
     </changeSet>
     <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
 

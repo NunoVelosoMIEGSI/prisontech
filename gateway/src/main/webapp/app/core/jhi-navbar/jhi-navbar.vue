@@ -7,7 +7,7 @@
             <b-navbar-brand class="logo float-left" b-link to="/">
                 <img src="../../../content/images/cctv.png" style="width: 46px; height: 46px;">
                 <!--<span class="logo-img"></span>-->
-                <span v-text="$t('global.title')" class="navbar-title">Prisontech</span> <span class="navbar-version">{{version}}</span>
+                <span v-text="$t('global.title')" class="navbar-title">Prisiontech</span> <span class="navbar-version">{{version}}</span>
             </b-navbar-brand>
         </div>
         <b-collapse is-nav id="header-tabs">
@@ -38,6 +38,17 @@
                         <font-awesome-icon icon="asterisk" />
                         <span v-text="$t('global.menu.entities.eventosTipoevento')">Tipoevento</span>
                     </b-dropdown-item>
+                    <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
+                </b-nav-item-dropdown>
+
+                <b-nav-item-dropdown
+                    id="meu-menu2"
+                    v-if="authenticated"
+                    active-class="active" class="pointer">
+                    <span slot="button-content" class="navbar-dropdown-menu">
+                        <font-awesome-icon icon="th-list" />
+                        <span v-text="$t('global.menu.meu_menu2.main')">Dados</span>
+                    </span>
                     <b-dropdown-item to="/evento">
                         <font-awesome-icon icon="asterisk" />
                         <span v-text="$t('global.menu.entities.eventosEvento')">Evento</span>
@@ -46,8 +57,7 @@
                         <font-awesome-icon icon="asterisk" />
                         <span v-text="$t('global.menu.entities.eventosLogseventos')">Logseventos</span>
                     </b-dropdown-item>
-                    <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
-                </b-nav-item-dropdown>
+                </b-nav-item-dropdown>                
 
                 <b-nav-item-dropdown
                     id="meu-menu"
@@ -57,7 +67,7 @@
                     class="pointer">
                     <span slot="button-content" class="navbar-dropdown-menu">
                         <font-awesome-icon icon="user-plus" />
-                        <span>Integrações</span>
+                        <span  v-text="$t('global.menu.meu_menu.main')">Integrações</span>
                     </span>
                     <b-dropdown-item to="/pages/page_camaras">
                         <font-awesome-icon icon="user" />

@@ -7,7 +7,7 @@ export interface IArea {
   numPessoasPerm?: number;
   limiteArea?: number;
   eventos?: IEvento[];
-  camara?: ICamara;
+  camaras?: ICamara[];
 }
 
 export class Area implements IArea {
@@ -17,6 +17,6 @@ export class Area implements IArea {
     public numPessoasPerm?: number,
     public limiteArea?: number,
     public eventos?: IEvento[],
-    public camara?: ICamara
+    public camaras?: ICamara[]
   ) {}
 }

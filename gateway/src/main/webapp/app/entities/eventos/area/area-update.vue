@@ -46,10 +46,9 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="form-control-label" v-text="$t('gatewayApp.eventosArea.camara')" for="area-camara">Camara</label>
-                        <select class="form-control" id="area-camara" name="camara" v-model="area.camara">
-                            <option v-bind:value="null"></option>
-                            <option v-bind:value="area.camara && camaraOption.id === area.camara.id ? area.camara : camaraOption" v-for="camaraOption in camaras" :key="camaraOption.id">{{camaraOption.descricao}}</option>
+                        <label v-text="$t('gatewayApp.eventosArea.camara')" for="area-camara">Camara</label>
+                        <select class="form-control" id="area-camara" multiple name="camara" v-model="area.camaras" style="height: 200px;">
+                            <option v-bind:value="getSelected(area.camaras, camaraOption)" v-for="camaraOption in camaras" :key="camaraOption.id">{{camaraOption.descricao}}</option>
                         </select>
                     </div>
                 </div>

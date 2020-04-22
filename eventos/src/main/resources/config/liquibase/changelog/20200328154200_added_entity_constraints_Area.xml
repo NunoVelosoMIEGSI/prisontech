@@ -8,11 +8,17 @@
     -->
     <changeSet id="20200328154200-2" author="jhipster">
         
+        <addForeignKeyConstraint baseColumnNames="area_id"
+                                 baseTableName="area_camara"
+                                 constraintName="fk_area_camara_area_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="area"/>
+
         <addForeignKeyConstraint baseColumnNames="camara_id"
-                                 baseTableName="area"
-                                 constraintName="fk_area_camara_id"
+                                 baseTableName="area_camara"
+                                 constraintName="fk_area_camara_camara_id"
                                  referencedColumnNames="id"
                                  referencedTableName="camara"/>
-
+        
     </changeSet>
 </databaseChangeLog>

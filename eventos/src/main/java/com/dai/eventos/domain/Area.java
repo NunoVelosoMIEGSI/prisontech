@@ -1,6 +1,5 @@
 package com.dai.eventos.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
@@ -37,9 +36,11 @@ public class Area implements Serializable {
     @OneToMany(mappedBy = "area")
     private Set<Evento> eventos = new HashSet<>();
 
-    @ManyToOne
-    @JsonIgnoreProperties("areas")
-    private Camara camara;
+    @ManyToMany
+    @JoinTable(name = "area_camara",
+               joinColumns = @JoinColumn(name = "area_id", referencedColumnName = "id"),
+               inverseJoinColumns = @JoinColumn(name = "camara_id", referencedColumnName = "id"))
+    private Set<Camara> camaras = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -114,17 +115,29 @@ public class Area implements Serializable {
         this.eventos = eventos;
     }
 
-    public Camara getCamara() {
-        return camara;
+    public Set<Camara> getCamaras() {
+        return camaras;
     }
 
-    public Area camara(Camara camara) {
-        this.camara = camara;
+    public Area camaras(Set<Camara> camaras) {
+        this.camaras = camaras;
         return this;
     }
 
-    public void setCamara(Camara camara) {
-        this.camara = camara;
+    public Area addCamara(Camara camara) {
+        this.camaras.add(camara);
+        camara.getAreas().add(this);
+        return this;
+    }
+
+    public Area removeCamara(Camara camara) {
+        this.camaras.remove(camara);
+        camara.getAreas().remove(this);
+        return this;
+    }
+
+    public void setCamaras(Set<Camara> camaras) {
+        this.camaras = camaras;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

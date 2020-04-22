@@ -54,6 +54,10 @@ export default class AreaUpdate extends Vue {
     });
   }
 
+  created(): void {
+    this.area.camaras = [];
+  }
+
   public save(): void {
     this.isSaving = true;
     if (this.area.id) {
@@ -100,5 +104,16 @@ export default class AreaUpdate extends Vue {
       .then(res => {
         this.camaras = res.data;
       });
+  }
+
+  public getSelected(selectedVals, option): any {
+    if (selectedVals) {
+      for (let i = 0; i < selectedVals.length; i++) {
+        if (option.id === selectedVals[i].id) {
+          return selectedVals[i];
+        }
+      }
+    }
+    return option;
   }
 }

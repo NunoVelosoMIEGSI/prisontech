@@ -42,9 +42,9 @@
                     <td>{{area.numPessoasPerm}}</td>
                     <td>{{area.limiteArea}}</td>
                     <td>
-                        <div v-if="area.camara">
-                            <router-link :to="{name: 'CamaraView', params: {camaraId: area.camara.id}}">{{area.camara.descricao}}</router-link>
-                        </div>
+                        <span v-for="(camara, i) in area.camaras" :key="camara.id">{{i > 0 ? ', ' : ''}}
+                            <router-link class="form-control-static" :to="{name: 'CamaraView', params: {camaraId: camara.id}}">{{camara.descricao}}</router-link>
+                        </span>
                     </td>
                     <td class="text-right">
                         <div class="btn-group">
