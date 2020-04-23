@@ -42,7 +42,10 @@
                                 <!--<td>
                                     <router-link :to="{name: 'EventoView', params: {eventoId: evento.id}}">{{evento.id}}</router-link>
                                 </td>-->
-                                <td>{{evento.descricao}}</td>
+                                <!--<td>{{evento.descricao}}</td>-->
+                                <td>
+                                    <router-link :to="{name: 'EventoView', params: {eventoId: evento.id}}">{{evento.descricao}}</router-link>
+                                </td>
                                 <td>{{evento.numPessoasPerm}}</td>
                                 <td>{{evento.numPessoasDet}}</td>
                                 <td v-if="evento.dataHoraInicio"> {{$d(Date.parse(evento.dataHoraInicio), 'short') }}</td>
