@@ -5,12 +5,20 @@ export interface ICamara {
   id?: number;
   descricao?: string;
   estado?: boolean;
+  enderecoIp?: string;
   eventos?: IEvento[];
   areas?: IArea[];
 }
 
 export class Camara implements ICamara {
-  constructor(public id?: number, public descricao?: string, public estado?: boolean, public eventos?: IEvento[], public areas?: IArea[]) {
+  constructor(
+    public id?: number,
+    public descricao?: string,
+    public estado?: boolean,
+    public enderecoIp?: string,
+    public eventos?: IEvento[],
+    public areas?: IArea[]
+  ) {
     this.estado = this.estado || false;
   }
 }

@@ -29,6 +29,7 @@
                     <th><span v-text="$t('gatewayApp.eventosArea.numPessoasPerm')">Num Pessoas Perm</span></th>
                     <th><span v-text="$t('gatewayApp.eventosArea.limiteArea')">Limite Area</span></th>
                     <th><span v-text="$t('gatewayApp.eventosArea.camara')">Camara</span></th>
+                    <th><span v-text="$t('gatewayApp.eventosArea.tipoevento')">Tipoevento</span></th>
                     <th></th>
                 </tr>
                 </thead>
@@ -45,6 +46,11 @@
                         <span v-for="(camara, i) in area.camaras" :key="camara.id">{{i > 0 ? ', ' : ''}}
                             <router-link class="form-control-static" :to="{name: 'CamaraView', params: {camaraId: camara.id}}">{{camara.descricao}}</router-link>
                         </span>
+                    </td>
+                    <td>
+                        <div v-if="area.tipoevento">
+                            <router-link :to="{name: 'TipoeventoView', params: {tipoeventoId: area.tipoevento.id}}">{{area.tipoevento.descricao}}</router-link>
+                        </div>
                     </td>
                     <td class="text-right">
                         <div class="btn-group">

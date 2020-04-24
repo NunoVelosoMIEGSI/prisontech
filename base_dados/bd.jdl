@@ -6,7 +6,8 @@ entity Area {
 
 entity Camara{
 	descricao String required,
-	estado Boolean required
+	estado Boolean required,
+	enderecoIp String required
 }
 
 entity Tipoevento{
@@ -34,7 +35,8 @@ entity Logseventos {
 relationship OneToMany {
 	Area to Evento{area},
 	Camara to Evento{camara},
-	Tipoevento to Evento{tipoevento}
+	Tipoevento to Evento{tipoevento},
+	Tipoevento to Area{tipoevento}
 }
 
 

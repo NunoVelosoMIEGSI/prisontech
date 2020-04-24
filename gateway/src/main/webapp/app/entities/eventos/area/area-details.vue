@@ -30,6 +30,14 @@
                             <router-link :to="{name: 'CamaraView', params: {camaraId: camara.id}}">{{camara.descricao}}</router-link>
                         </span>
                     </dd>
+                    <dt>
+                        <span v-text="$t('gatewayApp.eventosArea.tipoevento')">Tipoevento</span>
+                    </dt>
+                    <dd>
+                        <div v-if="area.tipoevento">
+                            <router-link :to="{name: 'TipoeventoView', params: {tipoeventoId: area.tipoevento.id}}">{{area.tipoevento.descricao}}</router-link>
+                        </div>
+                    </dd>
                 </dl>
                 <button type="submit"
                         v-on:click.prevent="previousState()"

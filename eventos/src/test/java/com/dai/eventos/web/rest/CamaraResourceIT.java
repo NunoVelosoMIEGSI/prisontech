@@ -40,6 +40,9 @@ public class CamaraResourceIT {
     private static final Boolean DEFAULT_ESTADO = false;
     private static final Boolean UPDATED_ESTADO = true;
 
+    private static final String DEFAULT_ENDERECO_IP = "AAAAAAAAAA";
+    private static final String UPDATED_ENDERECO_IP = "BBBBBBBBBB";
+
     @Autowired
     private CamaraRepository camaraRepository;
 
@@ -86,7 +89,8 @@ public class CamaraResourceIT {
     public static Camara createEntity(EntityManager em) {
         Camara camara = new Camara()
             .descricao(DEFAULT_DESCRICAO)
-            .estado(DEFAULT_ESTADO);
+            .estado(DEFAULT_ESTADO)
+            .enderecoIp(DEFAULT_ENDERECO_IP);
         return camara;
     }
     /**
@@ -98,7 +102,8 @@ public class CamaraResourceIT {
     public static Camara createUpdatedEntity(EntityManager em) {
         Camara camara = new Camara()
             .descricao(UPDATED_DESCRICAO)
-            .estado(UPDATED_ESTADO);
+            .estado(UPDATED_ESTADO)
+            .enderecoIp(UPDATED_ENDERECO_IP);
         return camara;
     }
 
@@ -124,6 +129,7 @@ public class CamaraResourceIT {
         Camara testCamara = camaraList.get(camaraList.size() - 1);
         assertThat(testCamara.getDescricao()).isEqualTo(DEFAULT_DESCRICAO);
         assertThat(testCamara.isEstado()).isEqualTo(DEFAULT_ESTADO);
+        assertThat(testCamara.getEnderecoIp()).isEqualTo(DEFAULT_ENDERECO_IP);
     }
 
     @Test
@@ -184,6 +190,24 @@ public class CamaraResourceIT {
 
     @Test
     @Transactional
+    public void checkEnderecoIpIsRequired() throws Exception {
+        int databaseSizeBeforeTest = camaraRepository.findAll().size();
+        // set the field null
+        camara.setEnderecoIp(null);
+
+        // Create the Camara, which fails.
+
+        restCamaraMockMvc.perform(post("/api/camaras")
+            .contentType(TestUtil.APPLICATION_JSON)
+            .content(TestUtil.convertObjectToJsonBytes(camara)))
+            .andExpect(status().isBadRequest());
+
+        List<Camara> camaraList = camaraRepository.findAll();
+        assertThat(camaraList).hasSize(databaseSizeBeforeTest);
+    }
+
+    @Test
+    @Transactional
     public void getAllCamaras() throws Exception {
         // Initialize the database
         camaraRepository.saveAndFlush(camara);
@@ -194,7 +218,8 @@ public class CamaraResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(camara.getId().intValue())))
             .andExpect(jsonPath("$.[*].descricao").value(hasItem(DEFAULT_DESCRICAO)))
-            .andExpect(jsonPath("$.[*].estado").value(hasItem(DEFAULT_ESTADO.booleanValue())));
+            .andExpect(jsonPath("$.[*].estado").value(hasItem(DEFAULT_ESTADO.booleanValue())))
+            .andExpect(jsonPath("$.[*].enderecoIp").value(hasItem(DEFAULT_ENDERECO_IP)));
     }
     
     @Test
@@ -209,7 +234,8 @@ public class CamaraResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(camara.getId().intValue()))
             .andExpect(jsonPath("$.descricao").value(DEFAULT_DESCRICAO))
-            .andExpect(jsonPath("$.estado").value(DEFAULT_ESTADO.booleanValue()));
+            .andExpect(jsonPath("$.estado").value(DEFAULT_ESTADO.booleanValue()))
+            .andExpect(jsonPath("$.enderecoIp").value(DEFAULT_ENDERECO_IP));
     }
 
     @Test
@@ -234,7 +260,8 @@ public class CamaraResourceIT {
         em.detach(updatedCamara);
         updatedCamara
             .descricao(UPDATED_DESCRICAO)
-            .estado(UPDATED_ESTADO);
+            .estado(UPDATED_ESTADO)
+            .enderecoIp(UPDATED_ENDERECO_IP);
 
         restCamaraMockMvc.perform(put("/api/camaras")
             .contentType(TestUtil.APPLICATION_JSON)
@@ -247,6 +274,7 @@ public class CamaraResourceIT {
         Camara testCamara = camaraList.get(camaraList.size() - 1);
         assertThat(testCamara.getDescricao()).isEqualTo(UPDATED_DESCRICAO);
         assertThat(testCamara.isEstado()).isEqualTo(UPDATED_ESTADO);
+        assertThat(testCamara.getEnderecoIp()).isEqualTo(UPDATED_ENDERECO_IP);
     }
 
     @Test

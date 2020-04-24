@@ -12,7 +12,12 @@
                     <div class="form-group">
                         <label class="form-control-label" v-text="$t('gatewayApp.eventosTipoevento.descricao')" for="tipoevento-descricao">Descricao</label>
                         <input type="text" class="form-control" name="descricao" id="tipoevento-descricao"
-                            :class="{'valid': !$v.tipoevento.descricao.$invalid, 'invalid': $v.tipoevento.descricao.$invalid }" v-model="$v.tipoevento.descricao.$model" />
+                            :class="{'valid': !$v.tipoevento.descricao.$invalid, 'invalid': $v.tipoevento.descricao.$invalid }" v-model="$v.tipoevento.descricao.$model"  required/>
+                        <div v-if="$v.tipoevento.descricao.$anyDirty && $v.tipoevento.descricao.$invalid">
+                            <small class="form-text text-danger" v-if="!$v.tipoevento.descricao.required" v-text="$t('entity.validation.required')">
+                                This field is required.
+                            </small>
+                        </div>
                     </div>
                 </div>
                 <div>

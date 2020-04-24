@@ -20,5 +20,11 @@
                                  referencedColumnNames="id"
                                  referencedTableName="camara"/>
         
+        <addForeignKeyConstraint baseColumnNames="tipoevento_id"
+                                 baseTableName="area"
+                                 constraintName="fk_area_tipoevento_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tipoevento"/>
+
     </changeSet>
 </databaseChangeLog>

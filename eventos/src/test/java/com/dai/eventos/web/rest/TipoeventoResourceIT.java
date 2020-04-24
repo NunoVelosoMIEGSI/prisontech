@@ -142,6 +142,24 @@ public class TipoeventoResourceIT {
 
     @Test
     @Transactional
+    public void checkDescricaoIsRequired() throws Exception {
+        int databaseSizeBeforeTest = tipoeventoRepository.findAll().size();
+        // set the field null
+        tipoevento.setDescricao(null);
+
+        // Create the Tipoevento, which fails.
+
+        restTipoeventoMockMvc.perform(post("/api/tipoeventos")
+            .contentType(TestUtil.APPLICATION_JSON)
+            .content(TestUtil.convertObjectToJsonBytes(tipoevento)))
+            .andExpect(status().isBadRequest());
+
+        List<Tipoevento> tipoeventoList = tipoeventoRepository.findAll();
+        assertThat(tipoeventoList).hasSize(databaseSizeBeforeTest);
+    }
+
+    @Test
+    @Transactional
     public void getAllTipoeventos() throws Exception {
         // Initialize the database
         tipoeventoRepository.saveAndFlush(tipoevento);

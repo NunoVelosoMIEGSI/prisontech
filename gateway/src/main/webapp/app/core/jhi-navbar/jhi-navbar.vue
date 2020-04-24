@@ -30,13 +30,12 @@
                         <font-awesome-icon icon="asterisk" />
                         <span v-text="$t('global.menu.entities.eventosCamara')">Camara</span>
                     </b-dropdown-item>
-                    <b-dropdown-item to="/area">
-                        <font-awesome-icon icon="asterisk" />
-                        <span v-text="$t('global.menu.entities.eventosArea')">Area</span>
-                    </b-dropdown-item>
                     <b-dropdown-item to="/tipoevento">
                         <font-awesome-icon icon="asterisk" />
                         <span v-text="$t('global.menu.entities.eventosTipoevento')">Tipoevento</span>
+                    </b-dropdown-item>                    <b-dropdown-item to="/area">
+                        <font-awesome-icon icon="asterisk" />
+                        <span v-text="$t('global.menu.entities.eventosArea')">Area</span>
                     </b-dropdown-item>
                     <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
                 </b-nav-item-dropdown>

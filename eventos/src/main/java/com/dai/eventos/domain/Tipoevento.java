@@ -2,6 +2,7 @@ package com.dai.eventos.domain;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 
 import java.io.Serializable;
 import java.util.HashSet;
@@ -20,11 +21,15 @@ public class Tipoevento implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "descricao")
+    @NotNull
+    @Column(name = "descricao", nullable = false)
     private String descricao;
 
     @OneToMany(mappedBy = "tipoevento")
     private Set<Evento> eventos = new HashSet<>();
+
+    @OneToMany(mappedBy = "tipoevento")
+    private Set<Area> areas = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -71,6 +76,31 @@ public class Tipoevento implements Serializable {
 
     public void setEventos(Set<Evento> eventos) {
         this.eventos = eventos;
+    }
+
+    public Set<Area> getAreas() {
+        return areas;
+    }
+
+    public Tipoevento areas(Set<Area> areas) {
+        this.areas = areas;
+        return this;
+    }
+
+    public Tipoevento addArea(Area area) {
+        this.areas.add(area);
+        area.setTipoevento(this);
+        return this;
+    }
+
+    public Tipoevento removeArea(Area area) {
+        this.areas.remove(area);
+        area.setTipoevento(null);
+        return this;
+    }
+
+    public void setAreas(Set<Area> areas) {
+        this.areas = areas;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

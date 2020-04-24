@@ -8,6 +8,9 @@ import { IEvento } from '@/shared/model/eventos/evento.model';
 import CamaraService from '../camara/camara.service';
 import { ICamara } from '@/shared/model/eventos/camara.model';
 
+import TipoeventoService from '../tipoevento/tipoevento.service';
+import { ITipoevento } from '@/shared/model/eventos/tipoevento.model';
+
 import AlertService from '@/shared/alert/alert.service';
 import { IArea, Area } from '@/shared/model/eventos/area.model';
 import AreaService from './area.service';
@@ -43,6 +46,10 @@ export default class AreaUpdate extends Vue {
   @Inject('camaraService') private camaraService: () => CamaraService;
 
   public camaras: ICamara[] = [];
+
+  @Inject('tipoeventoService') private tipoeventoService: () => TipoeventoService;
+
+  public tipoeventos: ITipoevento[] = [];
   public isSaving = false;
 
   beforeRouteEnter(to, from, next) {
@@ -103,6 +110,11 @@ export default class AreaUpdate extends Vue {
       .retrieve()
       .then(res => {
         this.camaras = res.data;
+      });
+    this.tipoeventoService()
+      .retrieve()
+      .then(res => {
+        this.tipoeventos = res.data;
       });
   }
 

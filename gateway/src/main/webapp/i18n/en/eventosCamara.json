@@ -15,6 +15,7 @@
       },
       "descricao": "Descricao",
       "estado": "Estado",
+      "enderecoIp": "Endereco Ip",
       "evento": "Evento",
       "area": "Area"
     }

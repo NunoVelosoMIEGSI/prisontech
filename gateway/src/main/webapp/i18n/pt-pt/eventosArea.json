@@ -18,6 +18,7 @@
       "limiteArea": "Limite da área",
       "evento": "Evento",
       "camara": "Câmara",
+      "tipoevento": "Tipo de evento a detetar",
       "created": "Uma nova área foi criada com o identificador {{ param }}",
       "updated": "Área com identificador {{ param }} foi actualizada",
       "deleted": "Área com identificador {{ param }} foi eliminada"

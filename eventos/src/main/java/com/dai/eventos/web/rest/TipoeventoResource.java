@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
@@ -45,7 +46,7 @@ public class TipoeventoResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PostMapping("/tipoeventos")
-    public ResponseEntity<Tipoevento> createTipoevento(@RequestBody Tipoevento tipoevento) throws URISyntaxException {
+    public ResponseEntity<Tipoevento> createTipoevento(@Valid @RequestBody Tipoevento tipoevento) throws URISyntaxException {
         log.debug("REST request to save Tipoevento : {}", tipoevento);
         if (tipoevento.getId() != null) {
             throw new BadRequestAlertException("A new tipoevento cannot already have an ID", ENTITY_NAME, "idexists");
@@ -66,7 +67,7 @@ public class TipoeventoResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PutMapping("/tipoeventos")
-    public ResponseEntity<Tipoevento> updateTipoevento(@RequestBody Tipoevento tipoevento) throws URISyntaxException {
+    public ResponseEntity<Tipoevento> updateTipoevento(@Valid @RequestBody Tipoevento tipoevento) throws URISyntaxException {
         log.debug("REST request to update Tipoevento : {}", tipoevento);
         if (tipoevento.getId() == null) {
             throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");

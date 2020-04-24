@@ -19,6 +19,9 @@ const validations: any = {
     },
     estado: {
       required
+    },
+    enderecoIp: {
+      required
     }
   }
 };

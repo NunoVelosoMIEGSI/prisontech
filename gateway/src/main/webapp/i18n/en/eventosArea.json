@@ -17,7 +17,8 @@
       "numPessoasPerm": "Num Pessoas Perm",
       "limiteArea": "Limite Area",
       "evento": "Evento",
-      "camara": "Camara"
+      "camara": "Camara",
+      "tipoevento": "Tipoevento"
     }
   },
   "eventosApp": {

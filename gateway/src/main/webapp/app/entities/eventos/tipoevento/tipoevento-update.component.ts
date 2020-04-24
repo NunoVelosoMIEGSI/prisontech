@@ -5,13 +5,18 @@ import { numeric, required, minLength, maxLength, minValue, maxValue } from 'vue
 import EventoService from '../evento/evento.service';
 import { IEvento } from '@/shared/model/eventos/evento.model';
 
+import AreaService from '../area/area.service';
+import { IArea } from '@/shared/model/eventos/area.model';
+
 import AlertService from '@/shared/alert/alert.service';
 import { ITipoevento, Tipoevento } from '@/shared/model/eventos/tipoevento.model';
 import TipoeventoService from './tipoevento.service';
 
 const validations: any = {
   tipoevento: {
-    descricao: {}
+    descricao: {
+      required
+    }
   }
 };
 
@@ -26,6 +31,10 @@ export default class TipoeventoUpdate extends Vue {
   @Inject('eventoService') private eventoService: () => EventoService;
 
   public eventos: IEvento[] = [];
+
+  @Inject('areaService') private areaService: () => AreaService;
+
+  public areas: IArea[] = [];
   public isSaving = false;
 
   beforeRouteEnter(to, from, next) {
@@ -77,6 +86,11 @@ export default class TipoeventoUpdate extends Vue {
       .retrieve()
       .then(res => {
         this.eventos = res.data;
+      });
+    this.areaService()
+      .retrieve()
+      .then(res => {
+        this.areas = res.data;
       });
   }
 }

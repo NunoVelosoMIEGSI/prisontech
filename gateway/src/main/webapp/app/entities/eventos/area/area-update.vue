@@ -51,6 +51,13 @@
                             <option v-bind:value="getSelected(area.camaras, camaraOption)" v-for="camaraOption in camaras" :key="camaraOption.id">{{camaraOption.descricao}}</option>
                         </select>
                     </div>
+                    <div class="form-group">
+                        <label class="form-control-label" v-text="$t('gatewayApp.eventosArea.tipoevento')" for="area-tipoevento">Tipoevento</label>
+                        <select class="form-control" id="area-tipoevento" name="tipoevento" v-model="area.tipoevento">
+                            <option v-bind:value="null"></option>
+                            <option v-bind:value="area.tipoevento && tipoeventoOption.id === area.tipoevento.id ? area.tipoevento : tipoeventoOption" v-for="tipoeventoOption in tipoeventos" :key="tipoeventoOption.id">{{tipoeventoOption.descricao}}</option>
+                        </select>
+                    </div>
                 </div>
                 <div>
                     <button type="button" id="cancel-save" class="btn btn-secondary" v-on:click="previousState()">

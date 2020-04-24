@@ -15,6 +15,7 @@
       },
       "descricao": "Descrição",
       "evento": "Evento",
+      "area": "Área",
       "created": "Um novo tipo de evento foi criado com o identificador {{ param }}",
       "updated": "Tipo de evento com identificador {{ param }} foi actualizado",
       "deleted": "Tipo de evento com identificador {{ param }} foi eliminado"

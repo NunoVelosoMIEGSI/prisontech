@@ -13,6 +13,8 @@ import EventoService from '@/entities/eventos/evento/evento.service';
 
 import CamaraService from '@/entities/eventos/camara/camara.service';
 
+import TipoeventoService from '@/entities/eventos/tipoevento/tipoevento.service';
+
 const localVue = createLocalVue();
 
 config.initVueApp(localVue);
@@ -42,7 +44,9 @@ describe('Component Tests', () => {
 
           eventoService: () => new EventoService(),
 
-          camaraService: () => new CamaraService()
+          camaraService: () => new CamaraService(),
+
+          tipoeventoService: () => new TipoeventoService()
         }
       });
       comp = wrapper.vm;

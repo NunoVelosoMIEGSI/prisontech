@@ -30,6 +30,10 @@ public class Camara implements Serializable {
     @Column(name = "estado", nullable = false)
     private Boolean estado;
 
+    @NotNull
+    @Column(name = "endereco_ip", nullable = false)
+    private String enderecoIp;
+
     @OneToMany(mappedBy = "camara")
     private Set<Evento> eventos = new HashSet<>();
 
@@ -70,6 +74,19 @@ public class Camara implements Serializable {
 
     public void setEstado(Boolean estado) {
         this.estado = estado;
+    }
+
+    public String getEnderecoIp() {
+        return enderecoIp;
+    }
+
+    public Camara enderecoIp(String enderecoIp) {
+        this.enderecoIp = enderecoIp;
+        return this;
+    }
+
+    public void setEnderecoIp(String enderecoIp) {
+        this.enderecoIp = enderecoIp;
     }
 
     public Set<Evento> getEventos() {
@@ -145,6 +162,7 @@ public class Camara implements Serializable {
             "id=" + getId() +
             ", descricao='" + getDescricao() + "'" +
             ", estado='" + isEstado() + "'" +
+            ", enderecoIp='" + getEnderecoIp() + "'" +
             "}";
     }
 }

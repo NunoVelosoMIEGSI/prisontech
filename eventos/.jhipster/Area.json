@@ -37,6 +37,13 @@
             "relationshipName": "camara",
             "otherEntityField": "id",
             "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "tipoevento",
+            "otherEntityRelationshipName": "area",
+            "relationshipName": "tipoevento",
+            "otherEntityField": "id"
         }
     ],
     "changelogDate": "20200328154200",

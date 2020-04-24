@@ -27,6 +27,7 @@
                     <!--<th><span v-text="$t('global.field.id')">ID</span></th>-->
                     <th><span v-text="$t('gatewayApp.eventosCamara.descricao')">Descricao</span></th>
                     <th><span v-text="$t('gatewayApp.eventosCamara.estado')">Estado</span></th>
+                    <th><span v-text="$t('gatewayApp.eventosCamara.enderecoIp')">Endereco Ip</span></th>
                     <th></th>
                 </tr>
                 </thead>
@@ -40,6 +41,7 @@
                     <!--<td>{{camara.estado}}</td>-->
                     <td v-if="camara.estado==true">Ativa</td>
                     <td v-if="camara.estado==false">Inativa</td>
+                    <td>{{camara.enderecoIp}}</td>
                     <td class="text-right">
                         <div class="btn-group">
                             <router-link :to="{name: 'CamaraView', params: {camaraId: camara.id}}" tag="button" class="btn btn-info btn-sm details">

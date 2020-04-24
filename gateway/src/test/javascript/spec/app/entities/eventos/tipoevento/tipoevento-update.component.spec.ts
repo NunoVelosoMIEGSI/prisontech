@@ -11,6 +11,8 @@ import TipoeventoService from '@/entities/eventos/tipoevento/tipoevento.service'
 
 import EventoService from '@/entities/eventos/evento/evento.service';
 
+import AreaService from '@/entities/eventos/area/area.service';
+
 const localVue = createLocalVue();
 
 config.initVueApp(localVue);
@@ -38,7 +40,9 @@ describe('Component Tests', () => {
           alertService: () => new AlertService(store),
           tipoeventoService: () => tipoeventoServiceStub,
 
-          eventoService: () => new EventoService()
+          eventoService: () => new EventoService(),
+
+          areaService: () => new AreaService()
         }
       });
       comp = wrapper.vm;

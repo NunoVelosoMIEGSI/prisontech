@@ -1,5 +1,6 @@
 package com.dai.eventos.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
@@ -41,6 +42,10 @@ public class Area implements Serializable {
                joinColumns = @JoinColumn(name = "area_id", referencedColumnName = "id"),
                inverseJoinColumns = @JoinColumn(name = "camara_id", referencedColumnName = "id"))
     private Set<Camara> camaras = new HashSet<>();
+
+    @ManyToOne
+    @JsonIgnoreProperties("areas")
+    private Tipoevento tipoevento;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -138,6 +143,19 @@ public class Area implements Serializable {
 
     public void setCamaras(Set<Camara> camaras) {
         this.camaras = camaras;
+    }
+
+    public Tipoevento getTipoevento() {
+        return tipoevento;
+    }
+
+    public Area tipoevento(Tipoevento tipoevento) {
+        this.tipoevento = tipoevento;
+        return this;
+    }
+
+    public void setTipoevento(Tipoevento tipoevento) {
+        this.tipoevento = tipoevento;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

@@ -14,7 +14,8 @@
         "title": "Tipoevento"
       },
       "descricao": "Descricao",
-      "evento": "Evento"
+      "evento": "Evento",
+      "area": "Area"
     }
   },
   "eventosApp": {

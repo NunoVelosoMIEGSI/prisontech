@@ -18,6 +18,12 @@
                         <span v-if="camara.estado==true">Ativa</span>
                         <span v-if="camara.estado==false">Inativa</span>
                     </dd>
+                    <dt>
+                        <span v-text="$t('gatewayApp.eventosCamara.enderecoIp')">Endereco Ip</span>
+                    </dt>
+                    <dd>
+                        <span>{{camara.enderecoIp}}</span>
+                    </dd>
                 </dl>
                 <button type="submit"
                         v-on:click.prevent="previousState()"

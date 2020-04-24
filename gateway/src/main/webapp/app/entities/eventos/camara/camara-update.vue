@@ -29,6 +29,16 @@
                             </small>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label class="form-control-label" v-text="$t('gatewayApp.eventosCamara.enderecoIp')" for="camara-enderecoIp">Endereco Ip</label>
+                        <input type="text" class="form-control" name="enderecoIp" id="camara-enderecoIp"
+                            :class="{'valid': !$v.camara.enderecoIp.$invalid, 'invalid': $v.camara.enderecoIp.$invalid }" v-model="$v.camara.enderecoIp.$model"  required/>
+                        <div v-if="$v.camara.enderecoIp.$anyDirty && $v.camara.enderecoIp.$invalid">
+                            <small class="form-text text-danger" v-if="!$v.camara.enderecoIp.required" v-text="$t('entity.validation.required')">
+                                This field is required.
+                            </small>
+                        </div>
+                    </div>
                 </div>
                 <div>
                     <button type="button" id="cancel-save" class="btn btn-secondary" v-on:click="previousState()">
