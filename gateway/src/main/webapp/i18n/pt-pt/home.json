@@ -1,7 +1,7 @@
 {
   "home": {
     "title": "Bem-vindo!",
-    "subtitle": "Esta é a página principal",
+    "subtitle": "Faça login para ter acesso aos dados.",
     "logged": {
       "message": "Está autenticado como \"{{username}}\"."
     },
