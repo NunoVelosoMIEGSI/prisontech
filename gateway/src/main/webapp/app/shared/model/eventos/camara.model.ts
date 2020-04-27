@@ -6,6 +6,7 @@ export interface ICamara {
   descricao?: string;
   estado?: boolean;
   enderecoIp?: string;
+  enderecoMac?: string;
   eventos?: IEvento[];
   areas?: IArea[];
 }
@@ -16,6 +17,7 @@ export class Camara implements ICamara {
     public descricao?: string,
     public estado?: boolean,
     public enderecoIp?: string,
+    public enderecoMac?: string,
     public eventos?: IEvento[],
     public areas?: IArea[]
   ) {

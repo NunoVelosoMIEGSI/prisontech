@@ -18,6 +18,7 @@
       "area": "Área",
       "evento": "Evento",
       "enderecoIp": "Endereço IP",
+      "enderecoMac": "Endereco Mac",
       "created": "Uma nova câmara foi criada com o identificador {{ param }}",
       "updated": "Câmara com identificador {{ param }} foi actualizada",
       "deleted": "Câmara com identificador {{ param }} foi eliminada"

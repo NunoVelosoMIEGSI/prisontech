@@ -24,6 +24,12 @@
                     <dd>
                         <span>{{camara.enderecoIp}}</span>
                     </dd>
+                    <dt>
+                        <span v-text="$t('gatewayApp.eventosCamara.enderecoMac')">Endereco Mac</span>
+                    </dt>
+                    <dd>
+                        <span>{{camara.enderecoMac}}</span>
+                    </dd>
                 </dl>
                 <button type="submit"
                         v-on:click.prevent="previousState()"

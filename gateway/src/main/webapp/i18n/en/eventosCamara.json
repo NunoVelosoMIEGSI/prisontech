@@ -16,6 +16,7 @@
       "descricao": "Descricao",
       "estado": "Estado",
       "enderecoIp": "Endereco Ip",
+      "enderecoMac": "Endereco Mac",
       "evento": "Evento",
       "area": "Area"
     }

@@ -17,6 +17,10 @@
         },
         {
             "fieldName": "enderecoIp",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "enderecoMac",
             "fieldType": "String",
             "fieldValidateRules": [
                 "required"

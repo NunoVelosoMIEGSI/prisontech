@@ -32,9 +32,14 @@
                     <div class="form-group">
                         <label class="form-control-label" v-text="$t('gatewayApp.eventosCamara.enderecoIp')" for="camara-enderecoIp">Endereco Ip</label>
                         <input type="text" class="form-control" name="enderecoIp" id="camara-enderecoIp"
-                            :class="{'valid': !$v.camara.enderecoIp.$invalid, 'invalid': $v.camara.enderecoIp.$invalid }" v-model="$v.camara.enderecoIp.$model"  required/>
-                        <div v-if="$v.camara.enderecoIp.$anyDirty && $v.camara.enderecoIp.$invalid">
-                            <small class="form-text text-danger" v-if="!$v.camara.enderecoIp.required" v-text="$t('entity.validation.required')">
+                            :class="{'valid': !$v.camara.enderecoIp.$invalid, 'invalid': $v.camara.enderecoIp.$invalid }" v-model="$v.camara.enderecoIp.$model" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label" v-text="$t('gatewayApp.eventosCamara.enderecoMac')" for="camara-enderecoMac">Endereco Mac</label>
+                        <input type="text" class="form-control" name="enderecoMac" id="camara-enderecoMac"
+                            :class="{'valid': !$v.camara.enderecoMac.$invalid, 'invalid': $v.camara.enderecoMac.$invalid }" v-model="$v.camara.enderecoMac.$model"  required/>
+                        <div v-if="$v.camara.enderecoMac.$anyDirty && $v.camara.enderecoMac.$invalid">
+                            <small class="form-text text-danger" v-if="!$v.camara.enderecoMac.required" v-text="$t('entity.validation.required')">
                                 This field is required.
                             </small>
                         </div>

@@ -20,7 +20,8 @@ const validations: any = {
     estado: {
       required
     },
-    enderecoIp: {
+    enderecoIp: {},
+    enderecoMac: {
       required
     }
   }

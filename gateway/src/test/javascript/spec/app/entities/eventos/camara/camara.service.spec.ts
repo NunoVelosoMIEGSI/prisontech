@@ -30,7 +30,7 @@ describe('Service Tests', () => {
     beforeEach(() => {
       service = new CamaraService();
 
-      elemDefault = new Camara(0, 'AAAAAAA', false, 'AAAAAAA');
+      elemDefault = new Camara(0, 'AAAAAAA', false, 'AAAAAAA', 'AAAAAAA');
     });
 
     describe('Service methods', () => {
@@ -84,7 +84,8 @@ describe('Service Tests', () => {
           {
             descricao: 'BBBBBB',
             estado: true,
-            enderecoIp: 'BBBBBB'
+            enderecoIp: 'BBBBBB',
+            enderecoMac: 'BBBBBB'
           },
           elemDefault
         );
@@ -113,7 +114,8 @@ describe('Service Tests', () => {
           {
             descricao: 'BBBBBB',
             estado: true,
-            enderecoIp: 'BBBBBB'
+            enderecoIp: 'BBBBBB',
+            enderecoMac: 'BBBBBB'
           },
           elemDefault
         );
