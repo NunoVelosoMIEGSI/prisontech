@@ -2,7 +2,9 @@
     <div>
         <h2 id="page-heading">
             <span v-text="$t('gatewayApp.eventosCamara.home.title')" id="camara-heading">Camaras</span>
-            <router-link :to="{name: 'CamaraCreate'}" tag="button" id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-camara">
+            <router-link :to="{name: 'CamaraCreate'}" tag="button" id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-camara"
+                v-if="hasAnyAuthority('ROLE_ADMIN') || hasAnyAuthority('ROLE_RESPONSAVEL_SEGURANCA')"
+            ><!--UC 4 - so estes 2 atores podem criar camaras -->
                 <font-awesome-icon icon="plus"></font-awesome-icon>
                 <span  v-text="$t('gatewayApp.eventosCamara.home.createLabel')">
                     Create a new Camara
@@ -45,7 +47,9 @@
                     <td>{{camara.enderecoIp}}</td>
                     <td>{{camara.enderecoMac}}</td>
                     <td class="text-right">
-                        <div class="btn-group">
+                        <div class="btn-group"
+                            v-if="hasAnyAuthority('ROLE_ADMIN') || hasAnyAuthority('ROLE_RESPONSAVEL_SEGURANCA')"
+                        ><!--UC 4 - so estes 2 atores podem gerir os dados das camaras -->
                             <router-link :to="{name: 'CamaraView', params: {camaraId: camara.id}}" tag="button" class="btn btn-info btn-sm details">
                                 <font-awesome-icon icon="eye"></font-awesome-icon>
                                 <span class="d-none d-md-inline" v-text="$t('entity.action.view')">View</span>

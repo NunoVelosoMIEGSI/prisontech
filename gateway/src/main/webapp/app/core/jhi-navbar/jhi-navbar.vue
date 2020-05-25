@@ -26,7 +26,9 @@
                         <font-awesome-icon icon="th-list" />
                         <span v-text="$t('global.menu.entities.main')">Entities</span>
                     </span>
-                    <b-dropdown-item to="/camara">
+                    <b-dropdown-item to="/camara"
+                        v-if="hasAnyAuthority('ROLE_ADMIN') || hasAnyAuthority('ROLE_RESPONSAVEL_SEGURANCA') || hasAnyAuthority('ROLE_DIRETOR') "
+                    ><!--UC 4 - so estes 3 atores podem gerir camaras -->
                         <font-awesome-icon icon="asterisk" />
                         <span v-text="$t('global.menu.entities.eventosCamara')">Camara</span>
                     </b-dropdown-item>
@@ -42,7 +44,7 @@
 
                 <b-nav-item-dropdown
                     id="meu-menu2"
-                    v-if="authenticated"
+                    v-if="hasAnyAuthority('ROLE_ADMIN') || hasAnyAuthority('ROLE_RESPONSAVEL_SEGURANCA') || hasAnyAuthority('ROLE_DIRETOR') || hasAnyAuthority('RESPONSAVEL_CENTRAL_COMANDOS') "
                     active-class="active" class="pointer">
                     <span slot="button-content" class="navbar-dropdown-menu">
                         <font-awesome-icon icon="th-list" />
@@ -60,7 +62,7 @@
 
                 <b-nav-item-dropdown
                     id="meu-menu"
-                    v-if="hasAnyAuthority('ROLE_ADMIN')"
+                    v-if="hasAnyAuthority('ROLE_ADMIN') || hasAnyAuthority('ROLE_RESPONSAVEL_SEGURANCA') || hasAnyAuthority('ROLE_DIRETOR') || hasAnyAuthority('RESPONSAVEL_CENTRAL_COMANDOS') "
                     :class="{'router-link-active': subIsActive('/pages')}"
                     active-class="active"
                     class="pointer">

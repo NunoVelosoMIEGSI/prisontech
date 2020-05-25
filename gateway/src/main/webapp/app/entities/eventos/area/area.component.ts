@@ -6,10 +6,13 @@ import { IArea } from '@/shared/model/eventos/area.model';
 import AlertMixin from '@/shared/alert/alert.mixin';
 
 import AreaService from './area.service';
+import { VERSION } from '@/constants';
+import AccountService from '@/account/account.service';
 
 @Component
 export default class Area extends mixins(Vue2Filters.mixin, AlertMixin) {
   @Inject('areaService') private areaService: () => AreaService;
+  @Inject('accountService') private accountService: () => AccountService;
   private removeId: number = null;
   public areas: IArea[] = [];
 
@@ -62,5 +65,9 @@ export default class Area extends mixins(Vue2Filters.mixin, AlertMixin) {
 
   public closeDialog(): void {
     (<any>this.$refs.removeEntity).hide();
+  }
+
+  public hasAnyAuthority(authorities: any): boolean {
+    return this.accountService().hasAnyAuthority(authorities);
   }
 }

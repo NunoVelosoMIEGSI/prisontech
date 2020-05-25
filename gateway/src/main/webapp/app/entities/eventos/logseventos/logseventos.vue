@@ -48,11 +48,14 @@
                                 <font-awesome-icon icon="eye"></font-awesome-icon>
                                 <span class="d-none d-md-inline" v-text="$t('entity.action.view')">View</span>
                             </router-link>
-                            <router-link :to="{name: 'LogseventosEdit', params: {logseventosId: logseventos.id}}"  tag="button" class="btn btn-primary btn-sm edit">
+                            <router-link :to="{name: 'LogseventosEdit', params: {logseventosId: logseventos.id}}"  tag="button" class="btn btn-primary btn-sm edit"
+                                v-if="hasAnyAuthority('ROLE_ADMIN')"
+                            >
                                 <font-awesome-icon icon="pencil-alt"></font-awesome-icon>
                                 <span class="d-none d-md-inline" v-text="$t('entity.action.edit')">Edit</span>
                             </router-link>
                             <b-button v-on:click="prepareRemove(logseventos)"
+                                    v-if="hasAnyAuthority('ROLE_ADMIN')"
                                    variant="danger"
                                    class="btn btn-sm"
                                    v-b-modal.removeEntity>

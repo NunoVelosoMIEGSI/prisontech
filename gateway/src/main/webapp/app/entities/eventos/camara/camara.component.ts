@@ -6,10 +6,13 @@ import { ICamara } from '@/shared/model/eventos/camara.model';
 import AlertMixin from '@/shared/alert/alert.mixin';
 
 import CamaraService from './camara.service';
+import { VERSION } from '@/constants';
+import AccountService from '@/account/account.service';
 
 @Component
 export default class Camara extends mixins(Vue2Filters.mixin, AlertMixin) {
   @Inject('camaraService') private camaraService: () => CamaraService;
+  @Inject('accountService') private accountService: () => AccountService;
   private removeId: number = null;
   public camaras: ICamara[] = [];
 
@@ -62,5 +65,9 @@ export default class Camara extends mixins(Vue2Filters.mixin, AlertMixin) {
 
   public closeDialog(): void {
     (<any>this.$refs.removeEntity).hide();
+  }
+
+  public hasAnyAuthority(authorities: any): boolean {
+    return this.accountService().hasAnyAuthority(authorities);
   }
 }

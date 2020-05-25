@@ -47,6 +47,7 @@
                                 <span class="d-none d-md-inline" v-text="$t('entity.action.edit')">Edit</span>
                             </router-link>
                             <b-button v-on:click="prepareRemove(tipoevento)"
+                                    v-if="hasAnyAuthority('ROLE_ADMIN') || hasAnyAuthority('ROLE_RESPONSAVEL_SEGURANCA')"
                                    variant="danger"
                                    class="btn btn-sm"
                                    v-b-modal.removeEntity>

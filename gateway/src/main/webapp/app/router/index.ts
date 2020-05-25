@@ -85,7 +85,8 @@ export default new Router({
     {
       path: '/register',
       name: 'Register',
-      component: Register
+      component: Register,
+      meta: { authorities: [Authority.ADMIN, Authority.RESPONSAVEL_SEGURANCA ] }
     },
     {
       path: '/account/activate',
@@ -95,12 +96,14 @@ export default new Router({
     {
       path: '/account/reset/request',
       name: 'ResetPasswordInit',
-      component: ResetPasswordInit
+      component: ResetPasswordInit,
+      meta: { authorities: [Authority.ADMIN, Authority.RESPONSAVEL_SEGURANCA, Authority.RESPONSAVEL_CENTRAL_COMANDOS, Authority.DIRETOR, Authority.GUARDA_PRISIONAL] }
     },
     {
       path: '/account/reset/finish',
       name: 'ResetPasswordFinish',
-      component: ResetPasswordFinish
+      component: ResetPasswordFinish,
+      meta: { authorities: [Authority.ADMIN, Authority.RESPONSAVEL_SEGURANCA, Authority.RESPONSAVEL_CENTRAL_COMANDOS, Authority.DIRETOR, Authority.GUARDA_PRISIONAL] }
     },
     {
       path: '/account/password',
@@ -118,31 +121,31 @@ export default new Router({
       path: '/pages/page_camaras',
       name: 'Câmaras',
       component: page_camaras,
-      meta: { authorities: [Authority.ADMIN] }
+      meta: { authorities: [Authority.ADMIN, Authority.RESPONSAVEL_SEGURANCA, Authority.RESPONSAVEL_CENTRAL_COMANDOS, Authority.DIRETOR ] }
     },
     {
       path: '/admin/user-management',
       name: 'JhiUser',
       component: JhiUserManagementComponent,
-      meta: { authorities: [Authority.ADMIN] }
+      meta: { authorities: [Authority.ADMIN, Authority.RESPONSAVEL_SEGURANCA] }
     },
     {
       path: '/admin/user-management/new',
       name: 'JhiUserCreate',
       component: JhiUserManagementEditComponent,
-      meta: { authorities: [Authority.ADMIN] }
+      meta: { authorities: [Authority.ADMIN, Authority.RESPONSAVEL_SEGURANCA ] }
     },
     {
       path: '/admin/user-management/:userId/edit',
       name: 'JhiUserEdit',
       component: JhiUserManagementEditComponent,
-      meta: { authorities: [Authority.ADMIN] }
+      meta: { authorities: [Authority.ADMIN, Authority.RESPONSAVEL_SEGURANCA] }
     },
     {
       path: '/admin/user-management/:userId/view',
       name: 'JhiUserView',
       component: JhiUserManagementViewComponent,
-      meta: { authorities: [Authority.ADMIN] }
+      meta: { authorities: [Authority.ADMIN, Authority.RESPONSAVEL_SEGURANCA] }
     },
     {
       path: '/admin/docs',
@@ -192,125 +195,125 @@ export default new Router({
       path: '/area',
       name: 'Area',
       component: Area,
-      meta: { authorities: [Authority.USER] }
+      meta: { authorities: [Authority.ADMIN, Authority.RESPONSAVEL_SEGURANCA, Authority.RESPONSAVEL_CENTRAL_COMANDOS, Authority.DIRETOR] }
     },
     {
       path: '/area/new',
       name: 'AreaCreate',
       component: AreaUpdate,
-      meta: { authorities: [Authority.USER] }
+      meta: { authorities: [Authority.ADMIN, Authority.RESPONSAVEL_SEGURANCA] }
     },
     {
       path: '/area/:areaId/edit',
       name: 'AreaEdit',
       component: AreaUpdate,
-      meta: { authorities: [Authority.USER] }
+      meta: { authorities: [Authority.ADMIN, Authority.RESPONSAVEL_SEGURANCA] }
     },
     {
       path: '/area/:areaId/view',
       name: 'AreaView',
       component: AreaDetails,
-      meta: { authorities: [Authority.USER] }
+      meta: { authorities: [Authority.ADMIN, Authority.RESPONSAVEL_SEGURANCA, Authority.RESPONSAVEL_CENTRAL_COMANDOS, Authority.DIRETOR] }
     }
     ,
     {
       path: '/camara',
       name: 'Camara',
       component: Camara,
-      meta: { authorities: [Authority.USER] }
+      meta: { authorities: [Authority.ADMIN, Authority.RESPONSAVEL_SEGURANCA, Authority.DIRETOR] }
     },
     {
       path: '/camara/new',
       name: 'CamaraCreate',
       component: CamaraUpdate,
-      meta: { authorities: [Authority.USER] }
+      meta: { authorities: [Authority.ADMIN, Authority.RESPONSAVEL_SEGURANCA] }
     },
     {
       path: '/camara/:camaraId/edit',
       name: 'CamaraEdit',
       component: CamaraUpdate,
-      meta: { authorities: [Authority.USER] }
+      meta: { authorities: [Authority.ADMIN, Authority.RESPONSAVEL_SEGURANCA] }
     },
     {
       path: '/camara/:camaraId/view',
       name: 'CamaraView',
       component: CamaraDetails,
-      meta: { authorities: [Authority.USER] }
+      meta: { authorities: [Authority.ADMIN, Authority.RESPONSAVEL_SEGURANCA, Authority.DIRETOR] }
     }
     ,
     {
       path: '/tipoevento',
       name: 'Tipoevento',
       component: Tipoevento,
-      meta: { authorities: [Authority.USER] }
+      meta: { authorities: [Authority.ADMIN, Authority.RESPONSAVEL_CENTRAL_COMANDOS, Authority.DIRETOR, Authority.RESPONSAVEL_SEGURANCA] }
     },
     {
       path: '/tipoevento/new',
       name: 'TipoeventoCreate',
       component: TipoeventoUpdate,
-      meta: { authorities: [Authority.USER] }
+      meta: { authorities: [Authority.ADMIN, Authority.RESPONSAVEL_SEGURANCA] }
     },
     {
       path: '/tipoevento/:tipoeventoId/edit',
       name: 'TipoeventoEdit',
       component: TipoeventoUpdate,
-      meta: { authorities: [Authority.USER] }
+      meta: { authorities: [Authority.ADMIN, Authority.RESPONSAVEL_SEGURANCA] }
     },
     {
       path: '/tipoevento/:tipoeventoId/view',
       name: 'TipoeventoView',
       component: TipoeventoDetails,
-      meta: { authorities: [Authority.USER] }
+      meta: { authorities: [Authority.ADMIN, Authority.RESPONSAVEL_CENTRAL_COMANDOS, Authority.DIRETOR, Authority.RESPONSAVEL_SEGURANCA] }
     }
     ,
     {
       path: '/evento',
       name: 'Evento',
       component: Evento,
-      meta: { authorities: [Authority.USER] }
+      meta: { authorities: [Authority.ADMIN, Authority.RESPONSAVEL_SEGURANCA, Authority.RESPONSAVEL_CENTRAL_COMANDOS, Authority.DIRETOR] }
     },
     {
       path: '/evento/new',
       name: 'EventoCreate',
       component: EventoUpdate,
-      meta: { authorities: [Authority.USER] }
+      meta: { authorities: [Authority.ADMIN, Authority.RESPONSAVEL_SEGURANCA, Authority.RESPONSAVEL_CENTRAL_COMANDOS, Authority.DIRETOR] }
     },
     {
       path: '/evento/:eventoId/edit',
       name: 'EventoEdit',
       component: EventoUpdate,
-      meta: { authorities: [Authority.USER] }
+      meta: { authorities: [Authority.ADMIN ] }
     },
     {
       path: '/evento/:eventoId/view',
       name: 'EventoView',
       component: EventoDetails,
-      meta: { authorities: [Authority.USER] }
+      meta: { authorities: [Authority.ADMIN, Authority.RESPONSAVEL_SEGURANCA, Authority.RESPONSAVEL_CENTRAL_COMANDOS, Authority.DIRETOR] }
     }
     ,
     {
       path: '/logseventos',
       name: 'Logseventos',
       component: Logseventos,
-      meta: { authorities: [Authority.USER] }
+      meta: { authorities: [Authority.ADMIN, Authority.RESPONSAVEL_SEGURANCA, Authority.RESPONSAVEL_CENTRAL_COMANDOS, Authority.DIRETOR] }
     },
     {
       path: '/logseventos/new',
       name: 'LogseventosCreate',
       component: LogseventosUpdate,
-      meta: { authorities: [Authority.USER] }
+      meta: { authorities: [Authority.ADMIN] }
     },
     {
       path: '/logseventos/:logseventosId/edit',
       name: 'LogseventosEdit',
       component: LogseventosUpdate,
-      meta: { authorities: [Authority.USER] }
+      meta: { authorities: [Authority.ADMIN] }
     },
     {
       path: '/logseventos/:logseventosId/view',
       name: 'LogseventosView',
       component: LogseventosDetails,
-      meta: { authorities: [Authority.USER] }
+      meta: { authorities: [Authority.ADMIN, Authority.RESPONSAVEL_SEGURANCA, Authority.RESPONSAVEL_CENTRAL_COMANDOS, Authority.DIRETOR] }
     }
     // jhipster-needle-add-entity-to-router - JHipster will add entities to the router here
   ]
