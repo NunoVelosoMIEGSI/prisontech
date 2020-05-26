@@ -2,7 +2,7 @@
 <div>
   <div class="row">
   <div class="col-md-3">
-    <span class="hipster img-fluid rounded"></span>
+    <img src="../../../content/images/img_prison.jpg" style="width: 100%; margin-top: 30px;">
   </div>
   <div class="col-md-9">
     <h1 v-text="$t('error.title')">Error Page!</h1>

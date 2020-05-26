@@ -15,7 +15,8 @@ public final class AuthoritiesConstants {
     public static final String RESPONSAVEL_CENTRAL_COMANDOS = "ROLE_RESPONSAVEL_CENTRAL_COMANDOS";
     public static final String RESPONSAVEL_SEGURANCA = "ROLE_RESPONSAVEL_SEGURANCA";
     public static final String GUARDA_PRISIONAL = "ROLE_GUARDA_PRISIONAL";
-    public static final String ADMINISTRADOR_SISTEMA = "ROLE_ADMINISTRADOR_SISTEMA";
+    public static final String RECLUSO = "ROLE_RECLUSO";
+    public static final String TECNICO = "ROLE_TECNICO";
 
     private AuthoritiesConstants() {
     }
