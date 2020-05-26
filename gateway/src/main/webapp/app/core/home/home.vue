@@ -1,7 +1,7 @@
 <template>
     <div class="home row">
         <div class="col-md-3">
-            <img src="../../../content/images/img_prison.jpg" style="width: 375px; margin-top: 30px;">
+            <img src="../../../content/images/img_prison.jpg" style="width: 100%; margin-top: 30px;">
         </div>
         <div class="col-md-9">
             <div v-if="!authenticated">
