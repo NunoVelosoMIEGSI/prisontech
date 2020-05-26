@@ -26,9 +26,7 @@
                         <font-awesome-icon icon="th-list" />
                         <span v-text="$t('global.menu.entities.main')">Entities</span>
                     </span>
-                    <b-dropdown-item to="/camara"
-                        v-if="hasAnyAuthority('ROLE_ADMIN') || hasAnyAuthority('ROLE_RESPONSAVEL_SEGURANCA') || hasAnyAuthority('ROLE_DIRETOR') "
-                    ><!--UC 4 - so estes 3 atores podem gerir camaras -->
+                    <b-dropdown-item to="/camara">
                         <font-awesome-icon icon="asterisk" />
                         <span v-text="$t('global.menu.entities.eventosCamara')">Camara</span>
                     </b-dropdown-item>
